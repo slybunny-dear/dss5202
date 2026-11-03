@@ -22,7 +22,6 @@
 \newcommand{\note}[1]{\par\vspace{2pt}{\footnotesize\noindent\textit{Note.} #1\par}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \newcommand{\page}{\clearpage}
-\input{tables/numbers.tex}
 \hypersetup{pdftitle={Buying New, Buying Second-Hand, or Renting?},pdfauthor={DSS5202 Group 04}}
 \begin{document}
 \thispagestyle{plain}
@@ -110,7 +109,7 @@ where $k_m$ is cleaning count, $e_c$ the cleaning factor, $d_m$ allocated delive
 
 The common allocated garment burden is
 \begin{equation}
- \frac{6}{26}(14.8+0.84+0.99)=3.8376923\ \co\text{/year}.
+ \frac{6}{26}(14.8+0.84+0.99)\approx3.8377\ \co\text{/year}.
 \end{equation}
 The 0.478 kg reference mass is descriptive only because the factors already refer to a garment. Applying it again would incorrectly scale the inventory. The retained disposal proxy represents gross collection and incineration emissions; an energy-recovery credit has not been deducted. Emissions are reported in kg CO$_2$e, using the source factors as supplied. Their geographical and impact-method differences limit harmonization, so this is a screening comparison rather than a product-specific verified footprint.
 
@@ -137,7 +136,7 @@ These are researcher settings from the existing time configuration, not survey a
 \subsection{AHP elicitation, aggregation, and consistency}
 The original workbook contains 18 response records. Q8--Q10 provide the three comparisons for emissions ($E$), cost ($C$), and convenience ($V$). One record, anonymously labelled R017, lacks Q8 and is excluded from complete matrices without imputation. The main analysis retains all 17 complete responses, including individually inconsistent matrices, to report the existing exploratory model transparently.
 
-For Q8, codes 1 and 5 favour emissions and cost, respectively, with 3 indicating equal importance. The main researcher conversion assigns distance from the midpoint $|x-3|=0,1,2$ the intensities $1,3,5$. Hence the ratios for codes 1--5 are $(5,3,1,1/3,1/5)$ when code 1 favours the numerator. Q8 supplies $E/C$ and Q10 supplies $C/V$. For Q9, code 1 favours convenience, so its $E/V$ sequence is reversed. The retained Q9 and Q10 code-1 directions were previously confirmed in the project, but their complete five-category labels are absent from the archived question cells. Treating the other categories symmetrically is an explicit assumption; missing wording is not reconstructed as observed evidence. These responses are not a directly elicited Saaty 1--9 scale.
+For Q8, codes 1 and 5 favour emissions and cost, respectively, with 3 indicating equal importance. The main researcher conversion assigns distance from the midpoint $|x-3|=0,1,2$ the intensities $1,3,5$. Hence the ratios for codes 1--5 are $(5,3,1,1/3,1/5)$ when code 1 favours the numerator. Q8 supplies $E/C$ and Q10 supplies $C/V$. For Q9, code 1 favours convenience, so its $E/V$ sequence is reversed. The questionnaire screenshot supplied by the authors confirms the endpoints: Q9 runs from ``strongly prefer convenience'' (1) to ``strongly prefer emissions'' (5); Q10 runs from ``strongly prefer cost'' (1) to ``strongly prefer convenience'' (5). Codes 2--4 have no separate verbal labels. Midpoint equality and symmetric intensity interpretation are researcher choices consistent with this scale layout, rather than explicitly labelled responses. These responses are not a directly elicited Saaty 1--9 scale.
 
 For respondent $r$, the positive reciprocal judgment matrix is
 \begin{equation}
@@ -172,7 +171,7 @@ Equation~\ref{eq:weights} and the consistency check are then applied to $\bar A$
 \page
 \section{Results}
 \subsection{Annual emissions and their composition}
-Figure~\ref{fig:emissions} shows the recalculated annual burdens. Both buying options produce 4.9191323 \co/year, while rental produces 11.3796923 \co/year. The purchased garments each combine 3.4153846 for manufacturing, 0.1938462 for distribution, 0.2284615 for disposal, 0.7630000 for cleaning, and 0.3184400 for delivery. Their equality follows directly from identical lifetime allocation, cleaning counts, and delivery settings.
+Figure~\ref{fig:emissions} shows the recalculated annual burdens. Both buying options produce 4.9191 \co/year, while rental produces 11.3797 \co/year. The purchased garments each combine 3.4154 for manufacturing, 0.1938 for distribution, 0.2285 for disposal, 0.7630 for cleaning, and 0.3184 for delivery. Their equality follows directly from identical lifetime allocation, cleaning counts, and delivery settings.
 
 \begin{figure}[!htbp]
 \centering\includegraphics[width=.98\linewidth]{figures/emissions.pdf}
@@ -180,7 +179,7 @@ Figure~\ref{fig:emissions} shows the recalculated annual burdens. Both buying op
 \label{fig:emissions}
 \end{figure}
 
-Rental has the same allocated garment stages, 0.6540000 \co\ from six cleans, and 6.8880000 \co\ from 240 passenger-kilometres. It exceeds either purchase by 6.4605600 \co/year. Transport contributes an additional 6.5695600, partly offset by 0.1090000 less cleaning. Thus, under the retained travel arrangement, the additional burden is primarily associated with collection and return. It is not caused by a larger rental manufacturing allocation.
+Rental has the same allocated garment stages, 0.6540 \co\ from six cleans, and 6.8880 \co\ from 240 passenger-kilometres. It exceeds either purchase by 6.4606 \co/year. Transport contributes an additional 6.5696, partly offset by 0.1090 less cleaning. Thus, under the retained travel arrangement, the additional burden is primarily associated with collection and return. It is not caused by a larger rental manufacturing allocation.
 
 \subsection{Annual expenditure and its composition}
 \begin{table}[htbp]
@@ -219,7 +218,7 @@ The anchors are researcher settings: $U_E=6(4)=24$ \co/year, $U_C=6(60)=360$ SGD
 \caption{Integrated annual results with full-sample AHP weights.}
 \label{tab:ranking}
 \centering\small\input{tables/ranking.tex}
-\note{E, C, and V scores refer to emissions, cost, and convenience. Values are calculated at full precision before rounding. Time values are assumed active minutes, not observations.}
+\note{E, C, and V scores refer to emissions, cost, and convenience. Annual emissions are displayed to four decimal places and composite scores to six; calculations retain full precision. Time values are assumed active minutes, not observations.}
 \end{table}
 
 Second-hand ranks first, followed by new and rental. The second-hand advantage over new is entirely the weighted cost-score difference, $0.479329(11.01/360)=0.014659$; their emissions and time scores are identical. Rental has lower performance scores on all three criteria under the current inputs.
@@ -240,10 +239,10 @@ First, the environmental results depend on proxy data. Production-related factor
 
 Second, the market comparison is narrow and conditional. Advertised prices may change, and neither a transaction nor availability across all six dates was verified. The second-hand item's colour, delivered condition, and authenticity were not independently checked. Rental hygiene procedures, routine care charges, and extra platform fees remain unresolved. Assumed normal returns exclude damage and lateness costs, while zero resale and residual value omit possible retained financial value. These gaps limit generalization.
 
-Third, the preference evidence is weak. Fifteen personal matrices fail the main CR threshold; low aggregate inconsistency can coexist with these failures. Missing Q9/Q10 category labels, the imposed 1/3/5 intensity conversion, and the two-person qualified subset prevent strong population claims. Convenience is reduced to assumed active time, although the survey describes a broader mix of time and effort. Fixed score anchors establish implicit trade-off scales in addition to the AHP weights. No statistical representativeness, causal effect, or ranking robustness is established.
+Third, the preference evidence is weak. Fifteen personal matrices fail the main CR threshold; low aggregate inconsistency can coexist with these failures. Unlabelled intermediate positions, the researcher-imposed intensity mapping, and the two-person qualified subset limit preference interpretation and generalization. Convenience is reduced to assumed active time, although the survey describes a broader mix of time and effort. Fixed score anchors establish implicit trade-off scales in addition to the AHP weights. No statistical representativeness, causal effect, or ranking robustness is established.
 
 \section{Conclusion}
-Under the retained six-event scenario, second-hand ranks first (0.842087), new second (0.827428), and rental third (0.529996). The purchase options each produce 4.9191323 \co/year, compared with rental's 11.3796923, while annual expenditures are SGD 60.99, SGD 72.00, and SGD 108.00, respectively. For a student able to rewear this model and use the assumed delivery and care arrangements, second-hand is the preferred option in the current calculation. This answer is limited to the shared 26-wear allocation, proxy factors, assumed travel and active time, and exploratory AHP evidence. It provides a transparent course-project comparison, rather than a universal recommendation about purchasing and rental.
+Under the retained six-event scenario, second-hand ranks first (0.842087), new second (0.827428), and rental third (0.529996). The purchase options each produce 4.9191 \co/year, compared with rental's 11.3797, while annual expenditures are SGD 60.99, SGD 72.00, and SGD 108.00, respectively. For a student able to rewear this model and use the assumed delivery and care arrangements, second-hand is the preferred option in the current calculation. This result is conditional on the shared 26-wear allocation, proxy factors, assumed travel and active time, and exploratory AHP evidence; it is not a universal recommendation.
 
 \page
 \input{references.tex}
@@ -258,12 +257,14 @@ Environmental inputs are documented in \texttt{data/parameters.json} and \path{d
 The UK 2026 full-set workbook supplies rail/tram factors from \textit{Business travel--land} D89 and \textit{WTT--pass vehs \& travel--land} D86: $0.02121+0.00749=0.02870$ \co/passenger-km. Van factors use \textit{Delivery vehicles} D32 and \textit{WTT--delivery vehs \& freight} D31: $0.25716+0.06128=0.31844$ \co/vehicle-km. Selected cells and workbook hash are archived in \texttt{uk2026\_selected\_cells.json}. Transport upstream energy is included once; the gross disposal value is not replaced by a transport-only waste-reporting factor.
 
 \subsection{Survey traceability and reporting scope}
-The workbook \texttt{data/raw/survey\_18.xlsx}, sheet \textit{Original responses} (Chinese sheet name in the file), rows 2--19, columns J--L, supplies Q8--Q10. Question cells B27--B29 in the questions/rules sheet are transcribed in \texttt{results/run\_manifest.json}. The archived Q8 has five explicit labels. Q9 and Q10 have question text but not a complete five-label legend. Their missing labels remain a data gap. The question defines cost net of resale or retained value; the present zero-value settings make it numerically equal to expenditure.
+The workbook \texttt{data/raw/survey\_18.xlsx}, sheet \textit{Original responses} (Chinese sheet name in the file), rows 2--19, columns J--L, supplies Q8--Q10. Question cells B27--B29 in the questions/rules sheet are transcribed in \texttt{results/run\_manifest.json}. The archived Q8 has five explicit labels. The author-supplied questionnaire screenshot verifies both Q9/Q10 endpoints: Q9 1 favours convenience and 5 emissions; Q10 1 favours cost and 5 convenience, with each endpoint labelled ``strongly prefer.'' Positions 2--4 are numbered without separate verbal labels. The model interprets 3 as equality and the two sides symmetrically; the 1/3/5 ratio mapping remains a researcher conversion, not an observed ratio scale. The question defines cost net of resale or retained value; the present zero-value settings make it numerically equal to expenditure.
 
 Anonymous response IDs, source rows, ratios, personal weights, and CR values are available in \texttt{results/ahp\_individual.csv}. R017 is incomplete; R006 and R015 form the qualified subset under the main mapping. The report presents this mapping and its existing qualified subset only. Other diagnostics already produced by the project are not additional analyses undertaken for this paper.
 
 \subsection{Reproduction and authorship}
 Run \texttt{python code/run.py} from the project root, then regenerate report assets with \texttt{python report/generate\_assets.py}. The annual table and vector emissions chart read the resulting CSVs; no model parameters or questionnaire records are changed by the report scripts. Model checks use \texttt{python -m unittest discover -s tests -v}. Build instructions and the final verification record accompany the source.
 
-Authors and student numbers were taken from the original Group 4 proposal: Yang Yihua (A0351243N), Cao Xiaoyue (A0354984L), Yang Liu (A0357706W), Liu Ziqing (A0355482X), and Xie Tongling (A0356420L). Institutional affiliation and instructor name: \textbf{[to be completed]}. Course-specific AI-use declaration requirements: \textbf{[to be confirmed]}. AI assistance was used for English drafting, LaTeX preparation, figure generation, and computational/document checks; author review and approval remain pending.
+Authors: Yang Yihua, Cao Xiaoyue, Yang Liu, Liu Ziqing, and Xie Tongling. Affiliation: Faculty of Science, National University of Singapore. Instructor: Kim Leng Poh.
+
+\noindent\textit{AI use statement.} AI assistance was used for English drafting, LaTeX preparation, figure generation, and computational and document checks.
 \end{document}

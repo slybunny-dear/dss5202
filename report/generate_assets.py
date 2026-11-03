@@ -5,7 +5,6 @@ Requires matplotlib in addition to the project's openpyxl dependency.
 """
 from pathlib import Path
 import csv
-import json
 import os
 
 os.environ.setdefault("MPLCONFIGDIR", "/private/tmp/dss5202-report-mpl")
@@ -48,7 +47,6 @@ table("ranking.tex", "lrrrrrrr", ["Option", "\\co/year", "SGD/year", "Minutes", 
         f"{float(annual[r['mode']]['annual_minutes']):.0f}"] +
        [f"{float(r[k]):.4f}" for k in ("emissions_score", "cost_score", "convenience_score")] +
        [f"{float(r['score']):.6f} ({r['rank']})"] for r in ranks])
-(HERE / "tables/numbers.tex").write_text("% Tables are generated from results CSVs; no final results are hard-coded here.\n")
 
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10, "pdf.fonttype": 42,
                      "axes.spines.top": False, "axes.spines.right": False})
@@ -86,7 +84,4 @@ for x in (2.2,4.8,7.4):
 ax.text(5, .10, "One student | Six events | Same model | Rewearing allowed",ha="center",fontsize=8.6,color="#444444")
 fig.savefig(HERE / "figures/framework.pdf", bbox_inches="tight", pad_inches=.03)
 plt.close(fig)
-summary = {"annual": annual, "main_mapping_groups": groups, "main_ranking": ranks}
-(HERE / "build/numerical_audit.json").parent.mkdir(exist_ok=True)
-(HERE / "build/numerical_audit.json").write_text(json.dumps(summary, indent=2)+"\n")
-print("Generated 3 tables, 2 vector figures, and numerical audit from project CSVs.")
+print("Generated 3 tables and 2 vector figures from project CSVs.")
