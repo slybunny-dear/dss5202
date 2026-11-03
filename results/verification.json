@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "date": "2026-11-03 Asia/Singapore",
+  "checks": {
+    "unit_tests": 10,
+    "test_result": "PASS",
+    "run_from_outside_project": "PASS",
+    "repeated_run_identical_outputs": "PASS",
+    "input_hashes_unchanged": "PASS",
+    "python_syntax": "PASS",
+    "README_links": "PASS",
+    "deleted_paths_absent": "PASS",
+    "no_project_cache": "PASS"
+  },
+  "test_output": "test_ahp_independent_power_iteration_and_cr (test_calculations.ResearchChecks.test_ahp_independent_power_iteration_and_cr) ... ok\ntest_deposit_and_reference_mass_do_not_change_burdens (test_calculations.ResearchChecks.test_deposit_and_reference_mass_do_not_change_burdens) ... ok\ntest_independent_decimal_annual_formulas (test_calculations.ResearchChecks.test_independent_decimal_annual_formulas) ... ok\ntest_input_change_propagates_and_remaining_life_rejected (test_calculations.ResearchChecks.test_input_change_propagates_and_remaining_life_rejected) ... ok\ntest_original_files_unchanged (test_calculations.ResearchChecks.test_original_files_unchanged) ... ok\ntest_raw_completeness_directions_and_group_weights (test_calculations.ResearchChecks.test_raw_completeness_directions_and_group_weights) ... ok\ntest_scores_and_rank_are_computed (test_calculations.ResearchChecks.test_scores_and_rank_are_computed) ... ok\ntest_source_currency_prices_and_factors (test_calculations.ResearchChecks.test_source_currency_prices_and_factors) ... ok\ntest_transport_care_and_time_boundaries (test_calculations.ResearchChecks.test_transport_care_and_time_boundaries) ... ok\ntest_unclipped_scores_and_invalid_burdens (test_calculations.ResearchChecks.test_unclipped_scores_and_invalid_burdens) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.017s\n\nOK",
+  "result_files_sha256": {
+    "ahp_group.csv": "35413b38681418c8514c930747644636b106f521da4a95d491f737576a0659c0",
+    "ahp_individual.csv": "706aed595cc9652dad5eaa19e85dabc051ee6eb8b78b8b79671167a01a98ce99",
+    "annual_results.csv": "2aab1de4fd85a4c743090cc45010b1a54ab0353f80263461d9a6ea25d58efdb2",
+    "rankings.csv": "33aa5a022874125453a78a097fa3f535f6292df53ef253298139b6ddff7a6072",
+    "report.md": "70440c86c69db4f7f7041b060a61590c88aa869b6cdcdc3d8d5939d3d9895009",
+    "run_manifest.json": "9475d953ef38cfdcd91ed76fc3d476427f3262406c57eaeb9d2293676559e9a6",
+    "survey_input.csv": "bcf1d96427ef400f52c0509afa70ab965b72550eca0db23078d356021d8b12c9"
+  },
+  "code_sha256": {
+    "code/ahp.py": "0b4f0223a072909a118278dc30eea4ea7e3b16b49d474f6b16e3e71852497db4",
+    "code/model.py": "1226081b1c06409eaf52a11a73af380986fa0eeaf1e0c0fce4ac0fb8fff94e21",
+    "code/run.py": "c8f4994dae6d69ca004f5dfeea6d6358a8565c97065ac48dcdb8b043e203501e"
+  },
+  "file_count_after_cleanup": 35,
+  "removed_files": 247
+}

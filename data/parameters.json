@@ -1,0 +1,323 @@
+{
+  "study": {
+    "product": "Love, Bonito Eyka Multi-way Satin Column Dress, S",
+    "requested_spelling": "Eykq",
+    "note": "原始三条报价均为Eyka；中等档次为研究定位，未进行独立品质测量。",
+    "currency": "SGD",
+    "scope": "一名学生一年六次正式活动；新购一件、二手一件或逐场租赁同款。"
+  },
+  "parameters": {
+    "events": {
+      "value": 6,
+      "unit": "event/year",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "允许同款复穿；每次租期覆盖一场，六场互不重叠。"
+    },
+    "lifetime_wears": {
+      "value": 26,
+      "unit": "wear/garment",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO;E001",
+      "note": "参考Sandin估计，统一26次为研究假设；跨拥有者/租客总寿命。"
+    },
+    "used_prior_wears": {
+      "value": 1,
+      "unit": "wear",
+      "evidence_type": "original_quote",
+      "source": "M2_002",
+      "note": "卖家自述；仅检查剩余寿命，不将年度分摊分母改为25。"
+    },
+    "initial_owned_cleans": {
+      "value": 1,
+      "unit": "clean/acquisition",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO;M2_001",
+      "note": "新品及二手初洗一次；新品制造商要求穿前洗。"
+    },
+    "cleans_per_wear": {
+      "value": 1,
+      "unit": "clean/wear",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "购买穿后洗，租赁归还后洗；租赁实际工艺未知。"
+    },
+    "rental_legs": {
+      "value": 4,
+      "unit": "one-way leg/rental",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "取衣往返加还衣往返。"
+    },
+    "one_way_km": {
+      "value": 10,
+      "unit": "km/leg",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "假设专程轨道出行，非真实路线。"
+    },
+    "delivery_one_way_km": {
+      "value": 10,
+      "unit": "vehicle-km/leg",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "购买配送路线；无实测。"
+    },
+    "delivery_legs": {
+      "value": 2,
+      "unit": "leg/shipment",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "配送路线共20车公里。"
+    },
+    "delivery_batch": {
+      "value": 20,
+      "unit": "garment/shipment",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "等价件数分摊，每件1车公里；不再按重量缩放。"
+    },
+    "reference_mass": {
+      "value": 0.478,
+      "unit": "kg/garment",
+      "evidence_type": "literature_reference",
+      "source": "E001",
+      "note": "只作参考，不参与任何额外乘法；实际商品重量未知。"
+    },
+    "manufacturing": {
+      "value": 14.8,
+      "unit": "kgCO2e/garment",
+      "evidence_type": "literature_proxy",
+      "source": "E001",
+      "note": "Fig4.24图形数字化后取1位小数；含原料纺织染整缝制等，不是作者精确表值。"
+    },
+    "distribution": {
+      "value": 0.84,
+      "unit": "kgCO2e/garment",
+      "evidence_type": "literature_proxy",
+      "source": "E001",
+      "note": "Fig4.24图形数字化后取2位小数；既有分销零售按寿命分摊。"
+    },
+    "disposal": {
+      "value": 0.99,
+      "unit": "kgCO2e/garment",
+      "evidence_type": "literature_proxy",
+      "source": "E001",
+      "note": "寿终收运及焚烧毛排放，不扣热电信用。"
+    },
+    "cleaning": {
+      "value": 0.109,
+      "unit": "kgCO2e/clean",
+      "evidence_type": "literature_proxy",
+      "source": "E002",
+      "note": "意大利40°C家庭水洗、烘干和熨烫组合代理；非新加坡冷水清洗实测；租赁工艺未知暂用同因子。"
+    },
+    "rail": {
+      "value": 0.0287,
+      "unit": "kgCO2e/passenger-km",
+      "evidence_type": "literature_proxy",
+      "source": "E003",
+      "note": "0.02121直接+0.00749上游；英国light rail/tram代理新加坡MRT，非本地实测。"
+    },
+    "van": {
+      "value": 0.31844,
+      "unit": "kgCO2e/vehicle-km",
+      "evidence_type": "literature_proxy",
+      "source": "E003",
+      "note": "0.25716直接+0.06128上游；英国货车代理；不再除载客数。"
+    },
+    "new_price": {
+      "value": 65,
+      "unit": "SGD/garment",
+      "evidence_type": "original_quote",
+      "source": "M2_001",
+      "note": "原始页面明确S$/SGD；新品一次付全价。"
+    },
+    "used_price": {
+      "value": 52,
+      "unit": "SGD/garment",
+      "evidence_type": "original_quote",
+      "source": "M2_002",
+      "note": "原始页面明确S$/SGD；二手一次付全价。"
+    },
+    "new_delivery_fee": {
+      "value": 0,
+      "unit": "SGD/shipment",
+      "evidence_type": "original_quote",
+      "source": "M2_001",
+      "note": "65达到满60免运门槛；免运不等于无排放。"
+    },
+    "used_delivery_fee": {
+      "value": 1.99,
+      "unit": "SGD/shipment",
+      "evidence_type": "original_quote",
+      "source": "M2_002",
+      "note": "单次购买配送报价。"
+    },
+    "rent_per_booking": {
+      "value": 10,
+      "unit": "SGD/7 days",
+      "evidence_type": "original_quote",
+      "source": "M2_003",
+      "note": "每场单独租一次；不将7天理解为7次活动。"
+    },
+    "rental_days": {
+      "value": 7,
+      "unit": "day/booking",
+      "evidence_type": "original_quote",
+      "source": "M2_003",
+      "note": "报价租期。"
+    },
+    "refundable_deposit": {
+      "value": 99,
+      "unit": "SGD",
+      "evidence_type": "original_quote",
+      "source": "M2_003",
+      "note": "首次可退押金，全额退还假设下排除净成本；顺序租赁资金占用不乘6。"
+    },
+    "home_care_fee": {
+      "value": 1,
+      "unit": "SGD/clean",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "水电耗材成本假设，非报价。"
+    },
+    "rental_extra_care_fee": {
+      "value": 0,
+      "unit": "SGD/rental",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "普通护理额外收费暂设0；商家未确认全包。"
+    },
+    "fare_per_leg": {
+      "value": 2,
+      "unit": "SGD/one-way leg",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "研究情景票价，非实测票价。"
+    },
+    "resale": {
+      "value": 0,
+      "unit": "SGD/year",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "基准不转售，不扣回款。"
+    },
+    "residual": {
+      "value": 0,
+      "unit": "SGD/year",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "基准期末残值0。"
+    },
+    "order_minutes": {
+      "value": 15,
+      "unit": "minute/purchase",
+      "evidence_type": "research_assumption",
+      "source": "TIME",
+      "note": "购买操作一次。"
+    },
+    "home_care_minutes": {
+      "value": 15,
+      "unit": "active minute/clean",
+      "evidence_type": "research_assumption",
+      "source": "TIME",
+      "note": "只计消费者主动护理时间，排除机器被动运行。"
+    },
+    "rental_handling_minutes": {
+      "value": 10,
+      "unit": "minute/booking",
+      "evidence_type": "research_assumption",
+      "source": "TIME",
+      "note": "每次预约与面交处理合计，不另加购买订单时间。"
+    },
+    "travel_minutes_per_leg": {
+      "value": 30,
+      "unit": "minute/leg",
+      "evidence_type": "research_assumption",
+      "source": "TIME",
+      "note": "单程交通时间假设。"
+    },
+    "emissions_anchor": {
+      "value": 4,
+      "unit": "kgCO2e/event",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "固定参考上限；年度上限=本值×年度活动数；线性评分不截断。"
+    },
+    "cost_anchor": {
+      "value": 60,
+      "unit": "SGD/event",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "固定参考上限；年度上限=本值×年度活动数；线性评分不截断。"
+    },
+    "time_anchor": {
+      "value": 180,
+      "unit": "minute/event",
+      "evidence_type": "research_assumption",
+      "source": "SCENARIO",
+      "note": "固定参考上限；年度上限=本值×年度活动数；线性评分不截断。"
+    },
+    "ri": {
+      "value": 0.52,
+      "unit": "dimensionless",
+      "evidence_type": "method_reference",
+      "source": "AHP",
+      "note": "Saaty所存来源p104的n=3表值；不是常见其他表的0.58。"
+    },
+    "cr_threshold": {
+      "value": 0.1,
+      "unit": "dimensionless",
+      "evidence_type": "method_rule",
+      "source": "AHP",
+      "note": "CR<=0.10通过；不修改回答；主分析含全部完整样本，合格子样本另报。"
+    }
+  },
+  "ahp": {
+    "criteria": [
+      "E",
+      "C",
+      "V"
+    ],
+    "sheet": "原始回答",
+    "question_sheet": "题目与规则",
+    "question_cells": [
+      "B27",
+      "B28",
+      "B29"
+    ],
+    "columns": {
+      "q8": 10,
+      "q9": 11,
+      "q10": 12
+    },
+    "numerator_at_code_1": {
+      "q8": true,
+      "q9": false,
+      "q10": true
+    },
+    "main_mapping": "main_5_3",
+    "mappings": {
+      "main_5_3": [
+        1,
+        3,
+        5
+      ],
+      "mild_3_2": [
+        1,
+        2,
+        3
+      ]
+    },
+    "mapping_note": "距中心3的距离0/1/2对应强度1/3/5；替代1/2/3。均为研究者转换，不是原始Saaty1—9量表。Q8全部标签见原工作簿；Q9/Q10仅1端点经此前用户确认，2—5为对称假设。",
+    "aggregation": "同权几何聚合个人判断矩阵，再算群体特征向量",
+    "individual_method": "3×3正互反矩阵行几何均值归一化；此维度与主特征向量等价，另检查Aw=lambda*w。",
+    "main_inclusion": "全部三题完整的回答，保留高CR者作探索性主分析；另外导出CR合格子样本和温和映射。",
+    "incomplete": "不填补缺失，不把不完整回答算作第18份完整矩阵。"
+  },
+  "scoring": {
+    "formula": "1 - annual_burden / (per_event_anchor * events)",
+    "out_of_range": "有限非负负担超出上限时保留负分并发出警示；不截断、不改变公式。负负担/非有限值报错。"
+  }
+}

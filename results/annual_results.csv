@@ -1,0 +1,4 @@
+mode,events,currency,allocation_fraction,cleaning_count,passenger_km,allocated_delivery_vehicle_km,manufacturing_kgco2e,distribution_kgco2e,disposal_kgco2e,cleaning_kgco2e,transport_kgco2e,annual_kgco2e,purchase_sgd,delivery_sgd,rental_sgd,care_sgd,travel_sgd,annual_spending_sgd,refundable_deposit_sgd,order_minutes,care_minutes,handling_minutes,travel_minutes,annual_minutes
+new,6,SGD,0.23076923076923078,7,0,1.0,3.4153846153846157,0.19384615384615386,0.22846153846153847,0.763,0.31844,4.919132307692308,65,0,0,7,0,72,0,15,105,0,0,120
+used,6,SGD,0.23076923076923078,7,0,1.0,3.4153846153846157,0.19384615384615386,0.22846153846153847,0.763,0.31844,4.919132307692308,52,1.99,0,7,0,60.99,0,15,105,0,0,120
+rental,6,SGD,0.23076923076923078,6,240,0,3.4153846153846157,0.19384615384615386,0.22846153846153847,0.654,6.888,11.379692307692308,0,0,60,0,48,108,99,0,0,60,720,780

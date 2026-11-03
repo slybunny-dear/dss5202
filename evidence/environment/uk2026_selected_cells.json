@@ -1,0 +1,167 @@
+[
+  {
+    "sheet": "Passenger vehicles",
+    "cell": "B54",
+    "value": "Average car"
+  },
+  {
+    "sheet": "Passenger vehicles",
+    "cell": "C54",
+    "value": "km"
+  },
+  {
+    "sheet": "Passenger vehicles",
+    "cell": "X46",
+    "value": "Unknown"
+  },
+  {
+    "sheet": "Passenger vehicles",
+    "cell": "X54",
+    "value": 0.16591
+  },
+  {
+    "sheet": "Business travel- land",
+    "cell": "B81",
+    "value": "Average local bus"
+  },
+  {
+    "sheet": "Business travel- land",
+    "cell": "C81",
+    "value": "passenger.km"
+  },
+  {
+    "sheet": "Business travel- land",
+    "cell": "D81",
+    "value": 0.10151
+  },
+  {
+    "sheet": "Business travel- land",
+    "cell": "B89",
+    "value": "Light rail and tram"
+  },
+  {
+    "sheet": "Business travel- land",
+    "cell": "C89",
+    "value": "passenger.km"
+  },
+  {
+    "sheet": "Business travel- land",
+    "cell": "D89",
+    "value": 0.02121
+  },
+  {
+    "sheet": "WTT- pass vehs & travel- land",
+    "cell": "I42",
+    "value": "Unknown"
+  },
+  {
+    "sheet": "WTT- pass vehs & travel- land",
+    "cell": "I50",
+    "value": 0.04399
+  },
+  {
+    "sheet": "WTT- pass vehs & travel- land",
+    "cell": "B78",
+    "value": "Average local bus"
+  },
+  {
+    "sheet": "WTT- pass vehs & travel- land",
+    "cell": "C78",
+    "value": "passenger.km"
+  },
+  {
+    "sheet": "WTT- pass vehs & travel- land",
+    "cell": "D78",
+    "value": 0.02649
+  },
+  {
+    "sheet": "WTT- pass vehs & travel- land",
+    "cell": "B86",
+    "value": "Light rail and tram"
+  },
+  {
+    "sheet": "WTT- pass vehs & travel- land",
+    "cell": "C86",
+    "value": "passenger.km"
+  },
+  {
+    "sheet": "WTT- pass vehs & travel- land",
+    "cell": "D86",
+    "value": 0.00749
+  },
+  {
+    "sheet": "Delivery vehicles",
+    "cell": "D24",
+    "value": "Diesel"
+  },
+  {
+    "sheet": "Delivery vehicles",
+    "cell": "B32",
+    "value": "Average (up to 3.5 tonnes)"
+  },
+  {
+    "sheet": "Delivery vehicles",
+    "cell": "C32",
+    "value": "km"
+  },
+  {
+    "sheet": "Delivery vehicles",
+    "cell": "D32",
+    "value": 0.25716
+  },
+  {
+    "sheet": "WTT- delivery vehs & freight",
+    "cell": "B30",
+    "value": "Average (up to 3.5 tonnes)"
+  },
+  {
+    "sheet": "WTT- delivery vehs & freight",
+    "cell": "C30",
+    "value": "tonne.km"
+  },
+  {
+    "sheet": "WTT- delivery vehs & freight",
+    "cell": "D30",
+    "value": 0.15095
+  },
+  {
+    "sheet": "WTT- delivery vehs & freight",
+    "cell": "C31",
+    "value": "km"
+  },
+  {
+    "sheet": "WTT- delivery vehs & freight",
+    "cell": "D31",
+    "value": 0.06128
+  },
+  {
+    "sheet": "Freighting goods",
+    "cell": "B35",
+    "value": "Average (up to 3.5 tonnes)"
+  },
+  {
+    "sheet": "Freighting goods",
+    "cell": "C35",
+    "value": "tonne.km"
+  },
+  {
+    "sheet": "Freighting goods",
+    "cell": "D35",
+    "value": 0.63511
+  },
+  {
+    "sheet": "Waste disposal",
+    "cell": "B43",
+    "value": "Clothing"
+  },
+  {
+    "sheet": "Waste disposal",
+    "cell": "C43",
+    "value": "tonnes"
+  },
+  {
+    "sheet": "Waste disposal",
+    "cell": "G43",
+    "value": 4.65358
+  }
+]

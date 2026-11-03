@@ -1,0 +1,11 @@
+parameter,original_value,original_unit,source_id,locator,boundary_note
+dry_electricity,0.2,kWh/dress_clean,E002,p.7632 Table2,0.45kg参考衣物；0.081与0.057按原表保留，已按论文护理概率建模，不再次乘50%或19%；总清洗因子已含这些过程
+dry_solvent,0.00168,kg tetrachloroethylene/dress_clean,E002,p.7632 Table2,0.45kg参考衣物；0.081与0.057按原表保留，已按论文护理概率建模，不再次乘50%或19%；总清洗因子已含这些过程
+ironing,0.081,kWh/dress_clean,E002,p.7632 Table2,0.45kg参考衣物；0.081与0.057按原表保留，已按论文护理概率建模，不再次乘50%或19%；总清洗因子已含这些过程
+wet_electricity,0.101,kWh/dress_clean,E002,p.7632 Table2,0.45kg参考衣物；0.081与0.057按原表保留，已按论文护理概率建模，不再次乘50%或19%；总清洗因子已含这些过程
+wet_water,2.79,kg water/dress_clean,E002,p.7632 Table2,0.45kg参考衣物；0.081与0.057按原表保留，已按论文护理概率建模，不再次乘50%或19%；总清洗因子已含这些过程
+wet_detergent,0.00711,kg/dress_clean,E002,p.7632 Table2,0.45kg参考衣物；0.081与0.057按原表保留，已按论文护理概率建模，不再次乘50%或19%；总清洗因子已含这些过程
+wet_wastewater,0.00229,m3/dress_clean,E002,p.7632 Table2,0.45kg参考衣物；0.081与0.057按原表保留，已按论文护理概率建模，不再次乘50%或19%；总清洗因子已含这些过程
+drying,0.057,kWh/dress_clean,E002,p.7632 Table2,0.45kg参考衣物；0.081与0.057按原表保留，已按论文护理概率建模，不再次乘50%或19%；总清洗因子已含这些过程
+rental_lifetime_company_mean,7.5,uses/garment,E002,p.7632 §3.2,单一意大利商户数据，非新加坡/非全球平均
+purchase_lifetime_study_assumption,3,uses/garment,E002,pp.7632–7633 §3.2,原研究商户访谈支持的假设；与本项目单件六次不兼容，不作为基准

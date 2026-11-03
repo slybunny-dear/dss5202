@@ -1,0 +1,43 @@
+{
+  "python": "3.13.5",
+  "dependencies": {
+    "openpyxl": "3.1.5"
+  },
+  "inputs_sha256": {
+    "data/parameters.json": "1e721f873e6de958f90228a0457ef61344852742bced077f098edc99765e4b7c",
+    "data/raw/514322_Fulltext.pdf": "b99e5abd2f6a9c45706d82e2484728d31486daa9dca712513dea589936e1f229",
+    "data/raw/literature_factors.csv": "02cec533b042da3750364f15e56790409bd5112a4e849ba6105323ddbc5e11ef",
+    "data/raw/market_quotes.csv": "b261757a5b65a8d1078fd013c18810b35442493907d48943a47e33b094a7bff6",
+    "data/raw/market_services.csv": "723500a4b9ea9f7148fa1ab42001af43aee68ce926d9ddee033d542c8fb041cb",
+    "data/raw/proposal-group4.docx": "e7028175d028fe954fb5d6253997ee57d86e829465d5b40705e5064254848286",
+    "data/raw/source_manifest.json": "1731cefa44a14c9a938a39e8291d733de66ad069b5428bc3d52a134401be9efb",
+    "data/raw/survey_18.xlsx": "ea626f8a089047ca41aa958042b4cf592a0fca76f2336352b1029d3218bb217f",
+    "data/sources.json": "7a6926b3763ea0985c4c0ed5f9965b4c5ceb5d3a49871fc98f833b0966f0264e",
+    "evidence/environment/extraction_manifest.json": "f164949c67f6712f5fa201b8d1daaa350e3b1ea156db98af5000f52c45589e73",
+    "evidence/environment/formalwear_inventory.csv": "99ea8980e5bd7d1b772b6d7cc2ad4956376106529b72f5e50d04888070213e91",
+    "evidence/environment/formalwear_p7632_table2.png": "1df82d0e4e8a1238d2bd362039df86b5c7cc64b9301dd3bac2bd36a6b18cc725",
+    "evidence/environment/formalwear_p7635_table4.png": "50c5ea88aaf8aad51b7f1fe65ba9017ea6af4c4b793d4f30e275cc1a429242b6",
+    "evidence/environment/sandin_figure_4_24_digitized.csv": "61396c77a442db37aa7da8abd103e5deb2b43eee410d7a6ab923a5d50a59088b",
+    "evidence/environment/sandin_p159_tableB59.png": "2f96d2daa6090db71f3b4f52ac65f3fb3203020f9dfb6cb3fed6cf6ab901db6d",
+    "evidence/environment/sandin_p83_fig4_24.png": "0d02b019e11497941e3176800cd85e219554e0d094219b4f7b596906010850f3",
+    "evidence/environment/uk2026_selected_cells.json": "3b4ff7913dd805c44634f0a92772d8cdf12f012c152e61203d1a839131458e2c",
+    "evidence/market_quotes.md": "4574d3a8a2e0b67c0757f3bbb06c1ea27aceeb4f07e3e2a52486f993428c6943",
+    "evidence/time_assumptions.json": "a0e286e76b5633a64d748e45db19591081e2289c94115203ef2b47ae21566411"
+  },
+  "questions": [
+    {
+      "cell": "B27",
+      "text": "Q8 选择礼服时，减少排放与降低成本，你更重视哪一个？\nWhen choosing occasion dresses, which matters more: reducing emissions or lowering cost?\n排放=六场活动的温室气体总量；成本=年度开支减转售价或保留价值（不能重复扣）。\nEmissions: total GHGs for six events. Cost: annual expenditure less either resale or retained value.\n1明显更重视排放；2稍微更重视排放；3同等重要；4稍微更重视成本；5明显更重视成本。无法判断请留空。\n1 strongly prefer emissions; 2 moderately prefer emissions; 3 equally important; 4 moderately prefer cost; 5 strongly prefer cost. Leave blank if unable to judge."
+    },
+    {
+      "cell": "B28",
+      "text": "Q9 排放 Emissions 与便利 Convenience 哪个更重要、强多少？便利=找衣、预约、取还、清洗维护所花时间与精力；排放=六场温室气体总量。\nWhich matters more, and how strongly: emissions (GHGs for six events) or convenience (time/effort for searching, booking, collection/return and care)?"
+    },
+    {
+      "cell": "B29",
+      "text": "Q10 成本 Cost 与便利 Convenience 哪个更重要、强多少？成本=年度开支 — 转售价或保留价值（不能重复扣）；便利=寻找、预约、取还与清洗维护的时间精力。\nWhich matters more, and how strongly: cost (annual expenditure less either resale or retained value) or convenience (time and effort for search, booking, collection/return and care)?"
+    }
+  ],
+  "main_complete_n": 17,
+  "main_individual_cr_pass_n": 2
+}

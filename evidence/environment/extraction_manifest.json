@@ -1,0 +1,17 @@
+{
+  "pdf_sha256": "b99e5abd2f6a9c45706d82e2484728d31486daa9dca712513dea589936e1f229",
+  "pdf_pages": 167,
+  "grid_step": 1036.5430000000001,
+  "grid_ctm": 0.0162082,
+  "bar_ctm": 0.0158745,
+  "formula": "raw_height * bar_ctm / (grid_step * grid_ctm / 0.5)",
+  "sums": {
+    "manufacturing": 14.75677096385664,
+    "distribution_retail": 0.8378389204915073,
+    "use_excluded_from_manufacturing": 2.6216241101172097,
+    "eol_gross": 0.9864874107028314,
+    "eol_credit_excluded_from_base": -0.20270287319477076
+  },
+  "warning": "Graph digitisation, not author tabulated data; rounded factors used in model. Detailed and overview plots do not fully reconcile; do not treat sum as exact lifecycle total.",
+  "uk_workbook_sha256": "b5c4f2f86cdc74707337b2fb013b44ded189a1b528f5e29ea99856ba65ae0205"
+}

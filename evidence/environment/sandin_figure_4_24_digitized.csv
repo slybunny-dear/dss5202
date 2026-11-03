@@ -1,0 +1,25 @@
+bar,process,group,raw_height,kgco2e_digitized,source_id,locator
+1,fibre_polyester,manufacturing,6435.811,3.0405435703629635,E001,p.83 Figure 4.24; PDF page 81
+2,yarn,manufacturing,4605.18,2.175677694600434,E001,p.83 Figure 4.24; PDF page 81
+3,knitting,manufacturing,286.036,0.13513524879651387,E001,p.83 Figure 4.24; PDF page 81
+4,weaving,manufacturing,5034.234,2.3783805677952046,E001,p.83 Figure 4.24; PDF page 81
+5,pretreatment,manufacturing,2574.324,1.2162172391686248,E001,p.83 Figure 4.24; PDF page 81
+6,printing,manufacturing,1515.991,0.7162169131098037,E001,p.83 Figure 4.24; PDF page 81
+7,dyeing,manufacturing,2974.775,1.4054068709485852,E001,p.83 Figure 4.24; PDF page 81
+8,drying,manufacturing,1916.441,0.9054060724483625,E001,p.83 Figure 4.24; PDF page 81
+9,confection_energy,manufacturing,5062.838,2.3918942816514166,E001,p.83 Figure 4.24; PDF page 81
+10,confection_waste,manufacturing,514.865,0.2432435423220053,E001,p.83 Figure 4.24; PDF page 81
+11,confection_packaging,manufacturing,143.018,0.06756762439825693,E001,p.83 Figure 4.24; PDF page 81
+12,confection_other,manufacturing,28.604,0.013513713856212093,E001,p.83 Figure 4.24; PDF page 81
+13,production_transport,manufacturing,143.018,0.06756762439825693,E001,p.83 Figure 4.24; PDF page 81
+14,distribution_transport,distribution_retail,858.108,0.4054057463895415,E001,p.83 Figure 4.24; PDF page 81
+15,staff_transport,distribution_retail,57.208,0.027027427712424185,E001,p.83 Figure 4.24; PDF page 81
+16,store,distribution_retail,829.504,0.3918920325333295,E001,p.83 Figure 4.24; PDF page 81
+17,retail_waste,distribution_retail,28.604,0.013513713856212093,E001,p.83 Figure 4.24; PDF page 81
+18,user_transport,use_excluded_from_manufacturing,3747.072,1.7702719482108922,E001,p.83 Figure 4.24; PDF page 81
+19,washing,use_excluded_from_manufacturing,1086.937,0.513514039915033,E001,p.83 Figure 4.24; PDF page 81
+20,use_drying,use_excluded_from_manufacturing,486.261,0.2297298284657932,E001,p.83 Figure 4.24; PDF page 81
+21,ironing,use_excluded_from_manufacturing,228.829,0.10810829352549144,E001,p.83 Figure 4.24; PDF page 81
+22,eol_transport,eol_gross,28.604,0.013513713856212093,E001,p.83 Figure 4.24; PDF page 81
+23,eol_incineration,eol_gross,2059.459,0.9729736968466193,E001,p.83 Figure 4.24; PDF page 81
+24,eol_credit,eol_credit_excluded_from_base,-429.054,-0.20270287319477076,E001,p.83 Figure 4.24; PDF page 81

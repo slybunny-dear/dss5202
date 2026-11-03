@@ -1,0 +1,123 @@
+{
+  "M2_001": {
+    "source_id": "M2_001",
+    "author_or_organization": "Love, Bonito Singapore",
+    "title": "Eyka Multi-way Satin Column Dress",
+    "year": "n.d.",
+    "url": "https://www.lovebonito.com/sg/eyka-multi-way-satin-column-dress-11k5111075.html",
+    "accessed_date": "2026-11-03",
+    "locator": "SKU11k5111075; Mint S selected; Material & Care; Size & Fit; Delivery",
+    "evidence_note": "实时65，划线99；薄荷S选中显示有库存、免运，未加购物车。斜肩midaxi直筒，全里衬、侧拉链、可拆颈带。主料100% polyester，里料95% polyester/5% spandex。S长122/胸81/腰66/臀94cm，页面容差1英寸。穿前洗、冷水轻柔机洗、洗衣袋、配件分洗、晾干、勿拧。标准运费订单满60免，否则5；3–12工作日。特价不退换。搜索缓存99未采用，未用未来日期评论作证据。",
+    "access_method": "browser_live_dom",
+    "inherited_from_source_id": ""
+  },
+  "M2_002": {
+    "source_id": "M2_002",
+    "author_or_organization": "Carousell / igotgr8deals",
+    "title": "Eyka Multi-way Satin Column Dress",
+    "year": "n.d.",
+    "url": "https://www.carousell.sg/p/eyka-multi-way-satin-column-dress-1447640322/",
+    "accessed_date": "2026-11-03",
+    "locator": "listing1447640322; condition, description, size, delivery; model photo",
+    "evidence_note": "实时52，Like new，卖家称穿过一次数小时，品牌Love Bonito，S。描述同为Eyka斜肩midaxi、全里衬、侧拉链、可拆颈带。展示图为蓝灰色，文字没确认色号；实物/纤维洗标未独立验证。购买入口在；页面显示预购风险提示，需另确认交付库存。官方配送1.99（划线3.60）、寄出后2–4天，卖家处理时间/平台费未知。",
+    "access_method": "browser_live_dom",
+    "inherited_from_source_id": ""
+  },
+  "M2_003": {
+    "source_id": "M2_003",
+    "author_or_organization": "Carousell / forest_green66",
+    "title": "[FOR RENT] LB Eyka Multi-way Satin Column Toga Asymmetrical Dress Mint Green",
+    "year": "n.d.",
+    "url": "https://www.carousell.sg/p/for-rent-lb-eyka-multi-way-satin-column-toga-asymmetrical-dress-mint-green-1464833759/",
+    "accessed_date": "2026-11-03",
+    "locator": "listing1464833759; rental/deposit/return/damage terms and meetup points",
+    "evidence_note": "租10/7天；首次租押金99，可Singpass验证账户或回头租者50；验收通过24小时内返。要求不洗/不局部去渍直接还，轻皱/轻气味允许；顽渍干洗按收据约15–25从押金扣，永久污渍/破损至99，逾期2/天，丢失或超过到期3天未还99。结构化Like new但正文称Brand new，成色冲突。薄荷绿S；面交义顺/卡迪/丹戎巴葛/莱佛士坊/政府大厦MRT。无邮寄价、无日期确认、常规清洗流程/卫生保障未知。",
+    "access_method": "browser_live_dom",
+    "inherited_from_source_id": ""
+  },
+  "E001": {
+    "source_id": "E001",
+    "author_or_organization": "Sandin, G.; Roos, S.; Spak, B.; Zamani, B.; Peters, G. / RISE",
+    "title": "Environmental assessment of Swedish clothing consumption – six garments, sustainable futures",
+    "year": "2019",
+    "url": "https://research.chalmers.se/publication/514322/file/514322_Fulltext.pdf",
+    "accessed_date": "2026-11-02",
+    "locator": "pp.23,28–29,54–58,82–83,159; Tables 2.1,3.1,3.6,B-59; Figure 4.24; PDF page = printed page minus 2",
+    "evidence_note": "用户提供完整167页PDF；分项图向量数字化并目视核对；0.478kg聚酯日常裙，非正式礼服实测；26次是研究估算而非逐件追踪。"
+  },
+  "E002": {
+    "source_id": "E002",
+    "author_or_organization": "Monticelli, A.; Costamagna, M.",
+    "title": "Environmental assessment of the rental business model: a case study for formal wear",
+    "year": "2023",
+    "url": "https://doi.org/10.1007/s10668-022-02363-x",
+    "accessed_date": "2026-11-02",
+    "locator": "pp.7629–7635; Tables 1–4; PDF pp.5–11",
+    "evidence_note": "期刊卷年2023；在线发表2022；出版社全文已读并核对表2和4；450g棉礼服，意大利清洗与租赁案例。"
+  },
+  "E003": {
+    "source_id": "E003",
+    "author_or_organization": "Department for Energy Security and Net Zero",
+    "title": "Greenhouse gas reporting: conversion factors 2026, full set",
+    "year": "2026",
+    "url": "https://assets.publishing.service.gov.uk/media/6a29392bade52dc0882218a8/ghg-conversion-factors-2026-full-set.xlsx",
+    "accessed_date": "2026-11-02",
+    "locator": "Passenger vehicles X54; Business travel- land D81/D89; WTT- pass vehs & travel- land I50/D78/D86; Delivery vehicles D32; WTT- delivery vehs & freight D31; Waste disposal G43",
+    "evidence_note": "已下载官方full set；不是7月修订前含错误零值的flat file；英国车队和载客率代理。"
+  },
+  "E004": {
+    "source_id": "E004",
+    "author_or_organization": "Department for Energy Security and Net Zero",
+    "title": "2026 Government greenhouse gas conversion factors for company reporting: Methodology paper",
+    "year": "2026",
+    "url": "https://assets.publishing.service.gov.uk/media/6a2940543b15d05a7ce3202e/2026-GHG-conversion-factors-methodology-report.pdf",
+    "accessed_date": "2026-11-02",
+    "locator": "pp.17–18 Table 1; §§5.57,5.70–5.76; pp.123–124 §§12.22–12.24",
+    "evidence_note": "运输GWP100按官方2026版本保留；焚烧Scope3因子仅收运，不可当全处置LCA。"
+  },
+  "AHP": {
+    "accessed_date": "2026-11-03 Asia/Singapore",
+    "source_id": "AHP06_SAATY_PRIMARY",
+    "author": "Saaty, T. L.",
+    "title": "How to Make a Decision: The Analytic Hierarchy Process",
+    "volume_context": "Atti del XXIV Incontro di Studio (1994), pp.75-105",
+    "online_publication_date": "2009-06-01",
+    "date_note": "1994 is proceedings volume year; 2009 is publisher online date, not silently substituted for original context",
+    "doi": "10.13128/Aestimum-7138",
+    "landing_url": "https://oaj.fupress.net/index.php/ceset/article/view/6254",
+    "full_text_url": "https://oaj.fupress.net/index.php/ceset/article/download/6254/6254",
+    "read_status": "Primary publisher PDF read through web text; mathematical appendix and geometric-aggregation section located; no reliance on search snippet for RI",
+    "locators": {
+      "group_geometric_judgments": "printed p.99, PDF page25",
+      "eigenvector": "printed pp.103-104, PDF pages29-30",
+      "ci_cr_ri": "printed p.104, PDF page30, Random Consistency Index table and following paragraph"
+    },
+    "evidence_note": "This specific table reports n=3 RI=0.52; text gives CI=(lambda_max-n)/(n-1), CR=CI/RI and 0.10 threshold. Step06 uses .52; .58 is only an additional numerical diagnostic, not attributed to this table.",
+    "project_choices_not_from_source": [
+      "researcher 5/3 and3/2 conversions",
+      "17 full-complete exploratory main sample",
+      "fixed performance anchors",
+      "active-time proxies",
+      "care/travel scenario assumptions"
+    ]
+  },
+  "SCENARIO": {
+    "title": "用户指定的唯一研究情景",
+    "date": "2026-11-03",
+    "evidence_type": "research_assumption",
+    "note": "研究设定，不是问卷均值或本地实测；不从截图硬编码最终结果。"
+  },
+  "TIME": {
+    "title": "旧版配置中的主动时间假设",
+    "evidence": "evidence/time_assumptions.json",
+    "note": "查得原始项目假设，未取得行为计时数据；不属于问卷结果。"
+  },
+  "SURVEY": {
+    "file": "data/raw/survey_18.xlsx",
+    "sheet": "原始回答",
+    "rows": "2:19",
+    "columns": "J:L",
+    "questions": "题目与规则!B27:B29",
+    "note": "18份原始记录；17份三题完整；不填补缺失。Q9=1便利优先、Q10=1成本优先沿用此前用户确认。"
+  }
+}

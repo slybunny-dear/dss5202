@@ -1,0 +1,45 @@
+{
+  "original_file": "data/model_config_v2.json (已合并删除)",
+  "original_sha256": "7b65273ea8a40a9d2e418fea048ec82e4df0e27505d188ec07118a1df26bc489",
+  "evidence_type": "researcher_assumption_NOT_observed",
+  "original_excerpt": {
+    "A04_ORDER_TIME": {
+      "value": 15,
+      "evidence_ids": [
+        "B04_TIME"
+      ],
+      "reason": "v2研究者购买操作时间15分钟，沿用数值而非市场事实"
+    },
+    "A04_HOME_TIME": {
+      "value": 15,
+      "evidence_ids": [
+        "B04_TIME"
+      ],
+      "reason": "v2研究者每次居家护理主动15分钟，不计机器运行等被动时间"
+    },
+    "B04_TIME": {
+      "evidence_ids": [],
+      "reason": "租赁面交取还处理每预约共10分钟、单程交通30分钟；非原设计师店预约/试穿，也非受访者方案评分"
+    },
+    "consumer": {
+      "one_way_km": 10,
+      "fare_per_leg_sgd": 2,
+      "minutes_per_leg": 30,
+      "assumption_ids": [
+        "B04_TRIP"
+      ]
+    },
+    "rental_pickup_return": {
+      "legs_per_activity": 4,
+      "purpose_share": 1,
+      "handling_minutes": 10,
+      "assumption_ids": [
+        "B04_TIME",
+        "B04_TRIP",
+        "MA2_02"
+      ]
+    },
+    "effort_note": "v2仅操作时间简易假设；购买订单15+7洗×15=120分钟；租赁每单处理10+4腿×30，共780分钟；无设计师45分钟试穿；06可调整，不是问卷方案评分"
+  },
+  "note": "excerpt中的旧证据ID为历史追溯标识，当前解释统一见data/parameters.json及data/sources.json。"
+}
