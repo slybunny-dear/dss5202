@@ -1,0 +1,716 @@
+{
+  "provenance": {
+    "source_repository": "C:\\Users\\lenovo\\Desktop\\课程资料\\dss5202\\group work\\review_repo",
+    "revision_date": "2026-11-04",
+    "survey_records": 18,
+    "complete_comparisons": 17,
+    "inputs_sha256": {
+      "data\\parameters.json": "67cdb2a1df17a8f067d7d012f96d418cf073dd319c95f8ee13398d4f81e2cf91",
+      "data\\raw\\survey_18.xlsx": "ea626f8a089047ca41aa958042b4cf592a0fca76f2336352b1029d3218bb217f",
+      "code\\model.py": "a4be1bbdf15a7cb3b894000fc935110bfff5ea304e30b74891a9add8848ca62f",
+      "code\\ahp.py": "3756ec0211be3f3f4ee0678186c4336d76de0c2e18a00ed762ce819bbfbb8bb3"
+    },
+    "calculation_script_sha256": "dcf1d05832d9ff6ce7ad478bc17c13a49e4a02fdf5c8993e6ce6ebc2efa79a9e"
+  },
+  "survey_description": {
+    "sample_n": 18,
+    "profile": [
+      {
+        "question": "Q1: Student status",
+        "response": "Studying in Singapore",
+        "count": 18,
+        "valid_n": 18,
+        "percent": 100.0
+      },
+      {
+        "question": "Q2: Events in past 12 months",
+        "response": "0",
+        "count": 8,
+        "valid_n": 18,
+        "percent": 44.44444444444444
+      },
+      {
+        "question": "Q2: Events in past 12 months",
+        "response": "1--2",
+        "count": 5,
+        "valid_n": 18,
+        "percent": 27.77777777777778
+      },
+      {
+        "question": "Q2: Events in past 12 months",
+        "response": "3--4",
+        "count": 4,
+        "valid_n": 18,
+        "percent": 22.22222222222222
+      },
+      {
+        "question": "Q2: Events in past 12 months",
+        "response": "5--6",
+        "count": 0,
+        "valid_n": 18,
+        "percent": 0.0
+      },
+      {
+        "question": "Q2: Events in past 12 months",
+        "response": "7 or more",
+        "count": 1,
+        "valid_n": 18,
+        "percent": 5.555555555555555
+      },
+      {
+        "question": "Q4: Same-style reuse",
+        "response": "Probably willing",
+        "count": 6,
+        "valid_n": 18,
+        "percent": 33.333333333333336
+      },
+      {
+        "question": "Q4: Same-style reuse",
+        "response": "Uncertain",
+        "count": 4,
+        "valid_n": 18,
+        "percent": 22.22222222222222
+      },
+      {
+        "question": "Q4: Same-style reuse",
+        "response": "Probably unwilling",
+        "count": 6,
+        "valid_n": 18,
+        "percent": 33.333333333333336
+      },
+      {
+        "question": "Q4: Same-style reuse",
+        "response": "Definitely unwilling",
+        "count": 2,
+        "valid_n": 18,
+        "percent": 11.11111111111111
+      }
+    ],
+    "pairwise_directions": [
+      {
+        "question": "Q8: Emissions vs. cost",
+        "valid_n": 17,
+        "missing_n": 1,
+        "code_counts": {
+          "1": 0,
+          "2": 1,
+          "3": 3,
+          "4": 6,
+          "5": 7
+        },
+        "directions": [
+          {
+            "question": "Q8: Emissions vs. cost",
+            "response": "Emissions",
+            "count": 1,
+            "valid_n": 17,
+            "percent": 5.882352941176471,
+            "codes": [
+              1,
+              2
+            ]
+          },
+          {
+            "question": "Q8: Emissions vs. cost",
+            "response": "Equal importance",
+            "count": 3,
+            "valid_n": 17,
+            "percent": 17.647058823529413,
+            "codes": [
+              3
+            ]
+          },
+          {
+            "question": "Q8: Emissions vs. cost",
+            "response": "Cost",
+            "count": 13,
+            "valid_n": 17,
+            "percent": 76.47058823529412,
+            "codes": [
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "question": "Q9: Emissions vs. convenience",
+        "valid_n": 18,
+        "missing_n": 0,
+        "code_counts": {
+          "1": 5,
+          "2": 3,
+          "3": 7,
+          "4": 2,
+          "5": 1
+        },
+        "directions": [
+          {
+            "question": "Q9: Emissions vs. convenience",
+            "response": "Convenience",
+            "count": 8,
+            "valid_n": 18,
+            "percent": 44.44444444444444,
+            "codes": [
+              1,
+              2
+            ]
+          },
+          {
+            "question": "Q9: Emissions vs. convenience",
+            "response": "Midpoint",
+            "count": 7,
+            "valid_n": 18,
+            "percent": 38.888888888888886,
+            "codes": [
+              3
+            ]
+          },
+          {
+            "question": "Q9: Emissions vs. convenience",
+            "response": "Emissions",
+            "count": 3,
+            "valid_n": 18,
+            "percent": 16.666666666666668,
+            "codes": [
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "question": "Q10: Cost vs. convenience",
+        "valid_n": 18,
+        "missing_n": 0,
+        "code_counts": {
+          "1": 1,
+          "2": 5,
+          "3": 9,
+          "4": 3,
+          "5": 0
+        },
+        "directions": [
+          {
+            "question": "Q10: Cost vs. convenience",
+            "response": "Cost",
+            "count": 6,
+            "valid_n": 18,
+            "percent": 33.333333333333336,
+            "codes": [
+              1,
+              2
+            ]
+          },
+          {
+            "question": "Q10: Cost vs. convenience",
+            "response": "Midpoint",
+            "count": 9,
+            "valid_n": 18,
+            "percent": 50.0,
+            "codes": [
+              3
+            ]
+          },
+          {
+            "question": "Q10: Cost vs. convenience",
+            "response": "Convenience",
+            "count": 3,
+            "valid_n": 18,
+            "percent": 16.666666666666668,
+            "codes": [
+              4,
+              5
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "individual_diagnostics": {
+    "main_5_3": {
+      "complete_n": 17,
+      "ri_checks": [
+        {
+          "ri": 0.52,
+          "pass_n": 2,
+          "complete_n": 17,
+          "passed_ids": [
+            "R006",
+            "R015"
+          ]
+        },
+        {
+          "ri": 0.58,
+          "pass_n": 2,
+          "complete_n": 17,
+          "passed_ids": [
+            "R006",
+            "R015"
+          ]
+        }
+      ],
+      "cr_distribution_ri_052": [
+        {
+          "cr": 0.0,
+          "n": 2
+        },
+        {
+          "cr": 0.13039504294,
+          "n": 9
+        },
+        {
+          "cr": 0.283441821461,
+          "n": 5
+        },
+        {
+          "cr": 0.539263153674,
+          "n": 1
+        }
+      ]
+    },
+    "mild_3_2": {
+      "complete_n": 17,
+      "ri_checks": [
+        {
+          "ri": 0.52,
+          "pass_n": 11,
+          "complete_n": 17,
+          "passed_ids": [
+            "R001",
+            "R002",
+            "R005",
+            "R006",
+            "R007",
+            "R009",
+            "R012",
+            "R013",
+            "R014",
+            "R015",
+            "R018"
+          ]
+        },
+        {
+          "ri": 0.58,
+          "pass_n": 11,
+          "complete_n": 17,
+          "passed_ids": [
+            "R001",
+            "R002",
+            "R005",
+            "R006",
+            "R007",
+            "R009",
+            "R012",
+            "R013",
+            "R014",
+            "R015",
+            "R018"
+          ]
+        }
+      ],
+      "cr_distribution_ri_052": [
+        {
+          "cr": 0.0,
+          "n": 2
+        },
+        {
+          "cr": 0.051559207576,
+          "n": 9
+        },
+        {
+          "cr": 0.13039504294,
+          "n": 5
+        },
+        {
+          "cr": 0.209001516265,
+          "n": 1
+        }
+      ]
+    }
+  },
+  "methods": [
+    {
+      "key": "main_aij",
+      "label": "Main AIJ",
+      "mapping": "main_5_3",
+      "aggregation": "AIJ",
+      "n": 17,
+      "individual_pass_n": 2,
+      "weights": [
+        0.2008926580071308,
+        0.4793291297180824,
+        0.3197782122747868
+      ],
+      "group_cr": 0.013000919120409887,
+      "group_cr_ri_058": 0.011655996452781278,
+      "group_ci": 0.006760477942613141,
+      "baseline_scores": [
+        {
+          "mode": "used",
+          "emissions_score": 0.7950361538461539,
+          "cost_score": 0.8305833333333333,
+          "convenience_score": 0.8888888888888888,
+          "score": 0.8420870122827411,
+          "outside_reference_range": false,
+          "rank": 1
+        },
+        {
+          "mode": "new",
+          "emissions_score": 0.7950361538461539,
+          "cost_score": 0.8,
+          "convenience_score": 0.8888888888888888,
+          "score": 0.8274275297321965,
+          "outside_reference_range": false,
+          "rank": 2
+        },
+        {
+          "mode": "rental",
+          "emissions_score": 0.5258461538461539,
+          "cost_score": 0.7,
+          "convenience_score": 0.2777777777777778,
+          "score": 0.5299963035390789,
+          "outside_reference_range": false,
+          "rank": 3
+        }
+      ],
+      "traffic": {
+        "rental_score_intercept": 0.8647485218660611,
+        "rental_score_slope": -0.3347522183269821,
+        "alpha_equal_used": 0.06769636866508985,
+        "alpha_equal_new": 0.11148840871133503
+      }
+    },
+    {
+      "key": "mild_aij",
+      "label": "Mild AIJ",
+      "mapping": "mild_3_2",
+      "aggregation": "AIJ",
+      "n": 17,
+      "individual_pass_n": 11,
+      "weights": [
+        0.24097315381170287,
+        0.42953650955036643,
+        0.32949033663793076
+      ],
+      "group_cr": 0.005885350076795248,
+      "group_cr_ri_058": 0.005276520758506085,
+      "group_ci": 0.003060382039933529,
+      "baseline_scores": [
+        {
+          "mode": "used",
+          "emissions_score": 0.7950361538461539,
+          "cost_score": 0.8305833333333333,
+          "convenience_score": 0.8888888888888888,
+          "score": 0.8412285345110586,
+          "outside_reference_range": false,
+          "rank": 1
+        },
+        {
+          "mode": "new",
+          "emissions_score": 0.7950361538461539,
+          "cost_score": 0.8,
+          "convenience_score": 0.8888888888888888,
+          "score": 0.8280918762606433,
+          "outside_reference_range": false,
+          "rank": 2
+        },
+        {
+          "mode": "rental",
+          "emissions_score": 0.5258461538461539,
+          "cost_score": 0.7,
+          "convenience_score": 0.2777777777777778,
+          "score": 0.5189154563078544,
+          "outside_reference_range": false,
+          "rank": 3
+        }
+      ],
+      "traffic": {
+        "rental_score_intercept": 0.8650065104838158,
+        "rental_score_slope": -0.3460910541759614,
+        "alpha_equal_used": 0.0687043934994861,
+        "alpha_equal_new": 0.10666162496186396
+      }
+    },
+    {
+      "key": "main_aip",
+      "label": "Main AIP",
+      "mapping": "main_5_3",
+      "aggregation": "Arithmetic mean of individual priority vectors",
+      "n": 17,
+      "individual_pass_n": 2,
+      "weights": [
+        0.20271268443356752,
+        0.4662503691474032,
+        0.33103694641902937
+      ],
+      "group_cr": null,
+      "group_cr_ri_058": null,
+      "baseline_scores": [
+        {
+          "mode": "used",
+          "emissions_score": 0.7950361538461539,
+          "cost_score": 0.8305833333333333,
+          "convenience_score": 0.8888888888888888,
+          "score": 0.8426787622258216,
+          "outside_reference_range": false,
+          "rank": 1
+        },
+        {
+          "mode": "new",
+          "emissions_score": 0.7950361538461539,
+          "cost_score": 0.8,
+          "convenience_score": 0.8888888888888888,
+          "score": 0.8284192717693968,
+          "outside_reference_range": false,
+          "rank": 2
+        },
+        {
+          "mode": "rental",
+          "emissions_score": 0.5258461538461539,
+          "cost_score": 0.7,
+          "convenience_score": 0.2777777777777778,
+          "score": 0.5249256511870221,
+          "outside_reference_range": false,
+          "rank": 3
+        }
+      ],
+      "traffic": {
+        "rental_score_intercept": 0.8659622051184626,
+        "rental_score_slope": -0.34103655393144056,
+        "alpha_equal_used": 0.06827257261496279,
+        "alpha_equal_new": 0.11008477805758361
+      }
+    },
+    {
+      "key": "equal",
+      "label": "Equal weights",
+      "mapping": null,
+      "aggregation": "Normative equal-weight benchmark",
+      "n": null,
+      "individual_pass_n": null,
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "group_cr": null,
+      "group_cr_ri_058": null,
+      "equivalent_observed_subset": {
+        "ids": [
+          "R006",
+          "R015"
+        ],
+        "n": 2,
+        "each_response": [
+          3,
+          3,
+          3
+        ],
+        "group_cr": 0
+      },
+      "baseline_scores": [
+        {
+          "mode": "used",
+          "emissions_score": 0.7950361538461539,
+          "cost_score": 0.8305833333333333,
+          "convenience_score": 0.8888888888888888,
+          "score": 0.8381694586894587,
+          "outside_reference_range": false,
+          "rank": 1
+        },
+        {
+          "mode": "new",
+          "emissions_score": 0.7950361538461539,
+          "cost_score": 0.8,
+          "convenience_score": 0.8888888888888888,
+          "score": 0.8279750142450142,
+          "outside_reference_range": false,
+          "rank": 2
+        },
+        {
+          "mode": "rental",
+          "emissions_score": 0.5258461538461539,
+          "cost_score": 0.7,
+          "convenience_score": 0.2777777777777778,
+          "score": 0.5012079772079772,
+          "outside_reference_range": false,
+          "rank": 3
+        }
+      ],
+      "traffic": {
+        "rental_score_intercept": 0.8635413105413104,
+        "rental_score_slope": -0.3623333333333333,
+        "alpha_equal_used": 0.07002351017070403,
+        "alpha_equal_new": 0.09815905141572107
+      }
+    },
+    {
+      "key": "mild_pass_aij",
+      "label": "Mild AIJ, screened",
+      "mapping": "mild_3_2",
+      "aggregation": "AIJ",
+      "n": 11,
+      "individual_pass_n": 11,
+      "weights": [
+        0.22832808235462826,
+        0.42219698147334433,
+        0.34947493617202746
+      ],
+      "group_cr": 0.003819230866989406,
+      "group_cr_ri_058": 0.0034241380186801574,
+      "group_ci": 0.001986000050834491,
+      "baseline_scores": [
+        {
+          "mode": "used",
+          "emissions_score": 0.7950361538461539,
+          "cost_score": 0.8305833333333333,
+          "convenience_score": 0.8888888888888888,
+          "score": 0.8428432443141622,
+          "outside_reference_range": false,
+          "rank": 1
+        },
+        {
+          "mode": "new",
+          "emissions_score": 0.7950361538461539,
+          "cost_score": 0.8,
+          "convenience_score": 0.8888888888888888,
+          "score": 0.8299310532974358,
+          "outside_reference_range": false,
+          "rank": 2
+        },
+        {
+          "mode": "rental",
+          "emissions_score": 0.5258461538461539,
+          "cost_score": 0.7,
+          "convenience_score": 0.2777777777777778,
+          "score": 0.5126797021114867,
+          "outside_reference_range": false,
+          "rank": 3
+        }
+      ],
+      "traffic": {
+        "rental_score_intercept": 0.8674860833917293,
+        "rental_score_slope": -0.3548063812802425,
+        "alpha_equal_used": 0.06945432883323195,
+        "alpha_equal_new": 0.10584654638618465
+      }
+    }
+  ],
+  "annual_burdens": [
+    {
+      "mode": "new",
+      "events": 6,
+      "currency": "SGD",
+      "allocation_fraction": 0.23076923076923078,
+      "cleaning_count": 7,
+      "passenger_km": 0,
+      "allocated_delivery_vehicle_km": 1.0,
+      "manufacturing_kgco2e": 3.4153846153846157,
+      "distribution_kgco2e": 0.19384615384615386,
+      "disposal_kgco2e": 0.22846153846153847,
+      "cleaning_kgco2e": 0.763,
+      "transport_kgco2e": 0.31844,
+      "annual_kgco2e": 4.9191323076923075,
+      "purchase_sgd": 65,
+      "delivery_sgd": 0,
+      "rental_sgd": 0,
+      "care_sgd": 7,
+      "travel_sgd": 0,
+      "annual_spending_sgd": 72,
+      "refundable_deposit_sgd": 0,
+      "order_minutes": 15,
+      "care_minutes": 105,
+      "handling_minutes": 0,
+      "travel_minutes": 0,
+      "annual_minutes": 120
+    },
+    {
+      "mode": "used",
+      "events": 6,
+      "currency": "SGD",
+      "allocation_fraction": 0.23076923076923078,
+      "cleaning_count": 7,
+      "passenger_km": 0,
+      "allocated_delivery_vehicle_km": 1.0,
+      "manufacturing_kgco2e": 3.4153846153846157,
+      "distribution_kgco2e": 0.19384615384615386,
+      "disposal_kgco2e": 0.22846153846153847,
+      "cleaning_kgco2e": 0.763,
+      "transport_kgco2e": 0.31844,
+      "annual_kgco2e": 4.9191323076923075,
+      "purchase_sgd": 52,
+      "delivery_sgd": 1.99,
+      "rental_sgd": 0,
+      "care_sgd": 7,
+      "travel_sgd": 0,
+      "annual_spending_sgd": 60.99,
+      "refundable_deposit_sgd": 0,
+      "order_minutes": 15,
+      "care_minutes": 105,
+      "handling_minutes": 0,
+      "travel_minutes": 0,
+      "annual_minutes": 120
+    },
+    {
+      "mode": "rental",
+      "events": 6,
+      "currency": "SGD",
+      "allocation_fraction": 0.23076923076923078,
+      "cleaning_count": 6,
+      "passenger_km": 240,
+      "allocated_delivery_vehicle_km": 0,
+      "manufacturing_kgco2e": 3.4153846153846157,
+      "distribution_kgco2e": 0.19384615384615386,
+      "disposal_kgco2e": 0.22846153846153847,
+      "cleaning_kgco2e": 0.654,
+      "transport_kgco2e": 6.888,
+      "annual_kgco2e": 11.379692307692308,
+      "purchase_sgd": 0,
+      "delivery_sgd": 0,
+      "rental_sgd": 60,
+      "care_sgd": 0,
+      "travel_sgd": 48,
+      "annual_spending_sgd": 108,
+      "refundable_deposit_sgd": 99,
+      "order_minutes": 0,
+      "care_minutes": 0,
+      "handling_minutes": 60,
+      "travel_minutes": 720,
+      "annual_minutes": 780
+    }
+  ],
+  "annual_scoring_anchors": [
+    24,
+    360,
+    1080
+  ],
+  "traffic": {
+    "definition": "Common attributed share of collection/return travel emissions, incremental fares and active travel time",
+    "alpha_range": [
+      0,
+      1
+    ],
+    "burden_order": [
+      "kgCO2e/year",
+      "SGD/year",
+      "minutes/year"
+    ],
+    "rental_burden_intercepts": [
+      4.491692307692308,
+      60,
+      60
+    ],
+    "rental_burden_slopes": [
+      6.888,
+      48,
+      720
+    ],
+    "retained_rental_handling_minutes": 60,
+    "used_component_crossovers": [
+      0.06205574912891983,
+      0.020625000000000043,
+      0.08333333333333333
+    ]
+  }
+}

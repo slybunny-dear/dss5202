@@ -8,6 +8,7 @@
 
 - [论文 PDF](report/main.pdf) · [LaTeX 正文](report/main.tex) · [参考文献](report/references.tex)
 - [论文编译、检查摘要及待核实事项](report/README.md)
+- [原始问卷描述、AHP对照与交通敏感性分析](report/analysis/results.json)
 - [自动计算结果与解释](results/report.md)
 
 ## 目录
@@ -25,16 +26,20 @@
 
 ## 重算
 
-Python 3.10+；模型依赖 openpyxl，论文制图另需 matplotlib。
+Python 3.10+；模型依赖 openpyxl，论文分析与制图另需 numpy、matplotlib。
 
 ```sh
 python -m pip install -r requirements.txt
-python -B code/run.py
-python -B -m unittest discover -s tests -v
-python report/generate_assets.py
+python -m pip install numpy matplotlib
+python -X utf8 -B code/run.py
+python -X utf8 -B -m unittest discover -s tests -v
+python -X utf8 -B report/generate_assets.py
+python -X utf8 -B report/analysis/recompute.py --source-repo .
 ```
 
 `results/annual_results.csv` 保存排放、费用及主动时间分解；`ahp_individual.csv`、`ahp_group.csv` 保存个人和群体 AHP；`rankings.csv` 保存评分与排名；`survey_input.csv` 仅导出匿名 ID、原行号及三题回答；`run_manifest.json` 记录输入哈希和环境。
+
+最后一步使用原始18条问卷记录（17份完整比较）生成论文修订版的问卷描述表、5种AHP权重对照、基准排名和交通敏感性图表。`report/analysis/results.json` 保存完整计算值与输入哈希。论文分析仅使用原始问卷。已有论文图表可直接用于LaTeX编译；修改模型参数后应同步核对正文数值。
 
 ## 固定口径
 

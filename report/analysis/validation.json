@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "survey_records": 18,
+  "complete_matrices": 17,
+  "original_data_only": true,
+  "weight_specifications_checked": 5,
+  "individual_pass_main": 2,
+  "individual_pass_mild": 11,
+  "baseline_scores_checked": 15,
+  "traffic_crossovers_checked": 10,
+  "reference_entries": 9,
+  "undefined_references": 0,
+  "input_hashes_match": true,
+  "pdf_pages": 12,
+  "latex_layout_warnings": 0,
+  "main_text_negative_or_conversational_phrase_scan": "PASS",
+  "visual_review": "All pages rendered; tables and graphs reviewed at enlarged scale"
+}

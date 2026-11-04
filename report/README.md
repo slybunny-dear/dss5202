@@ -1,49 +1,64 @@
 # English term paper
 
-[论文 PDF](main.pdf) · [LaTeX 正文](main.tex) · [APA 7 参考文献](references.tex) · [可独立编译的源文件包](DSS5202_Group04_LaTeX_Source.zip)
+[论文 PDF](main.pdf) · [LaTeX 正文](main.tex) · [APA 7 参考文献](references.tex) · [原始问卷分析结果](analysis/results.json)
+
+## 本轮更新
+
+论文采用小组提供的中文摘要对应的学术英文版本，说明NUS学生一年六次正式活动的情景、LCA和LCC估算、AHP加权综合评分，以及补充交通敏感性分析的目的。
+
+正文同时纳入已完成的原始问卷描述表、AHP对照表、交通敏感性分析及相应方法、讨论和结论。全部分析使用原18条问卷记录，其中17份具有完整的三题比较。
 
 ## 文件
 
-```text
-report/
-├── main.tex / main.pdf
-├── references.tex
-├── generate_assets.py       # 读取项目 CSV，生成以下图表
-├── figures/                 # 2 张矢量 PDF 图
-├── tables/                  # 3 张 LaTeX 结果表
-├── DSS5202_Group04_LaTeX_Source.zip
-└── README.md
-```
-
-已有图表可直接编译，不需要原始问卷或 Python。`references.tex` 直接维护 APA 7 条目，使用 natbib 作者—年份引用，不需要 BibTeX/Biber。
+- `main.tex`、`main.pdf`：12页论文。
+- `references.tex`：9条参考文献，采用natbib作者—年份引用。
+- `tables/`：正文引用5张外置表；模型输入表直接写在正文中。`ahp.tex`保留原始基准分析输出。
+- `figures/`：研究流程、排放分解、交通敏感性分析，共3张矢量PDF图。
+- `analysis/recompute.py`：从原始问卷和项目模型重算修订版分析。
+- `analysis/results.json`：问卷描述、5种权重设定、基准综合分、交通交叉点及输入哈希。
+- `analysis/validation.json`：独立数值与论文检查结果。
+- `generate_assets.py`：原始基准图表生成器；更新全部图表时按下方顺序运行两个脚本。
 
 ## 编译
 
-在本目录执行，需 Tectonic（首次可能下载宏包）：
+已有表图可直接编译。使用Tectonic时，在本目录执行：
 
 ```sh
-mkdir -p build
-tectonic --keep-logs --outdir build main.tex
-cp build/main.pdf main.pdf
+tectonic main.tex
 ```
 
-也可使用完整 TeX Live/MiKTeX，执行两次 `pdflatex -interaction=nonstopmode -halt-on-error main.tex`。编译后检查 PDF，确认无缺失引用、内容溢出及图表排版问题。`build/` 和编译缓存不随源文件包交付。
+也可使用TeX Live或MiKTeX，执行两次：
 
-更新图表：在项目根目录运行 `python -B code/run.py`、现有测试，再运行 `python report/generate_assets.py`（需 matplotlib）。脚本不修改模型或问卷；若模型结果改变，正文中的解释性数字也须同步核对。正文排放展示 4 位小数、综合分 6 位，CSV 保留计算精度。
+```sh
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+```
 
-## 检查摘要
+参考文献直接维护在`references.tex`中。编译后检查引用、表图和分页。
 
-- 模型重算结果与论文一致，现有 10 项检查通过。
-- 论文共 10 页：8 页正文（含标题与 185 词摘要）、1 页参考文献、1 页附录；7 条外部引用与文献条目对应。
-- PDF 已逐页渲染检查，后续修订已复查相应页面；原始报价、问卷及模型数值未改动，未新增优化或敏感性分析。
-- 作者姓名经用户确认，论文不显示学号；归属为 NUS 理学院，教师为 Kim Leng Poh，附录保留一句 AI 使用声明。
-- 写作表达参考用户提供的 Jiang et al. CVPR 论文，未采用其内容、双栏模板或出版标识。
-- [问卷核实记录](../evidence/survey_scale.md)：Q9/Q10 两端标签均已核实，中间 2–4 只有数字；解释和比率映射仍作为研究设定。
+## 重算
 
-## 尚待核实
+从项目根目录执行：
 
-- 高个人 CR 的原因与受访者对量表的理解；量表核实没有消除仅 2/17 合格的限制。
-- 如课程另有格式或 AI 声明要求，提交前对照核实。
-- 六次可租性、租赁实际清洗与费用、实物状态、本地时间和交通数据仍受现有假设与代理数据限制，论文已披露。
+```sh
+python -m pip install -r requirements.txt
+python -m pip install numpy matplotlib
+python -X utf8 -B code/run.py
+python -X utf8 -B -m unittest discover -s tests -v
+python -X utf8 -B report/generate_assets.py
+python -X utf8 -B report/analysis/recompute.py --source-repo .
+```
 
-源文件包应在论文修订后重新生成，仅收录论文源文件、图表及必要说明，并附问卷量表核实记录，不包含原始问卷。
+原始生成器先更新流程图与费用表；修订版分析脚本随后更新问卷描述、AHP对照、排名、交通临界点和分析图。`--source-repo .`明确指定当前项目为输入来源。脚本读取原始数据并将修订版输出写入`report/`；模型参数变化时，正文数值与解释需同步核对。
+
+## 检查与解释
+
+- 原18条问卷记录、17份完整比较及输入哈希已核对；主分析仅2份通过个人CR检验。
+- 5种权重设定、15项基准综合分和10个交通交叉点经独立计算核验。
+- 个人与群体一致性分别报告；问卷权重作为探索性偏好证据，提供温和映射、AIP、等权和子样本对照。
+- 基准排序为二手、新品、租赁。主权重下，租赁与二手、新品的交通负担归属比例交叉点分别约为6.77%和11.15%。
+- 交通阈值对应指定评分参考值，以及交通排放、费用和时间同比例变化的设定。
+- 更新后的12页PDF已编译并检查引用与版面；原始模型参数和问卷回答保留。
+
+[问卷量表核实记录](../evidence/survey_scale.md)说明Q9/Q10端点方向与中间位置的解释。六次可租性、清洗安排、本地交通和主动时间等仍作为论文披露的情景或代理数据。
+
+可独立编译的源文件由`main.tex`、`references.tex`以及正文引用的`tables/`和`figures/`组成。源文件包为交付快照，日常编辑以展开文件为准。

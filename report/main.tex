@@ -11,7 +11,13 @@
 \setlength{\parindent}{1.2em}
 \setlength{\parskip}{2pt}
 \setlength{\emergencystretch}{2em}
-\linespread{1.00}
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\bottomfraction}{0.80}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.85}
+\setcounter{topnumber}{5}
+\setcounter{bottomnumber}{4}
+\setcounter{totalnumber}{6}
 \setlength{\headheight}{14pt}
 \pagestyle{fancy}\fancyhf{}
 \fancyhead[L]{\small DSS5202 Sustainable Systems Analysis}
@@ -21,7 +27,6 @@
 \newcommand{\co}{\ensuremath{\mathrm{kg\,CO_2e}}}
 \newcommand{\note}[1]{\par\vspace{2pt}{\footnotesize\noindent\textit{Note.} #1\par}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-\newcommand{\page}{\clearpage}
 \hypersetup{pdftitle={Buying New, Buying Second-Hand, or Renting?},pdfauthor={DSS5202 Group 04}}
 \begin{document}
 \thispagestyle{plain}
@@ -32,239 +37,275 @@
 \vspace{12pt}
 {\normalsize Yang Yihua, Cao Xiaoyue, Yang Liu, Liu Ziqing, and Xie Tongling\par}
 \end{center}
-\vspace{2pt}
 \begin{abstract}
-Choosing formalwear involves environmental burdens, cash expenditure, and personal effort. This study compares buying one new dress, buying one second-hand dress, and renting the same model separately for six formal events attended by one student in one year. A screening life-cycle carbon assessment and consumer life-cycle costing model are combined with analytic hierarchy process (AHP) criteria weights and fixed-anchor performance scores. Manufacturing, distribution, and disposal are allocated by six annual wears relative to 26 assumed lifetime wears; purchase payments are charged in full. Calculated annual emissions are 4.9191 kg CO$_2$e for both purchases and 11.3797 kg CO$_2$e for rental. Annual expenditure is SGD 60.99 for second-hand, SGD 72.00 for new, and SGD 108.00 for rental. Second-hand ranks first (0.842087), followed by new (0.827428) and rental (0.529996). Rental collection and return travel explains most of its additional emissions and assumed active time. Only two of 17 complete individual AHP responses meet the consistency threshold, making the preference evidence exploratory. Results apply to the specified garment proxies, allocation rule, care arrangements, and travel assumptions; they do not establish a general advantage of ownership over rental.
+Students choosing whether to purchase or rent formalwear must balance carbon emissions, expenditure, and convenience. This study compares purchasing a new dress, purchasing a second-hand dress, and renting the same dress model for a National University of Singapore student attending six formal events over one year. Life cycle assessment (LCA) estimates allocated annual greenhouse gas emissions, while life cycle costing (LCC) quantifies direct consumer expenditure. These outcomes are combined with a time-based convenience indicator through analytic hierarchy process (AHP)-weighted composite scoring. Under baseline assumptions, allocated annual emissions are 4.92 kg CO$_2$e for each purchase option and 11.38 kg CO$_2$e for rental. Annual expenditure is SGD 60.99, 72.00, and 108.00 for second-hand purchasing, new purchasing, and rental, respectively. Second-hand purchasing ranks first across the evaluated weighting specifications under baseline operating assumptions, reflecting its lower expenditure and identical modelled emissions and active time requirements relative to new purchasing. Transport sensitivity analysis further examines how collection-and-return travel burdens affect the ranking of the three alternatives. The findings support second-hand purchasing in the baseline scenario and identify substantial reductions in attributed collection-and-return travel burdens as a condition for rental competitiveness within the modelled scenarios.
 \end{abstract}
-\noindent\textit{Keywords:} formalwear; life-cycle assessment; consumer expenditure; second-hand clothing; analytic hierarchy process
+\noindent\textit{Keywords:} formalwear; life-cycle assessment; consumer expenditure; analytic hierarchy process; group judgments; transport sensitivity
 
 \section{Introduction}
-Students attending occasional formal events must decide whether to acquire a dress for repeated use or obtain temporary access through rental. A lower advertised rental fee need not imply a lower annual payment when each event requires a separate booking. Likewise, reuse does not by itself establish a smaller carbon footprint: garment lifetime, cleaning, and transport determine the burdens associated with providing the required service.
+Students attending formal events select among garment ownership, second-hand acquisition, and temporary access. Each arrangement combines an acquisition payment with cleaning, transport, and personal effort. The environmental performance of repeated garment use depends on lifetime utilization and the operations required to deliver the clothing service. A comparison on a common annual service basis can clarify how these components influence the preferred acquisition strategy.
 
-This report studies the Love, Bonito Eyka Multi-way Satin Column Dress in size S across three documented Singapore acquisition channels. It asks: \textit{For one student attending six formal events in one year, how do buying new, buying second-hand, and renting compare in allocated greenhouse gas emissions, direct expenditure, and an AHP-weighted decision score?} The alternatives provide the same model and permit repeated appearance. Their fit, suitability, hygiene, and availability are assumed adequate, rather than established by a physical inspection or six confirmed reservations.
+This study examines the Love, Bonito Eyka Multi-way Satin Column Dress in size S across three documented Singapore acquisition channels. The research question is: \textit{For one student attending six formal events in one year, how do buying new, buying second-hand, and renting compare in allocated greenhouse gas emissions, direct expenditure, and an AHP-weighted decision score?} The alternatives provide the same model and permit repeated appearance. The comparison assumes adequate fit, dress-code suitability, hygiene, and availability.
 
-The analysis follows a single chain from documented inputs to annual burdens, criteria weights, normalized scores, and interpretation. It evaluates three fixed alternatives. The resulting recommendation is conditional on the current model and evidence, with particular attention to the distinction between a quoted price, a literature proxy, a survey response, and a researcher assumption.
+The analysis evaluates three fixed acquisition strategies through a reproducible sequence of evidence classification, annual burden calculation, preference aggregation, performance scoring, and transport sensitivity analysis. The baseline establishes the relationship among environmental, financial, and time outcomes. The survey supports an exploratory account of criterion preferences, while the scenario analysis identifies service conditions associated with changes in ranking.
 
-\page
 \section{Background and Related Work}
-\subsection{Clothing life cycles and access models}
-Clothing comparisons require a common service basis. \citet{sandin2019} assess six garment types and document production and use inventories, including a polyester dress. Their reference garment supplies screening proxies, rather than measurements of the selected Eyka product.
+\subsection{Clothing life cycles and access arrangements}
+Clothing assessments require a common service definition and explicit allocation of garment production across use. \citet{sandin2019} document inventories and environmental impacts for six garment types, including a polyester dress. Their garment-level estimates provide screening proxies for the present analysis. Monticelli and Costamagna \citeyearpar{monticelli2023} compare formalwear rental and online purchasing in an Italian setting, highlighting the influence of use frequency and service operations. Their residential-care estimate supplies a cleaning proxy for the present study.
 
-Monticelli and Costamagna \citeyearpar{monticelli2023} compare formalwear rental with online purchasing in an Italian case. Their analysis separates life-cycle stages and shows why use frequency and service operations matter when interpreting rental. Their case uses a cotton dress and different ownership and rental lifetimes. Consequently, its comparative result is not transferred to the present alternatives; only the documented residential-care factor is used as a proxy. This report retains the existing project's common 26-wear lifetime across all channels, rather than introducing a rental lifetime advantage.
+The baseline assigns a common lifetime of 26 wears to all channels. This assumption provides a controlled comparison of acquisition, care, and transport arrangements at a common utilization level. The resulting carbon accounts describe attributed annual service burdens. Their interpretation depends on the lifetime and allocation convention, garment inventories, and delivery practices specified in the model.
 
-\subsection{AHP and performance scoring}
-AHP structures decisions into a goal, criteria, and alternatives, using reciprocal pairwise judgments to derive priorities. \citet{saaty1994} discusses eigenvector priorities, geometric aggregation of group judgments, and consistency assessment. Here, AHP supplies weights for emissions, expenditure, and convenience. The alternatives' performances are evaluated using separately specified linear scores. This is an AHP-weighted scoring model: alternative priorities are not elicited through additional pairwise matrices.
+\subsection{Preference aggregation and consistency}
+AHP translates reciprocal pairwise judgments into criterion priorities and assesses within-matrix consistency \citep{saaty1994}. Group applications distinguish the aggregation of individual judgments (AIJ) from the aggregation of individual priorities (AIP). AIJ combines judgments into a collective comparison matrix, whereas AIP combines the priority vectors of respondents treated as individual decision makers \citep{forman1998}.
 
-\section{Study Design and Methodology}
-\subsection{Functional unit, alternatives, and boundary}
-The functional unit is suitable formalwear for one student attending six events in one year. Buying new and buying second-hand each involve one acquisition and six wears; rental involves six separate seven-day bookings, each covering one event. Events do not overlap, and outfit variety is not a requirement. Although the same product model is selected, the second-hand listing's colour is not confirmed to match the mint new and rental options.
+Geometric aggregation can produce an acceptably consistent group matrix when individual matrices exhibit substantial inconsistency \citep{aullhyde2006}. Individual and group consistency consequently describe distinct levels of the judgment process. The present study reports both levels and examines alternative mappings and aggregation procedures. AHP supplies criterion weights; externally specified linear value functions translate the three alternatives' annual burdens into comparable performance scores.
 
-The environmental boundary includes allocated manufacturing, pre-consumer distribution and retail, gross end-of-life disposal, annual cleaning, and acquisition-related delivery or passenger travel. The annual allocation includes a share of eventual disposal, without claiming that disposal occurs during the study year. The model excludes travel to the events, shoes and accessories, accidental repairs, and new packaging; existing packaging is assumed reused. No additional store, platform, or warehouse model is added to the retained distribution factor.
+\section{Study Design and Methods}
+\subsection{Functional unit, alternatives, and system boundary}
+The functional unit is suitable formalwear for one student attending six formal events over one year. New and second-hand purchasing each comprise one acquisition followed by six wears. Rental comprises six separate seven-day bookings, each covering one event. Events occur in separate booking periods, and the baseline permits the same style throughout the year. The second-hand listing identifies the selected model and size, with its colour retained as a comparability uncertainty.
 
-\begin{figure}[!htbp]
+The environmental inventory comprises allocated manufacturing, pre-consumer distribution and retail, gross end-of-life disposal, annual cleaning, and acquisition-related delivery or passenger travel. Event travel, shoes, accessories, accidental repairs, and new packaging remain outside this inventory; the packaging assumption is reuse. The distribution factor supplies the retail component. Annual disposal allocation represents a share of eventual end-of-life treatment over the service life.
+
+\begin{figure}[htbp]
 \centering\includegraphics[width=\linewidth]{figures/framework.pdf}
-\caption{Study workflow. Inputs retain separate evidence classes. Survey responses inform criteria weights; explicit assumptions enter burden and scoring calculations. Arrows indicate the analytical sequence.}
+\caption{Analytical workflow linking evidence and assumptions to annual burdens, criterion weights, performance scores, and interpretation. The transport scenario varies the acquisition-travel component within this framework.}
 \label{fig:framework}
 \end{figure}
 
-\page
-\subsection{Data sources and key assumptions}
-Table~\ref{tab:inputs} distinguishes the four input classes. Market values are frozen advertised quotes recorded on 3 November 2026, not completed transactions. The official product page identifies a polyester main fabric and polyester--spandex lining, but actual item weight and fibre labels have not been independently checked \citep{lovebonito,usedquote,rentalquote}. The supplier instructs customers to wash before wearing. The rental listing instead asks users to return the dress without washing; the model therefore assigns cleaning after return.
+\subsection{Data sources and model inputs}
+The data register distinguishes advertised market quotes, literature proxies, original survey responses, and researcher-defined scenarios (Table~\ref{tab:inputs}). Market values are frozen advertised quotes recorded on 3 November 2026. The official product page specifies a polyester main fabric and polyester--spandex lining \citep{lovebonito}. The second-hand and rental listings identify the same model and size \citep{usedquote,rentalquote}. Garment mass, item condition, and transaction availability remain product-level evidence uncertainties.
 
 \begin{table}[htbp]
-\caption{Principal model inputs, evidence classes, and provenance.}
+\caption{Principal model inputs and evidence classification.}
 \label{tab:inputs}
 \centering\small
-\renewcommand{\arraystretch}{1.16}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.23\linewidth}>{\raggedright\arraybackslash}p{0.30\linewidth}Y@{}}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.23\linewidth}>{\raggedright\arraybackslash}p{.30\linewidth}Y@{}}
 \toprule
-Input & Retained value & Evidence class and source\\\midrule
-Acquisition prices & New SGD 65; second-hand SGD 52; rental SGD 10/7 days & Original quotes: Love, Bonito; igotgr8deals; forest\_green66\\
-Delivery and deposit & New SGD 0; second-hand SGD 1.99; rental refundable deposit SGD 99 & Original quote terms; full deposit refund is an assumption\\
-Production / distribution / disposal & 14.8 / 0.84 / 0.99 \co\ per garment & Literature proxies, rounded from digitized Fig. 4.24 in Sandin et al. (2019); gross disposal, no energy credit\\
-Reference garment & 0.478 kg polyester dress & Literature reference, not Eyka mass; no further mass multiplication\\
-Cleaning emission factor & 0.109 \co\ per clean & Literature proxy: residential water-wash, drying and ironing, Monticelli and Costamagna (2023), Table 4\\
-Rail / van factors & 0.0287 \co/passenger-km; 0.31844 \co/vehicle-km & UK 2026 proxies, direct plus energy upstream; DESNZ (2026)\\
-Annual / lifetime use & 6 / 26 wears, all channels & Research scenario; lifetime informed by Sandin et al. (2019)\\
-Cleaning activity & Purchases 7; rental 6 cleans/year & Research assumption: initial wash for purchases plus one after each wear\\
-Transport activity & Purchases: $20/20=1$ vehicle-km each; rental: $6\times4\times10=240$ passenger-km & Assumed delivery route/batch and four dedicated rail legs per booking\\
-Care / fares & SGD 1/home clean; SGD 2/travel leg; zero extra ordinary rental-care fee & Research assumptions, not service-provider confirmation\\
-Convenience and anchors & 120 / 780 minutes; annual anchors 24 \co, SGD 360, 1080 minutes & Research assumptions; active time only\\
-Criteria comparisons & Q8--Q10; 18 records, 17 complete & Original survey workbook; code-to-ratio mapping imposed by researchers\\
+Input & Baseline value & Evidence and provenance\\\midrule
+Acquisition payments & New SGD 65; second-hand SGD 52; rental SGD 10/7 days & Frozen advertised quotes: Love, Bonito and two Carousell listings\\
+Delivery and deposit & New SGD 0; second-hand SGD 1.99; refundable rental deposit SGD 99 & Advertised terms; full refund assumed\\
+Manufacturing / distribution / disposal & 14.8 / 0.84 / 0.99 \co\ per garment & Rounded graphical extractions from Sandin et al. (2019), Fig. 4.24\\
+Reference garment & 0.478 kg polyester dress & Literature reference mass\\
+Cleaning factor & 0.109 \co\ per clean & Residential washing, drying, and ironing proxy; Monticelli and Costamagna (2023), Table 4\\
+Rail / van factors & 0.0287 \co/passenger-km; 0.31844 \co/vehicle-km & UK 2026 factors, including direct and upstream energy emissions\\
+Annual / lifetime use & 6 / 26 wears, all channels & Common service and utilization scenario\\
+Cleaning counts & Purchases 7; rental 6 & Initial wash plus six post-wear washes for ownership; six post-return washes for rental\\
+Acquisition travel & Purchases: 1 allocated vehicle-km; rental: 240 passenger-km & Assumed delivery batch and four dedicated rail legs per booking\\
+Care and fares & SGD 1/home clean; SGD 2/travel leg; rental-care surcharge SGD 0 & Research assumptions\\
+Active time & Purchases 120; rental 780 minutes/year & Ordering, care, rental handling, and travel assumptions\\
+Annual score anchors & 24 \co; SGD 360; 1080 minutes & Reference burdens for linear scoring\\
+Criterion preferences & 18 original records; 17 complete matrices & Five-position survey responses and explicit ratio conversions\\
 \bottomrule
 \end{tabularx}
-\note{DESNZ = Department for Energy Security and Net Zero. Full source locators and computational details are in Appendix~\ref{app:audit}. A recorded seller claim of one prior wear is not independently verified.}
+\note{The reference mass describes the source garment. Emission factors already use a per-garment basis. Source locators appear in Appendix~\ref{app:audit}.}
 \end{table}
 
-The second-hand prior wear is used only to check remaining capacity: $1+6\leq26$. It does not change the allocation denominator to 25. No avoided-production credit or zero-production cut-off is assigned to second-hand. Local transport distances, batch size, fares, time, and rental care remain assumptions. The UK factors are used as transport proxies, rather than Singapore measurements \citep{desnz2026}.
+The supplier's care instructions motivate one initial wash for both purchase options. Rental care occurs after return, consistent with the listing's return instructions. The shared care factor represents residential washing, drying, and ironing in an Italian case. Transport factors represent UK rail and van activity \citep{desnz2026}. Their application to Singapore constitutes a geographical proxy assumption. The second-hand seller's reported prior wear enters the remaining-capacity check, $1+6\leq26$.
 
-\page
 \subsection{Annual carbon accounting}
-Let $m\in\{N,S,R\}$ denote new, second-hand, and rental, respectively. Let $n=6$ be annual wears, $L=26$ lifetime wears, and $M,D,F$ the per-garment manufacturing, distribution, and gross disposal factors. The screening LCA calculation is
+Let $m\in\{N,S,R\}$ denote new, second-hand, and rental, respectively. With $n=6$ annual wears, $L=26$ lifetime wears, and per-garment manufacturing, distribution, and gross disposal factors $M,D,F$, annual attributed emissions are
 \begin{equation}
- E_m=\frac{n}{L}(M+D+F)+k_m e_c+d_m e_v+p_m e_r ,
- \label{eq:lca}
+E_m=\frac{n}{L}(M+D+F)+k_m e_c+d_m e_v+p_m e_r,
+\label{eq:lca}
 \end{equation}
-where $k_m$ is cleaning count, $e_c$ the cleaning factor, $d_m$ allocated delivery vehicle-kilometres, $e_v$ the van factor, $p_m$ passenger-kilometres, and $e_r$ the rail factor. Thus $(k_N,k_S,k_R)=(7,7,6)$, $(d_N,d_S,d_R)=(1,1,0)$, and $(p_N,p_S,p_R)=(0,0,240)$. Rental does not receive an additional purchase-delivery charge in the environmental calculation.
+where $k_m$ is cleaning count, $d_m$ allocated delivery vehicle-kilometres, $p_m$ passenger-kilometres, and $e_c,e_v,e_r$ the corresponding factors. The baseline uses $(k_N,k_S,k_R)=(7,7,6)$, $(d_N,d_S,d_R)=(1,1,0)$, and $(p_N,p_S,p_R)=(0,0,240)$.
 
-The common allocated garment burden is
+The common garment-stage contribution is $(6/26)(14.8+0.84+0.99)=3.8377$ \co/year. Production, distribution, and gross disposal are allocated identically across channels. Avoided-production and energy-recovery credits are set to zero. The reference mass serves as descriptive inventory information. The source factors retain their published impact-method conventions, yielding a screening carbon assessment with explicit geographical and methodological transfer assumptions.
+
+\subsection{Annual consumer expenditure and active time}
+The consumer cost model measures direct cash expenditure over the study year. Let $P_m$ denote purchase payment, $H_m$ delivery payment, $r_m$ rental fee per booking, $c_h$ home-care cost, $c_x$ rental-care surcharge, $b_m$ paid passenger legs, and $f$ fare per leg. Then
 \begin{equation}
- \frac{6}{26}(14.8+0.84+0.99)\approx3.8377\ \co\text{/year}.
+C_m=P_m+H_m+n r_m+\mathbf{1}_{m\in\{N,S\}}k_m c_h
+ +\mathbf{1}_{m=R}n c_x+b_m f.
+\label{eq:lcc}
 \end{equation}
-The 0.478 kg reference mass is descriptive only because the factors already refer to a garment. Applying it again would incorrectly scale the inventory. The retained disposal proxy represents gross collection and incineration emissions; an energy-recovery credit has not been deducted. Emissions are reported in kg CO$_2$e, using the source factors as supplied. Their geographical and impact-method differences limit harmonization, so this is a screening comparison rather than a product-specific verified footprint.
+Inapplicable components take a value of zero. Purchase payments enter in full, and resale receipts and year-end residual value are set to zero. This convention measures annual cash affordability, while the carbon model attributes garment burdens to annual service use. The SGD 99 rental deposit is reported separately as a temporary liquidity requirement under the full-refund assumption. Sequential bookings require one deposit at a time. The baseline assumes timely returns in acceptable condition and zero additional platform and ordinary-care charges.
 
-\subsection{Consumer life-cycle costing}
-The LCC component is operationalized as one-year direct consumer expenditure in SGD. Let $P_m$ be purchase payment, $H_m$ delivery payment, $r_m$ rental fee per booking, $c_h$ home-care cost, $c_x$ extra rental-care fee, $b_m$ paid passenger legs, and $f$ fare per leg. Then
-\begin{equation}
- C_m=P_m+H_m+n r_m+\mathbf{1}_{m\neq R}k_m c_h
-       +\mathbf{1}_{m=R}n c_x+b_m f .
- \label{eq:lcc}
-\end{equation}
-Terms that do not apply to an alternative are zero. Both purchases incur their full acquisition payments, rather than $n/L$ of those payments. Manufacturing allocation distributes environmental service burdens across lifetime wears, whereas expenditure records the student's annual cash payments. These answer different accounting questions.
-
-Resale receipts and year-end residual value are both set to zero. No discounting or monetization of time or emissions is applied. The SGD 99 refundable rental deposit is a temporary cash requirement, excluded from final net cost under the full-refund assumption. Sequential bookings do not require six simultaneously outstanding deposits. Normal return without damage or delay and no additional platform fees are assumed. Setting ordinary rental-care surcharges to zero is not evidence that cleaning is contractually included.
-
-\subsection{Convenience as active consumer time}
-The retained time proxy counts ordering, active home care, rental handling, and dedicated travel:
+Convenience is operationalized as active consumer time:
 \begin{align}
- T_N=T_S&=15+7(15)=120\ \text{minutes/year},\\
- T_R&=6[10+4(30)]=780\ \text{minutes/year}.
+T_N=T_S&=15+7(15)=120\ \text{minutes/year},\\
+T_R&=6[10+4(30)]=780\ \text{minutes/year}.
+\label{eq:time}
 \end{align}
-These are researcher settings from the existing time configuration, not survey averages or timed observations. Passive machine operation and provider labour are excluded. Search and fitting are not separately measured. The proxy therefore captures only part of the broader convenience concept presented to respondents.
+The components comprise ordering, active home care, booking and handover, and dedicated travel. These values are researcher-defined scenarios. The operationalized construct is the active-time component of convenience; broader search, fitting, and psychological effort remain areas for further measurement.
 
-\page
-\subsection{AHP elicitation, aggregation, and consistency}
-The original workbook contains 18 response records. Q8--Q10 provide the three comparisons for emissions ($E$), cost ($C$), and convenience ($V$). One record, anonymously labelled R017, lacks Q8 and is excluded from complete matrices without imputation. The main analysis retains all 17 complete responses, including individually inconsistent matrices, to report the existing exploratory model transparently.
+\subsection{Survey description and AHP specification}
+The original questionnaire contains 18 records. Question-level descriptions use the available answers to each item. Seventeen records contain all three criterion comparisons, Q8--Q10; record R017 contributes its two recorded comparisons to the question-level summaries. All survey statistics and preference calculations derive from these original responses.
 
-For Q8, codes 1 and 5 favour emissions and cost, respectively, with 3 indicating equal importance. The main researcher conversion assigns distance from the midpoint $|x-3|=0,1,2$ the intensities $1,3,5$. Hence the ratios for codes 1--5 are $(5,3,1,1/3,1/5)$ when code 1 favours the numerator. Q8 supplies $E/C$ and Q10 supplies $C/V$. For Q9, code 1 favours convenience, so its $E/V$ sequence is reversed. The questionnaire screenshot supplied by the authors confirms the endpoints: Q9 runs from ``strongly prefer convenience'' (1) to ``strongly prefer emissions'' (5); Q10 runs from ``strongly prefer cost'' (1) to ``strongly prefer convenience'' (5). Codes 2--4 have no separate verbal labels. Midpoint equality and symmetric intensity interpretation are researcher choices consistent with this scale layout, rather than explicitly labelled responses. These responses are not a directly elicited Saaty 1--9 scale.
+The criteria are emissions ($E$), expenditure ($C$), and convenience ($V$). Q8 supplies $E/C$, Q9 supplies $E/V$, and Q10 supplies $C/V$. Q8 provides five verbal categories centred on equal importance. Q9 and Q10 provide labelled endpoints and numbered intermediate positions. For these two items, midpoint equality and symmetric intensity form explicit analytical interpretations. The baseline mapping assigns distance from code 3, $|x-3|=0,1,2$, to ratio intensities $1,3,5$. Where code 1 favours the numerator, codes 1--5 map to $(5,3,1,1/3,1/5)$. Q9 reverses this sequence because its code 1 favours convenience. A milder mapping uses intensities $1,2,3$ to examine uncertainty in the conversion of ordered responses to ratios.
 
-For respondent $r$, the positive reciprocal judgment matrix is
+For respondent $r$, the positive reciprocal comparison matrix is
 \begin{equation}
- A^{(r)}=\begin{pmatrix}
- 1&a_{EC}^{(r)}&a_{EV}^{(r)}\\
- 1/a_{EC}^{(r)}&1&a_{CV}^{(r)}\\
- 1/a_{EV}^{(r)}&1/a_{CV}^{(r)}&1
- \end{pmatrix}.
- \label{eq:matrix}
+A^{(r)}=\begin{pmatrix}
+1&a_{EC}^{(r)}&a_{EV}^{(r)}\\
+1/a_{EC}^{(r)}&1&a_{CV}^{(r)}\\
+1/a_{EV}^{(r)}&1/a_{CV}^{(r)}&1
+\end{pmatrix}.
+\label{eq:matrix}
 \end{equation}
-The code obtains priorities using normalized row geometric means,
+For a $3\times3$ positive reciprocal matrix, normalized row geometric means equal the principal eigenvector:
 \begin{equation}
- g_i=\left(\prod_{j=1}^{3}a_{ij}\right)^{1/3},\qquad
- w_i=\frac{g_i}{\sum_{h=1}^{3}g_h}.
- \label{eq:weights}
+g_i=\left(\prod_{j=1}^{3}a_{ij}\right)^{1/3},\qquad
+w_i=\frac{g_i}{\sum_{h=1}^{3}g_h}.
+\label{eq:weights}
 \end{equation}
-For a positive reciprocal $3\times3$ matrix this equals the principal eigenvector. The implementation also checks $Aw=\lambda_{\max}w$ numerically. Consistency is evaluated as
+The calculation checks $Aw=\lambda_{\max}w$. Consistency is summarized by
 \begin{equation}
- \lambda_{\max}=\frac{1}{3}\sum_{i=1}^{3}\frac{(Aw)_i}{w_i},\qquad
- CI=\frac{\lambda_{\max}-3}{2},\qquad CR=\frac{CI}{0.52}.
- \label{eq:cr}
+CI=\frac{\lambda_{\max}-3}{2},\qquad CR=\frac{CI}{RI}.
+\label{eq:cr}
 \end{equation}
-The retained random index $RI=0.52$ comes from the $n=3$ table on printed page 104 of \citet{saaty1994}; $CR\leq0.10$ is the acceptance threshold. This specific source reports 0.52, rather than the 0.58 found in other RI tables.
+The baseline uses $RI=0.52$, from the three-element table on printed page 104 of \citet{saaty1994}, and the criterion $CR\leq0.10$. A parallel calculation uses the course reference value $RI=0.58$. RI affects consistency diagnostics and CR-based subset membership; priorities calculated from a given matrix depend on its judgments.
 
-For $q$ included respondents, judgments are aggregated with equal respondent weights before priorities are calculated:
+For $q$ respondents, AIJ forms the collective matrix as
 \begin{equation}
- \bar a_{ij}=\left(\prod_{r=1}^{q}a_{ij}^{(r)}\right)^{1/q}.
- \label{eq:aggregate}
+\bar a_{ij}=\exp\left(\frac{1}{q}\sum_{r=1}^{q}\ln a_{ij}^{(r)}\right).
+\label{eq:aij}
 \end{equation}
-Equation~\ref{eq:weights} and the consistency check are then applied to $\bar A$. Individual weight vectors are not arithmetically averaged. A second, already available result uses only respondents meeting the personal CR threshold under the same main mapping. It is reported as a descriptive comparison, without treating agreement in rank as a robustness validation. No new preference mapping or sensitivity experiment is introduced in this report.
+The baseline AIJ retains all 17 complete responses with equal respondent weights. The comparison includes the milder mapping, an AIP arithmetic average $\bar w_i=q^{-1}\sum_r w_i^{(r)}$, and an equal-weight reference $w_i=1/3$. CR-qualified subsets provide descriptive selection diagnostics. Individual consistency, collective consistency, mapping sensitivity, and aggregation sensitivity are reported separately. These specifications characterize the available preference evidence as exploratory.
 
-\page
+\subsection{Performance scoring and transport scenarios}
+For burden $B_{mj}\in\{E_m,C_m,T_m\}$ and annual reference $U_j$, the linear performance score and weighted composite are
+\begin{equation}
+s_{mj}=1-\frac{B_{mj}}{U_j},\qquad
+S_m=w_Es_{mE}+w_Cs_{mC}+w_Vs_{mV}.
+\label{eq:score}
+\end{equation}
+The reference burdens are $U_E=24$ \co/year, $U_C=360$ SGD/year, and $U_V=1080$ minutes/year. They specify the scales of the value functions. The scoring function retains its linear form across the burden domain, including values beyond the reference anchors. Higher composite scores indicate preferred outcomes. The effective contribution per unit of burden is governed jointly by $w_j$ and $U_j$.
+
+The transport analysis preserves the six-event functional unit and the three acquisition strategies. Let $\alpha\in[0,1]$ denote the share of baseline rental collection-and-return travel attributed to the rental activity. The baseline is $\alpha=1$; the lower boundary $\alpha=0$ represents fully shared journeys with zero incremental travel burden. Passenger-travel emissions, incremental fares, and travel time scale proportionally with $\alpha$, while six rental payments, six cleans, and 60 minutes of booking and handover remain fixed:
+\begin{align}
+E_R(\alpha)&=4.4916923+6.888\alpha,\label{eq:transportE}\\
+C_R(\alpha)&=60+48\alpha,\\
+T_R(\alpha)&=60+720\alpha.
+\label{eq:transportT}
+\end{align}
+This linked specification defines a controlled scenario family. Its proportional relationship among emissions, fares, and time is a modelling assumption. Substituting these equations into Eq.~\ref{eq:score} gives $S_R(\alpha)=a-b\alpha$. Rental--ownership crossover shares follow from $\alpha^*=(a-S_m)/b$. The analysis repeats this calculation under each weight specification to examine preference sensitivity of the travel threshold.
+
 \section{Results}
-\subsection{Annual emissions and their composition}
-Figure~\ref{fig:emissions} shows the recalculated annual burdens. Both buying options produce 4.9191 \co/year, while rental produces 11.3797 \co/year. The purchased garments each combine 3.4154 for manufacturing, 0.1938 for distribution, 0.2285 for disposal, 0.7630 for cleaning, and 0.3184 for delivery. Their equality follows directly from identical lifetime allocation, cleaning counts, and delivery settings.
+\subsection{Original questionnaire description}
+Table~\ref{tab:survey} summarizes the original sample, reported activities, rewearing responses, and pairwise choices. All 18 records identify students studying in Singapore. Thirteen of the 17 available Q8 answers favour expenditure reduction over emissions reduction. Q9 contains eight responses on the convenience side, three on the emissions side, and seven at the midpoint. Q10 contains six on the cost side, three on the convenience side, and nine at the midpoint. These counts describe the direction of recorded preferences on each question's own response scale.
 
-\begin{figure}[!htbp]
+\begin{table}[htbp]
+\caption{Descriptive profile and criterion comparisons in the original questionnaire.}
+\label{tab:survey}
+\centering\small
+\input{tables/survey_description.tex}
+\note{Question-specific denominators use available responses. Q8 has 17 recorded answers; Q9 and Q10 each have 18. Midpoint denotes the central numbered position in Q9 and Q10. Complete-matrix AHP uses 17 records.}
+\end{table}
+
+\subsection{Annual environmental, financial, and time outcomes}
+Both purchase strategies yield 4.92 \co/year. Their stage contributions comprise 3.4154 from manufacturing, 0.1938 from distribution and retail, 0.2285 from gross disposal, 0.7630 from cleaning, and 0.3184 from delivery. Rental yields 11.38 \co/year, including the same attributed garment-stage burden, 0.6540 from cleaning, and 6.8880 from rail travel (Figure~\ref{fig:emissions}). The rental--purchase difference is 6.4606 \co/year: acquisition transport contributes an additional 6.5696, offset by a cleaning reduction of 0.1090.
+
+\begin{figure}[htbp]
 \centering\includegraphics[width=.98\linewidth]{figures/emissions.pdf}
-\caption{Annual greenhouse gas emissions by modelled life-cycle stage. Values are generated from \texttt{annual\_results.csv}; totals are rounded for display. Allocated garment stages use six of 26 lifetime wears for every option. Purchase delivery and rental passenger travel are shown together as the acquisition-transport stage.}
+\caption{Annual greenhouse gas emissions by life-cycle stage under the common 26-wear allocation. Acquisition transport combines allocated purchase delivery and rental passenger travel.}
 \label{fig:emissions}
 \end{figure}
 
-Rental has the same allocated garment stages, 0.6540 \co\ from six cleans, and 6.8880 \co\ from 240 passenger-kilometres. It exceeds either purchase by 6.4606 \co/year. Transport contributes an additional 6.5696, partly offset by 0.1090 less cleaning. Thus, under the retained travel arrangement, the additional burden is primarily associated with collection and return. It is not caused by a larger rental manufacturing allocation.
-
-\subsection{Annual expenditure and its composition}
 \begin{table}[htbp]
-\caption{Consumer expenditure by component (SGD/year).}
+\caption{Annual consumer expenditure by component (SGD).}
 \label{tab:cost}
-\centering\small
-\input{tables/costs.tex}
-\note{Deposit is excluded from each total. The rental quote is SGD 10 per booking for six bookings; travel is 24 legs at an assumed SGD 2. Home care is seven cleans at an assumed SGD 1. Extra ordinary rental-care charges are assumed zero.}
+\centering\small\input{tables/costs.tex}
+\note{The refundable rental deposit of SGD 99 represents temporary liquidity. Rental travel comprises 24 paid legs at SGD 2 per leg.}
 \end{table}
 
-Second-hand has the lowest annual expenditure at SGD 60.99, saving SGD 11.01 relative to new. Its SGD 13 lower garment price is partly offset by SGD 1.99 delivery. Rental's SGD 60 booking fees exceed the second-hand garment price and are supplemented by SGD 48 travel, giving SGD 108.00 annually. The refundable deposit remains relevant to liquidity even though it does not increase modelled final cost. Quoted rental penalties are not expected annual payments in the normal-return scenario.
+Annual expenditure is SGD 60.99 for second-hand, SGD 72.00 for new, and SGD 108.00 for rental (Table~\ref{tab:cost}). Second-hand purchasing saves SGD 11.01 relative to new. Rental payments total SGD 60 and travel adds SGD 48. Active time is 120 minutes for each purchase option and 780 minutes for rental, of which 720 minutes arise from dedicated travel.
 
-\page
-\subsection{Criteria weights and individual consistency}
-Only 2 of 17 complete individual matrices (11.8\%) pass $CR\leq0.10$ under the main conversion. These are R006 and R015. Responses were not revised with respondents, and no personal judgment is described as consistent merely because it contributes to a consistent group matrix. Table~\ref{tab:ahp} reports the full-sample aggregate and the existing qualified subset.
+\subsection{Consistency diagnostics and preference comparisons}
+Under the baseline ratio mapping and $RI=0.52$, two of 17 individual matrices satisfy $CR\leq0.10$. Their CR values are zero; nine respondents have CR approximately 0.1304, five have 0.2834, and one has 0.5393. The two qualifying respondents, R006 and R015, each select the midpoint for all three comparisons and therefore each receive equal criterion weights. Their shared result coincides numerically with the normative equal-weight reference.
+
+The full-sample AIJ matrix yields $\lambda_{\max}=3.013521$, $CI=0.006760$, and $CR=0.013001$. This group statistic describes coherence after aggregation. The individual diagnostics characterize the substantial within-respondent inconsistency in the baseline mapping. Together they support an exploratory interpretation of the survey-derived priorities.
 
 \begin{table}[htbp]
-\caption{Group AHP priorities under the retained main mapping.}
+\caption{Criterion weights under alternative mappings and aggregation procedures.}
 \label{tab:ahp}
-\centering\small\input{tables/ahp.tex}
-\note{The full-sample group has $\lambda_{\max}=3.013521$ and $CI=0.006760$. The qualified-subset aggregate is the all-ones matrix. A group CR below 0.10 does not resolve the 15 individual failures.}
+\centering\small\input{tables/ahp_comparison.tex}
+\note{AIJ aggregates judgments geometrically; AIP averages individual priorities arithmetically. Passed counts individual matrices with $CR\leq0.10$ under the corresponding mapping. CR values use $RI=0.52$. The equal-weight reference also matches the two baseline CR-qualified respondents. The entry n.a. denotes a priority-vector specification, for which a group judgment matrix is outside the aggregation procedure.}
 \end{table}
 
-Cost receives the largest full-sample weight (0.479329), followed by convenience (0.319778) and emissions (0.200893). The qualified two-person aggregate instead assigns one-third to each criterion. This substantial difference in weights limits any claim that the full-sample priorities are well-established student preferences.
+The baseline full-sample weights are 0.2009 for emissions, 0.4793 for cost, and 0.3198 for convenience. The milder ratio mapping increases individual consistency acceptance to 11 of 17 and yields weights of 0.2410, 0.4295, and 0.3295. Its group CR is 0.005885. AIP under the baseline mapping yields 0.2027, 0.4663, and 0.3310. Using $RI=0.58$ retains the same acceptance counts of two and eleven for the respective mappings. These comparisons distinguish sensitivity to ratio intensity from sensitivity to the aggregation stage.
 
-\subsection{Normalization, scores, and ranking}
-For burden $B_{mj}\in\{E_m,C_m,T_m\}$ and annual reference $U_j$, performance and composite scores are
-\begin{equation}
- s_{mj}=1-\frac{B_{mj}}{U_j},\qquad
- S_m=w_Es_{mE}+w_Cs_{mC}+w_Vs_{mV}.
- \label{eq:score}
-\end{equation}
-The anchors are researcher settings: $U_E=6(4)=24$ \co/year, $U_C=6(60)=360$ SGD/year, and $U_V=6(180)=1080$ minutes/year. They are reference burdens for normalization, not observed maxima, spending constraints, or empirical acceptability thresholds. Scores are not clipped: a burden exceeding its anchor would yield a negative score. All current scores lie within the reference range. The scores are also not normalized to sum to one across alternatives.
+\subsection{Composite scores and baseline dominance}
+Table~\ref{tab:ranking} presents annual outcomes and scores using the baseline full-sample AIJ weights. Second-hand ranks first at 0.8421, followed by new at 0.8274 and rental at 0.5300. The same ordering holds under the milder mapping, AIP, equal weights, and the milder-mapping qualified subset.
 
 \begin{table}[htbp]
-\caption{Integrated annual results with full-sample AHP weights.}
+\caption{Baseline annual outcomes, criterion scores, and composite ranking.}
 \label{tab:ranking}
 \centering\small\input{tables/ranking.tex}
-\note{E, C, and V scores refer to emissions, cost, and convenience. Annual emissions are displayed to four decimal places and composite scores to six; calculations retain full precision. Time values are assumed active minutes, not observations.}
+\note{Time values are assumed active minutes. Calculations retain full precision; display precision supports comparison of closely spaced scores.}
 \end{table}
 
-Second-hand ranks first, followed by new and rental. The second-hand advantage over new is entirely the weighted cost-score difference, $0.479329(11.01/360)=0.014659$; their emissions and time scores are identical. Rental has lower performance scores on all three criteria under the current inputs.
+The ordering follows directly from the baseline performance relationships. Second-hand and new have equal modelled emissions and active time, with second-hand costing SGD 11.01 less. New has lower burdens than rental on all three criteria. The corresponding composite-score differences are
+\begin{align}
+S_S-S_N&=\frac{11.01}{360}w_C,\\
+S_N-S_R&=0.26919w_E+0.10000w_C+0.61111w_V.
+\label{eq:dominance}
+\end{align}
+Both expressions are positive for positive criterion weights. The baseline ordering therefore extends throughout the interior of the normalized weight simplex. At $w_C=0$, new and second-hand share the same score. This dominance property explains the stability of baseline ranking across preference specifications and identifies operational assumptions as the central drivers of potential ranking changes.
 
-Using only the two CR-qualified respondents gives scores of 0.838169 (second-hand), 0.827975 (new), and 0.501208 (rental), with the same order. This agreement describes two existing calculations. It does not validate robustness to uncertain lifetimes, service practices, score anchors, or survey coding, and no such validation is claimed.
+\subsection{Transport attribution and ranking crossovers}
+With the baseline survey weights, the rental score varies as
+\begin{equation}
+S_R(\alpha)=0.864748522-0.334752218\alpha.
+\label{eq:traffic_score}
+\end{equation}
+At $\alpha=0$, rental emissions, expenditure, and active time are 4.49 \co, SGD 60, and 60 minutes, respectively. The rental score is 0.8647. As the attributed travel share increases, rental first intersects second-hand at $\alpha=0.067696$ and then new at $\alpha=0.111488$ (Figure~\ref{fig:traffic}). Thus rental ranks first below approximately 6.77\%, second between approximately 6.77\% and 11.15\%, and third above approximately 11.15\%. Each crossover assigns equal scores to the intersecting options.
 
-\page
-\section{Discussion and Limitations}
-\subsection{Interpreting the comparison}
-Buying second-hand combines the lowest annual payment with the same allocated emissions and active time as buying new. Rental's low single-booking price does not translate into a lower six-event cost. Four dedicated travel legs per booking add expenditure and effort; their emissions outweigh the single avoided clean.
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{figures/traffic_sensitivity.pdf}
+\caption{Composite-score sensitivity to the share of rental acquisition-travel burdens attributed to rental. The full range connects the shared-journey boundary to the dedicated-travel baseline; the enlarged crossover region resolves changes in ordering. Both panels use the original 17-response baseline AIJ weights.}
+\label{fig:traffic}
+\end{figure}
 
-Equal lifetime allocation is central to this interpretation. Rental receives no modelled benefit from achieving more lifetime uses than ownership, because every channel is assigned 26 wears. Second-hand is charged the same manufacturing share as new, even though the garment already exists. The comparison therefore concerns allocated burdens per annual service under a common rule; it does not estimate the marginal production avoided by a second-hand purchase or a rental transaction. Equality of new and second-hand emissions is a consequence of this model, not a general finding about these markets.
+\begin{table}[htbp]
+\caption{Rental crossover shares under alternative criterion-weight specifications.}
+\label{tab:thresholds}
+\centering\small\input{tables/traffic_thresholds.tex}
+\note{Each entry is the percentage of baseline rental travel emissions, fares, and time at which the indicated pair has equal composite scores. Ownership outcomes and other rental components remain fixed.}
+\end{table}
 
-LCC charges the complete purchase price this year, while LCA assigns six wears' share of lifetime garment emissions. Annual affordability and environmental service attribution answer different questions. The purchase expenditure is therefore not a depreciated annual garment cost.
+The rental--second-hand crossover is approximately 6.87\% under the milder full-sample mapping, 6.83\% under AIP, and 7.00\% under equal weights (Table~\ref{tab:thresholds}). These values indicate a closely grouped first-place crossover across the evaluated preference specifications. The transport attribution assumption determines the operational scenario, while preference weights adjust the precise crossover location.
 
-\subsection{Evidence and methodological limits}
-First, the environmental results depend on proxy data. Production-related factors are rounded graphical extractions for a literature dress, not Eyka-specific measurements. The source's detailed and overview plots do not fully reconcile, and extraction precision is not measurement precision. Actual mass, construction, origin, and lifetime remain unverified. The residential cleaning proxy combines washing, drying, and ironing in an Italian setting; it does not measure local cold-water home care or the rental provider's actual process. UK transport factors are likewise not local rail or delivery intensities. Different source impact-method versions are retained without a common inventory recalculation.
+\section{Discussion}
+\subsection{Mechanisms underlying the acquisition comparison}
+The baseline advantage of second-hand purchasing arises from its lower acquisition payment under common garment-stage allocation, cleaning, and delivery assumptions. Equal attributed emissions for the two purchase options follow from this modelling convention. The common 26-wear lifetime similarly equalizes rental's allocated garment burden with ownership. The analysis therefore isolates service operations and annual payments at a common lifetime utilization level.
 
-Second, the market comparison is narrow and conditional. Advertised prices may change, and neither a transaction nor availability across all six dates was verified. The second-hand item's colour, delivered condition, and authenticity were not independently checked. Rental hygiene procedures, routine care charges, and extra platform fees remain unresolved. Assumed normal returns exclude damage and lateness costs, while zero resale and residual value omit possible retained financial value. These gaps limit generalization.
+Rental's low booking price combines with repeated travel payments and time commitments over six events. The transport analysis quantifies this mechanism: a rental advantage emerges near the lower boundary of incremental acquisition travel. The small first-place crossover share, approximately 6.8\% under the baseline weights, indicates the extent of travel sharing associated with that advantage within the proportional scenario model. Practical relevance depends on actual trip chaining, routes, fares, and timing. These relationships motivate service arrangements that integrate collection and return with existing journeys.
 
-Third, the preference evidence is weak. Fifteen personal matrices fail the main CR threshold; low aggregate inconsistency can coexist with these failures. Unlabelled intermediate positions, the researcher-imposed intensity mapping, and the two-person qualified subset limit preference interpretation and generalization. Convenience is reduced to assumed active time, although the survey describes a broader mix of time and effort. Fixed score anchors establish implicit trade-off scales in addition to the AHP weights. No statistical representativeness, causal effect, or ranking robustness is established.
+\subsection{Interpretation of the preference evidence}
+The survey provides two complementary forms of evidence. Question-level counts describe expressed preference directions, including the predominance of cost over emissions in Q8. AHP translates those responses into exploratory numerical priorities under explicit ratio and aggregation assumptions. The personal CR distribution and variation across mappings indicate sensitivity in the numerical strength assigned to the recorded categories.
+
+The increase in acceptance under the milder mapping reflects a change in the analytical conversion. The AIP comparison assesses how the aggregation stage influences collective priorities. The two-person qualified subset illustrates the selection effect of the baseline consistency threshold, with its all-midpoint responses producing the equal-weight vector. These results preserve the distinction between preference description, matrix consistency, and population inference. Baseline ranking stability follows from criterion dominance, while the transport crossovers provide a separate assessment of ranking sensitivity under changing service conditions.
+
+\subsection{Evidence scope and further analytical development}
+The environmental inventory combines garment proxies, rounded graphical extractions, an Italian residential-care estimate, and UK transport factors. Detailed and overview source plots exhibit reconciliation differences, and the selected factors retain their original methodological conventions. Product-specific inventories and harmonized local factors would strengthen the precision and geographical applicability of the estimated burdens. Different channel-specific lifetimes and alternative second-hand allocation conventions represent additional dimensions for scenario analysis.
+
+The financial comparison uses advertised quotes and annual cash expenditure with zero resale and residual values. Its interpretation concerns cash payments during the study year. Transaction prices, service availability, care arrangements, and year-end garment value would support broader economic characterization. The refundable deposit describes a distinct liquidity requirement.
+
+Convenience is represented by assumed active minutes. Search, fitting, availability management, and broader effort contribute further dimensions to this construct. The fixed scoring anchors also shape trade-offs through their interaction with criterion weights. The transport scenario offers an analytically transparent proportional relationship among incremental emissions, fares, and time; route-specific evidence would permit separate variation of these components. The 17 complete comparison sets support exploratory preference analysis, with broader inference requiring additional evidence on respondent coverage and elicitation quality.
 
 \section{Conclusion}
-Under the retained six-event scenario, second-hand ranks first (0.842087), new second (0.827428), and rental third (0.529996). The purchase options each produce 4.9191 \co/year, compared with rental's 11.3797, while annual expenditures are SGD 60.99, SGD 72.00, and SGD 108.00, respectively. For a student able to rewear this model and use the assumed delivery and care arrangements, second-hand is the preferred option in the current calculation. This result is conditional on the shared 26-wear allocation, proxy factors, assumed travel and active time, and exploratory AHP evidence; it is not a universal recommendation.
+For the six-event baseline, second-hand purchasing produces the highest composite score, followed by new purchasing and rental. Both purchase options yield 4.92 \co/year, compared with 11.38 \co/year for rental. Annual expenditure is SGD 60.99 for second-hand, SGD 72.00 for new, and SGD 108.00 for rental. The second-hand advantage over new is attributable to its SGD 11.01 cost saving under equal modelled emissions and active time.
 
-\page
+Original questionnaire responses support an exploratory assessment of criterion preferences. Two of 17 individual matrices meet the baseline consistency criterion, and alternative mappings and aggregation procedures provide transparent sensitivity comparisons. The baseline ranking follows from the alternatives' criterion-level dominance across positive weight settings. Under the selected score anchors and proportional transport scenario, rental becomes the highest-scoring option below approximately 6.77\% of baseline rental travel burdens, with the evaluated preference specifications placing the first-place crossover near 7\%. The study consequently links the acquisition recommendation to garment allocation, service operations, annual payments, and the treatment of collection-and-return travel.
+
 \input{references.tex}
-\page
+\clearpage
 \appendix
 \section{Source and Reproduction Notes}\label{app:audit}
-\subsection{Source locators and evidence status}
-The frozen market evidence is indexed as M2\_001 (official new product), M2\_002 (second-hand listing 1447640322), and M2\_003 (rental listing 1464833759) in \texttt{data/sources.json}; the brief extracts are in \texttt{evidence/market\_quotes.md}. The recorded access date is 3 November 2026, Singapore time. This report uses that frozen evidence and does not substitute a subsequently observed price. The rental listing's first-use deposit is SGD 99; a lower conditional deposit is not used in the baseline.
+\subsection{Market and environmental evidence}
+Market sources are indexed as M2\_001 (new), M2\_002 (second-hand listing 1447640322), and M2\_003 (rental listing 1464833759) in the source register, with access dated 3 November 2026, Singapore time. The baseline uses the first-rental refundable deposit of SGD 99. Literature locators are Sandin et al. (2019), printed page 83, Figure 4.24, for garment-stage burdens and printed page 159, Table B-59, for the 0.478 kg reference mass. The cleaning proxy is the residential GWP entry in Monticelli and Costamagna (2023), Table 4, printed page 7635; Table 2 on page 7632 describes the associated inventory.
 
-Environmental inputs are documented in \texttt{data/parameters.json} and \path{data/raw/literature_factors.csv}. The manufacturing, distribution, and disposal factors refer to printed page 83, Figure 4.24, of Sandin et al. (2019); the 0.478 kg reference is in Table B-59 on printed page 159. Figure extraction records are retained in \texttt{evidence/environment/}. The cleaning factor is the residential GWP entry in Table 4 of Monticelli and Costamagna (2023), printed page 7635; its washing inventory is in Table 2, page 7632. Only this care proxy is adopted, not the Italian study's full rental scenario.
+UK 2026 rail factors comprise direct and upstream terms of $0.02121+0.00749=0.02870$ \co/passenger-km from \textit{Business travel--land} D89 and \textit{WTT--pass vehs \& travel--land} D86. Van factors comprise $0.25716+0.06128=0.31844$ \co/vehicle-km from \textit{Delivery vehicles} D32 and \textit{WTT--delivery vehs \& freight} D31. The source evidence archive contains selected cells and file hashes.
 
-The UK 2026 full-set workbook supplies rail/tram factors from \textit{Business travel--land} D89 and \textit{WTT--pass vehs \& travel--land} D86: $0.02121+0.00749=0.02870$ \co/passenger-km. Van factors use \textit{Delivery vehicles} D32 and \textit{WTT--delivery vehs \& freight} D31: $0.25716+0.06128=0.31844$ \co/vehicle-km. Selected cells and workbook hash are archived in \texttt{uk2026\_selected\_cells.json}. Transport upstream energy is included once; the gross disposal value is not replaced by a transport-only waste-reporting factor.
+\subsection{Survey and analytical traceability}
+The original workbook's response sheet, rows 2--19 and columns J--L, supplies Q8--Q10. The question-and-rules sheet provides the archived wording. Q9 endpoints run from convenience to emissions; Q10 endpoints run from cost to convenience. Intermediate positions are numbered, and the analysis assigns symmetric ratios around code 3. Q8 defines cost net of resale or retained value; the baseline zero-value assumptions align that quantity with annual cash expenditure.
 
-\subsection{Survey traceability and reporting scope}
-The workbook \texttt{data/raw/survey\_18.xlsx}, sheet \textit{Original responses} (Chinese sheet name in the file), rows 2--19, columns J--L, supplies Q8--Q10. Question cells B27--B29 in the questions/rules sheet are transcribed in \texttt{results/run\_manifest.json}. The archived Q8 has five explicit labels. The author-supplied questionnaire screenshot verifies both Q9/Q10 endpoints: Q9 1 favours convenience and 5 emissions; Q10 1 favours cost and 5 convenience, with each endpoint labelled ``strongly prefer.'' Positions 2--4 are numbered without separate verbal labels. The model interprets 3 as equality and the two sides symmetrically; the 1/3/5 ratio mapping remains a researcher conversion, not an observed ratio scale. The question defines cost net of resale or retained value; the present zero-value settings make it numerically equal to expenditure.
+The revised analysis archive records question-level counts, individual consistency diagnostics, five weight specifications, annual burdens, transport equations, and crossover shares in \path{analysis/results.json}. The script \path{analysis/recompute.py} recreates the analysis from the original workbook and project parameters. Source hashes identify the inputs. The standalone LaTeX package includes the generated tables and vector figures required for compilation. Numerical comparisons use full-precision values, with rounded presentation in the main text.
 
-Anonymous response IDs, source rows, ratios, personal weights, and CR values are available in \texttt{results/ahp\_individual.csv}. R017 is incomplete; R006 and R015 form the qualified subset under the main mapping. The report presents this mapping and its existing qualified subset only. Other diagnostics already produced by the project are not additional analyses undertaken for this paper.
-
-\subsection{Reproduction and authorship}
-Run \texttt{python code/run.py} from the project root, then regenerate report assets with \texttt{python report/generate\_assets.py}. The annual table and vector emissions chart read the resulting CSVs; no model parameters or questionnaire records are changed by the report scripts. Model checks use \texttt{python -m unittest discover -s tests -v}. Build instructions and the final verification record accompany the source.
-
+\subsection{Authorship}
 Authors: Yang Yihua, Cao Xiaoyue, Yang Liu, Liu Ziqing, and Xie Tongling. Affiliation: Faculty of Science, National University of Singapore. Instructor: Kim Leng Poh.
 
-\noindent\textit{AI use statement.} AI assistance was used for English drafting, LaTeX preparation, figure generation, and computational and document checks.
+\noindent\textit{AI use statement.} AI assistance supported English drafting and revision, LaTeX preparation, figure generation, and computational and document checks.
 \end{document}
