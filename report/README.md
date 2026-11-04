@@ -1,64 +1,52 @@
 # English term paper
 
-[论文 PDF](main.pdf) · [LaTeX 正文](main.tex) · [APA 7 参考文献](references.tex) · [原始问卷分析结果](analysis/results.json)
+[论文 PDF](main.pdf) · [LaTeX 正文](main.tex) · [LaTeX 源文件包](DSS5202_Group04_LaTeX_Source.zip) · [结果数据](../results/analysis_summary.json)
 
-## 本轮更新
+## 当前稿件
 
-论文采用小组提供的中文摘要对应的学术英文版本，说明NUS学生一年六次正式活动的情景、LCA和LCC估算、AHP加权综合评分，以及补充交通敏感性分析的目的。
+论文比较NUS学生一年参加六次正式活动的新品购买、二手购买和同款租赁。正文采用原始问卷的1、2、3比率映射与全部17份完整回答，报告个人及群体一致性、年度LCA/LCC结果、AHP加权综合评分和交通敏感性分析。
 
-正文同时纳入已完成的原始问卷描述表、AHP对照表、交通敏感性分析及相应方法、讨论和结论。全部分析使用原18条问卷记录，其中17份具有完整的三题比较。
+研究流程图按年度负担与问卷权重两条分析路径组织，再汇合为综合评分和交通分析。论文共6页（含参考文献），包含3张矢量图、2张外置结果表及正文中的主要输入表。问卷描述统计保存在原始资料中，正文聚焦研究方法与结果。
 
-## 文件
+## 从原始数据重建
 
-- `main.tex`、`main.pdf`：12页论文。
-- `references.tex`：9条参考文献，采用natbib作者—年份引用。
-- `tables/`：正文引用5张外置表；模型输入表直接写在正文中。`ahp.tex`保留原始基准分析输出。
-- `figures/`：研究流程、排放分解、交通敏感性分析，共3张矢量PDF图。
-- `analysis/recompute.py`：从原始问卷和项目模型重算修订版分析。
-- `analysis/results.json`：问卷描述、5种权重设定、基准综合分、交通交叉点及输入哈希。
-- `analysis/validation.json`：独立数值与论文检查结果。
-- `generate_assets.py`：原始基准图表生成器；更新全部图表时按下方顺序运行两个脚本。
+在项目根目录执行（Python 3.11+）：
 
-## 编译
+```sh
+python -m pip install -r requirements.txt
+python -X utf8 -B code/run.py
+python -X utf8 -B -m unittest discover -s tests -v
+python -X utf8 -B report/generate_assets.py
+```
 
-已有表图可直接编译。使用Tectonic时，在本目录执行：
+`results/ahp_individual.csv`保存个人权重及CR，`ahp_group.csv`保存群体权重，`rankings.csv`保存基准评分和排名。交通结果位于`transport_scenarios.csv`与`transport_thresholds.csv`；`analysis_summary.json`汇总实际计算值。图表生成器直接读取这些结果。
+
+## 编译与打包
+
+已有表图可独立编译。在`report/`目录执行：
 
 ```sh
 tectonic main.tex
 ```
 
-也可使用TeX Live或MiKTeX，执行两次：
+也可使用TeX Live或MiKTeX，连续执行两次：
 
 ```sh
 pdflatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
-参考文献直接维护在`references.tex`中。编译后检查引用、表图和分页。
-
-## 重算
-
-从项目根目录执行：
+完成PDF检查后，从项目根目录执行：
 
 ```sh
-python -m pip install -r requirements.txt
-python -m pip install numpy matplotlib
-python -X utf8 -B code/run.py
-python -X utf8 -B -m unittest discover -s tests -v
-python -X utf8 -B report/generate_assets.py
-python -X utf8 -B report/analysis/recompute.py --source-repo .
+python -X utf8 -B report/package_source.py
 ```
 
-原始生成器先更新流程图与费用表；修订版分析脚本随后更新问卷描述、AHP对照、排名、交通临界点和分析图。`--source-repo .`明确指定当前项目为输入来源。脚本读取原始数据并将修订版输出写入`report/`；模型参数变化时，正文数值与解释需同步核对。
+源文件包包含正文、参考文献及实际引用的表图，解压后可直接编译。`delivery_manifest.json`记录LaTeX、PDF和源文件包的SHA-256。代码、原始数据和完整结果随GitHub仓库提供；源文件包用于独立排版编译。
 
-## 检查与解释
+## 本轮结果
 
-- 原18条问卷记录、17份完整比较及输入哈希已核对；主分析仅2份通过个人CR检验。
-- 5种权重设定、15项基准综合分和10个交通交叉点经独立计算核验。
-- 个人与群体一致性分别报告；问卷权重作为探索性偏好证据，提供温和映射、AIP、等权和子样本对照。
-- 基准排序为二手、新品、租赁。主权重下，租赁与二手、新品的交通负担归属比例交叉点分别约为6.77%和11.15%。
-- 交通阈值对应指定评分参考值，以及交通排放、费用和时间同比例变化的设定。
-- 更新后的12页PDF已编译并检查引用与版面；原始模型参数和问卷回答保留。
+环境、成本和便利性权重为0.2410、0.4295和0.3295。二手、新品和租赁的综合分为0.8412、0.8281和0.5189。个人CR达标11/17，群体CR为0.005885。租赁相对二手、新品的交通临界值为基准交通负担的约6.87%和10.67%；计算维持同一组AHP权重及评分参考值。
 
-[问卷量表核实记录](../evidence/survey_scale.md)说明Q9/Q10端点方向与中间位置的解释。六次可租性、清洗安排、本地交通和主动时间等仍作为论文披露的情景或代理数据。
+论文基于原始问卷和已归档证据。参数变更后，请重算并同步核对正文中的数值陈述。
 
-可独立编译的源文件由`main.tex`、`references.tex`以及正文引用的`tables/`和`figures/`组成。源文件包为交付快照，日常编辑以展开文件为准。
+已通过14项模型检查、309条交通情景的独立核验和全部6页视觉检查；编译日志中的引用与版面检查通过。详见`validation.json`。

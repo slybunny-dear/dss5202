@@ -54,7 +54,8 @@ def compute(config):
     finally:
         wb.close()
     individual, groups = [], []
-    for mapping, strength in opts["mappings"].items():
+    for mapping in (opts["main_mapping"],):
+        strength = opts["mappings"][mapping]
         matrices = {}
         for row in raw:
             complete = all(row[q] not in (None, "") for q in opts["columns"])
@@ -73,9 +74,8 @@ def compute(config):
                 item.update(w_E=w[0], w_C=w[1], w_V=w[2], lambda_max=lam, ci=ci, cr=cr,
                             cr_pass=cr <= p["cr_threshold"])
             individual.append(item)
-        for subset in ("all_complete", "cr_pass"):
-            selected = [r for r in individual if r["mapping"] == mapping and r["complete"]
-                        and (subset == "all_complete" or r["cr_pass"])]
+        for subset in ("all_complete",):
+            selected = [r for r in individual if r["mapping"] == mapping and r["complete"]]
             if not selected:
                 raise ValueError(f"No respondents in {mapping}/{subset}; cannot aggregate")
             group = [[math.exp(sum(math.log(matrices[r["respondent_id"]][i][j])

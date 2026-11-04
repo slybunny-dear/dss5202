@@ -1,0 +1,167 @@
+{
+  "data_origin": "original_survey",
+  "survey_records": 18,
+  "complete_comparisons": 17,
+  "individual_cr_pass_n": 11,
+  "mapping": "mild_3_2",
+  "mapping_strengths": [
+    1,
+    2,
+    3
+  ],
+  "ri": 0.52,
+  "cr_threshold": 0.1,
+  "criterion_weights": {
+    "E": 0.24097315381170287,
+    "C": 0.42953650955036643,
+    "V": 0.32949033663793076
+  },
+  "group_cr": 0.005885350076795248,
+  "group_lambda_max": 3.006120764079867,
+  "annual_burdens": [
+    {
+      "mode": "new",
+      "events": 6,
+      "currency": "SGD",
+      "allocation_fraction": 0.23076923076923078,
+      "cleaning_count": 7,
+      "passenger_km": 0,
+      "allocated_delivery_vehicle_km": 1.0,
+      "manufacturing_kgco2e": 3.4153846153846157,
+      "distribution_kgco2e": 0.19384615384615386,
+      "disposal_kgco2e": 0.22846153846153847,
+      "cleaning_kgco2e": 0.763,
+      "transport_kgco2e": 0.31844,
+      "annual_kgco2e": 4.919132307692308,
+      "purchase_sgd": 65,
+      "delivery_sgd": 0,
+      "rental_sgd": 0,
+      "care_sgd": 7,
+      "travel_sgd": 0,
+      "annual_spending_sgd": 72,
+      "refundable_deposit_sgd": 0,
+      "order_minutes": 15,
+      "care_minutes": 105,
+      "handling_minutes": 0,
+      "travel_minutes": 0,
+      "annual_minutes": 120
+    },
+    {
+      "mode": "used",
+      "events": 6,
+      "currency": "SGD",
+      "allocation_fraction": 0.23076923076923078,
+      "cleaning_count": 7,
+      "passenger_km": 0,
+      "allocated_delivery_vehicle_km": 1.0,
+      "manufacturing_kgco2e": 3.4153846153846157,
+      "distribution_kgco2e": 0.19384615384615386,
+      "disposal_kgco2e": 0.22846153846153847,
+      "cleaning_kgco2e": 0.763,
+      "transport_kgco2e": 0.31844,
+      "annual_kgco2e": 4.919132307692308,
+      "purchase_sgd": 52,
+      "delivery_sgd": 1.99,
+      "rental_sgd": 0,
+      "care_sgd": 7,
+      "travel_sgd": 0,
+      "annual_spending_sgd": 60.99,
+      "refundable_deposit_sgd": 0,
+      "order_minutes": 15,
+      "care_minutes": 105,
+      "handling_minutes": 0,
+      "travel_minutes": 0,
+      "annual_minutes": 120
+    },
+    {
+      "mode": "rental",
+      "events": 6,
+      "currency": "SGD",
+      "allocation_fraction": 0.23076923076923078,
+      "cleaning_count": 6,
+      "passenger_km": 240,
+      "allocated_delivery_vehicle_km": 0,
+      "manufacturing_kgco2e": 3.4153846153846157,
+      "distribution_kgco2e": 0.19384615384615386,
+      "disposal_kgco2e": 0.22846153846153847,
+      "cleaning_kgco2e": 0.654,
+      "transport_kgco2e": 6.888,
+      "annual_kgco2e": 11.379692307692308,
+      "purchase_sgd": 0,
+      "delivery_sgd": 0,
+      "rental_sgd": 60,
+      "care_sgd": 0,
+      "travel_sgd": 48,
+      "annual_spending_sgd": 108,
+      "refundable_deposit_sgd": 99,
+      "order_minutes": 0,
+      "care_minutes": 0,
+      "handling_minutes": 60,
+      "travel_minutes": 720,
+      "annual_minutes": 780
+    }
+  ],
+  "baseline_scores": [
+    {
+      "mapping": "mild_3_2",
+      "subset": "all_complete",
+      "mode": "used",
+      "emissions_score": 0.7950361538461538,
+      "cost_score": 0.8305833333333333,
+      "convenience_score": 0.8888888888888888,
+      "score": 0.8412285345110586,
+      "outside_reference_range": false,
+      "rank": 1
+    },
+    {
+      "mapping": "mild_3_2",
+      "subset": "all_complete",
+      "mode": "new",
+      "emissions_score": 0.7950361538461538,
+      "cost_score": 0.8,
+      "convenience_score": 0.8888888888888888,
+      "score": 0.8280918762606433,
+      "outside_reference_range": false,
+      "rank": 2
+    },
+    {
+      "mapping": "mild_3_2",
+      "subset": "all_complete",
+      "mode": "rental",
+      "emissions_score": 0.5258461538461539,
+      "cost_score": 0.7,
+      "convenience_score": 0.2777777777777778,
+      "score": 0.5189154563078544,
+      "outside_reference_range": false,
+      "rank": 3
+    }
+  ],
+  "transport": {
+    "rental_burden_coefficients": {
+      "annual_kgco2e": {
+        "intercept": 4.491692307692308,
+        "slope": 6.888
+      },
+      "annual_spending_sgd": {
+        "intercept": 60,
+        "slope": 48
+      },
+      "annual_minutes": {
+        "intercept": 60,
+        "slope": 720
+      }
+    },
+    "rental_score_intercept": 0.8650065104838158,
+    "rental_score_slope": -0.3460910541759614,
+    "thresholds": [
+      {
+        "comparison": "rental_vs_used",
+        "alpha": 0.0687043934994861
+      },
+      {
+        "comparison": "rental_vs_new",
+        "alpha": 0.10666162496186396
+      }
+    ]
+  }
+}

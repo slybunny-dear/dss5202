@@ -10,6 +10,6 @@ Evidence: original questionnaire screenshot supplied by the user in this convers
 | 4 | Numeric position only; no separate verbal label | Numeric position only; no separate verbal label |
 | 5 | 排放远比便利重要 / strongly prefer emissions | 便利远比成本重要 / strongly prefer convenience |
 
-The screenshot resolves the endpoint direction and confirms that intermediate verbal labels were not present on the displayed form. Treating position 3 as equality and positions 2/4 symmetrically is a modelling interpretation consistent with the centred, two-ended scale; the researcher mapping of distance from 3 to ratio intensities 1/3/5 is not directly observed questionnaire wording.
+The screenshot establishes the endpoint directions; intermediate positions 2--4 have numeric labels. The analysis interprets position 3 as equality and assigns reciprocal ratio intensities 1, 2, and 3 according to distance from the midpoint. These intensities are the study's analytical conversion of the original five-position responses.
 
-The verified directions agree with the existing model: Q9 is reversed when forming E/V, and Q10 code 1 favours the numerator in C/V. No numerical result, respondent answer, inclusion rule or consistency result changes. Only 2 of 17 complete personal matrices meet the retained main-mapping CR threshold; verification of the scale does not resolve those consistency failures.
+Q9 is reversed when forming E/V; Q10 code 1 favours the numerator in C/V. All 17 complete original response sets enter the geometrically aggregated group matrix. At RI=0.52, 11 individual matrices satisfy CR≤0.10 and the group CR is approximately 0.005885. Raw respondent answers remain archived in the original workbook.

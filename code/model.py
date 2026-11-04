@@ -81,6 +81,22 @@ def normalize(burdens, annual_anchors):
     return [1 - value / anchor for value, anchor in zip(burdens, annual_anchors)]
 
 
+def evaluate_transport(config, alpha):
+    """Scale the attributed rental travel component; other components stay fixed."""
+    if isinstance(alpha, bool) or not isinstance(alpha, (int, float)) or not math.isfinite(alpha) or not 0 <= alpha <= 1:
+        raise ValueError("Transport attribution alpha must be finite and between 0 and 1")
+    rows = evaluate(config)
+    rental = next(row for row in rows if row["mode"] == "rental")
+    for key in ("passenger_km", "transport_kgco2e", "travel_sgd", "travel_minutes"):
+        rental[key] *= alpha
+    rental["annual_kgco2e"] = sum(rental[s + "_kgco2e"] for s in STAGES)
+    rental["annual_spending_sgd"] = sum(rental[k] for k in
+        ("purchase_sgd", "delivery_sgd", "rental_sgd", "care_sgd", "travel_sgd"))
+    rental["annual_minutes"] = sum(rental[k] for k in
+        ("order_minutes", "care_minutes", "handling_minutes", "travel_minutes"))
+    return rows
+
+
 def rank(rows, weights, config):
     if len(weights) != 3 or any(not math.isfinite(x) or x <= 0 for x in weights) or not math.isclose(sum(weights), 1):
         raise ValueError("Three positive normalized weights required")
@@ -93,5 +109,30 @@ def rank(rows, weights, config):
                            convenience_score=scores[2], score=sum(w*s for w, s in zip(weights, scores)),
                            outside_reference_range=any(s < 0 or s > 1 for s in scores)))
     for row in output:
-        row["rank"] = 1 + sum(other["score"] > row["score"] for other in output)
+        # Preserve ties at analytical crossover points despite floating-point noise.
+        row["rank"] = 1 + sum(other["score"] > row["score"] and
+                              not math.isclose(other["score"], row["score"], rel_tol=0, abs_tol=1e-12)
+                              for other in output)
     return sorted(output, key=lambda row: (row["rank"], row["mode"]))
+
+
+def transport_analysis(config, weights):
+    """Derive the linear travel-score response and crossings from model parameters."""
+    low = evaluate_transport(config, 0)
+    high = evaluate_transport(config, 1)
+    low_scores = {r["mode"]: r["score"] for r in rank(low, weights, config)}
+    high_scores = {r["mode"]: r["score"] for r in rank(high, weights, config)}
+    rental_low = next(r for r in low if r["mode"] == "rental")
+    rental_high = next(r for r in high if r["mode"] == "rental")
+    intercept = low_scores["rental"]
+    decrease = intercept - high_scores["rental"]
+    coefficients = {
+        key: {"intercept": rental_low[key], "slope": rental_high[key] - rental_low[key]}
+        for key in ("annual_kgco2e", "annual_spending_sgd", "annual_minutes")
+    }
+    thresholds = [{"comparison": f"rental_vs_{mode}",
+                   "alpha": (intercept - low_scores[mode])/decrease if decrease > 0 else None}
+                  for mode in ("used", "new")]
+    return {"rental_burden_coefficients": coefficients,
+            "rental_score_intercept": intercept, "rental_score_slope": -decrease,
+            "thresholds": thresholds}

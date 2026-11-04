@@ -1,0 +1,15 @@
+{
+  "main_pdf_sha256": "e3b86d8869bb4b6a69dc73472a94f564b125eb458c215ac5f338125b17476a21",
+  "main_tex_sha256": "449776e2d2898f43b000bf05229db8d1712b4012b8a75e136c5cfeff212c356c",
+  "source_zip_sha256": "435992856c5b4c2879bcc0e7ea35a5638528c7536e96ee6efbd99111bd6e503e",
+  "source_files": [
+    "figures/emissions.pdf",
+    "figures/framework.pdf",
+    "figures/traffic_sensitivity.pdf",
+    "main.tex",
+    "README.md",
+    "references.tex",
+    "tables/costs.tex",
+    "tables/ranking.tex"
+  ]
+}

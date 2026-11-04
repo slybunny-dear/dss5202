@@ -1,57 +1,53 @@
 # DSS5202 Group 04
 
-比较一名学生一年参加 6 次正式活动时，购买新品复穿、购买二手复穿、每场单独租赁同款 **Love, Bonito Eyka Multi-way Satin Column Dress（S）** 的年度排放、支出和综合评分。
+比较一名NUS学生一年参加6次正式活动时，购买新品、购买二手和逐场租赁同款 **Love, Bonito Eyka Multi-way Satin Column Dress（S）** 的年度碳排放、直接支出和便利性。
 
-流程：**参数与来源 → LCA → LCC → AHP 权重 → 标准化评分与排名 → 解释**。
+[英文论文 PDF](report/main.pdf) · [LaTeX 正文](report/main.tex) · [LaTeX 源文件包](report/DSS5202_Group04_LaTeX_Source.zip) · [结果说明](results/report.md)
 
-## 入口
+## 当前分析
 
-- [论文 PDF](report/main.pdf) · [LaTeX 正文](report/main.tex) · [参考文献](report/references.tex)
-- [论文编译、检查摘要及待核实事项](report/README.md)
-- [原始问卷描述、AHP对照与交通敏感性分析](report/analysis/results.json)
-- [自动计算结果与解释](results/report.md)
+使用原始18条问卷记录中的17份完整比较，以1、2、3的比率强度构造AHP判断矩阵，几何聚合全部完整回答。环境、成本、便利性的群体权重依次为0.2410、0.4295、0.3295；11/17份个人矩阵满足CR≤0.10，群体CR为0.005885（RI=0.52）。个人和群体一致性分别解释。
+
+| 方案 | 年度排放（kg CO₂e） | 年度支出（SGD） | 主动时间（分钟） | 综合评分 | 排名 |
+|---|---:|---:|---:|---:|---:|
+| 二手购买 | 4.92 | 60.99 | 120 | 0.8412 | 1 |
+| 全新购买 | 4.92 | 72.00 | 120 | 0.8281 | 2 |
+| 租赁 | 11.38 | 108.00 | 780 | 0.5189 | 3 |
+
+交通情景中的α表示计入租赁的取还交通负担占基准值的比例。固定AHP权重，交通排放、费用和时间随α同比例变化；租赁与二手、新品的评分交叉点分别约为6.87%和10.67%。这些临界值对应当前评分参考值和交通情景假设。
+
+## 重算与检查
+
+Python 3.11+，在项目根目录执行：
+
+```sh
+python -m pip install -r requirements.txt
+python -X utf8 -B code/run.py
+python -X utf8 -B -m unittest discover -s tests -v
+python -X utf8 -B report/generate_assets.py
+```
+
+随后按[论文编译说明](report/README.md)生成PDF和源文件包。原始问卷与材料保存在`data/raw/`；模型参数与来源位于`data/parameters.json`和`data/sources.json`。`results/`保存原始题目编码、个人CR、群体权重、年度负担、综合评分和交通情景结果，`run_manifest.json`记录计算输入哈希。
 
 ## 目录
 
 ```text
-├── code/           # model.py、ahp.py、run.py：计算与结果导出
-├── data/           # parameters.json、sources.json 与 raw/ 原始资料
-├── evidence/       # 报价、时间假设、问卷量表核实与文献图表证据
-├── results/        # 重算生成的 CSV、结果报告和输入哈希清单
-├── report/         # 论文 PDF、LaTeX、图表、生成脚本及源文件包
-├── tests/          # 10 项计算与来源检查
-├── requirements.txt
-└── README.md
+code/          年度LCA、LCC、AHP、评分与交通情景计算
+data/         参数、来源及原始问卷和材料
+evidence/     市场报价、量表核实及文献提取记录
+results/      全精度结果CSV、汇总JSON与计算清单
+report/       英文论文、LaTeX、PDF、图表和生成脚本
+tests/        独立公式、原始数据和交通临界值检验
 ```
 
-## 重算
+## 研究口径
 
-Python 3.10+；模型依赖 openpyxl，论文分析与制图另需 numpy、matplotlib。
+- 固定一年六场、三个方案和同款礼服；每次租期覆盖一场活动。
+- 制造、分销与处置按年度6次/终身26次分摊；购买清洗7次，租赁6次。
+- 购买配送分摊1车公里；租赁基准为240人公里轨道交通。
+- 支出为当年消费者直接支付，转售和期末残值设为0；全退押金表示临时资金占用。
+- AHP仅使用完整原始回答，量表方向见[核实记录](evidence/survey_scale.md)。
+- 线性评分为1−年度负担/年度参考值，参考值为24 kg CO₂e、360 SGD、1080分钟。便利性以主动时间表示。
+- 文献代理因子、票价、护理与时间参数的证据类别在参数文件和论文中列明。
 
-```sh
-python -m pip install -r requirements.txt
-python -m pip install numpy matplotlib
-python -X utf8 -B code/run.py
-python -X utf8 -B -m unittest discover -s tests -v
-python -X utf8 -B report/generate_assets.py
-python -X utf8 -B report/analysis/recompute.py --source-repo .
-```
-
-`results/annual_results.csv` 保存排放、费用及主动时间分解；`ahp_individual.csv`、`ahp_group.csv` 保存个人和群体 AHP；`rankings.csv` 保存评分与排名；`survey_input.csv` 仅导出匿名 ID、原行号及三题回答；`run_manifest.json` 记录输入哈希和环境。
-
-最后一步使用原始18条问卷记录（17份完整比较）生成论文修订版的问卷描述表、5种AHP权重对照、基准排名和交通敏感性图表。`report/analysis/results.json` 保存完整计算值与输入哈希。论文分析仅使用原始问卷。已有论文图表可直接用于LaTeX编译；修改模型参数后应同步核对正文数值。
-
-## 固定口径
-
-- 制造、分销与处置统一按年度 6 次 / 终身 26 次分摊；二手此前 1 次仅用于剩余寿命检查。0.478 kg 是文献参考质量，不再额外乘算。
-- 购买清洗 7 次、租赁 6 次，采用同一清洗代理因子。购买分摊 1 车公里配送；租赁为 240 人公里轨道交通，不叠加购买配送。
-- 金额为 SGD；购买计完整购衣款，押金假设全退并排除净成本，转售与残值为 0。
-- 18 条问卷记录中 17 份完整，主映射个人仅 2/17 通过 CR。群体几何聚合判断，RI=0.52、CR≤0.10；全部完整回答为探索性主分析，合格子样本另报。
-- [Q9/Q10 原问卷量表已核实](evidence/survey_scale.md)：端点方向与代码一致；中间位置只有数字，1/3/5 比率转换为研究设定。
-- 年度参考上限 24 kgCO₂e、360 SGD、1080 分钟；评分为 1−负担/上限，不截断。购买 120 / 租赁 780 分钟为主动时间假设。
-
-## 小组协作
-
-每项修改建议建立独立分支，通过 Pull Request 讨论、审核并合入 `main`。修改参数或代码后须重算、测试，并按论文目录说明更新图表及 PDF。源文件包是交付快照，日常编辑以展开的源文件为准。
-
-仓库含原始问卷、提案及作者信息，建议保持私有，仅邀请组员；不提交密钥、虚拟环境或编译缓存。Git 历史及原始资料保留。
+修改模型或参数后，请重算结果、检查测试，并同步生成图表和论文。原始资料及历次修改保留在Git历史中。

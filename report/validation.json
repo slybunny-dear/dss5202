@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "original_survey_records": 18,
+  "complete_original_responses": 17,
+  "mapping_strengths": [
+    1,
+    2,
+    3
+  ],
+  "individual_cr_pass_n": 11,
+  "unit_tests_passed": 14,
+  "independent_transport_rows_verified": 309,
+  "baseline_scores_verified": 3,
+  "traffic_crossovers_verified": 2,
+  "raw_data_unchanged": true,
+  "input_and_code_hashes_match": true,
+  "pdf_pages": 6,
+  "references": 8,
+  "latex_warnings": 0,
+  "conversational_or_negative_phrase_scan": "PASS",
+  "visual_review": "All six pages and three figures reviewed",
+  "pdf_sha256": "e3b86d8869bb4b6a69dc73472a94f564b125eb458c215ac5f338125b17476a21"
+}
