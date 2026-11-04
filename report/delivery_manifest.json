@@ -1,7 +1,7 @@
 {
-  "main_pdf_sha256": "8d516f2831f6705778525404938efb1814a621a602f7ad59829148889389ea33",
-  "main_tex_sha256": "01951dcf644991b6d58f70649f9a96530ecdc45ba729a4cab74c94706bce1782",
-  "source_zip_sha256": "1390d71fa563600ca0ea6d51d39aec46df0ca715e25ee3525b210147a83ca75c",
+  "main_pdf_sha256": "3cac490993ad0190e43fca9d9dbf425640c646e02520382eb25263ab0ab366a0",
+  "main_tex_sha256": "e09c17a9fa06f1bfe681f028e42173be0967571a3430ab8a8ec9a46e511066ec",
+  "source_zip_sha256": "1164b22b08dc70ca600a5eae3a52f086bcb8708d5399306fbf3d8882403faffb",
   "source_files": [
     "figures/emissions.pdf",
     "figures/framework.pdf",

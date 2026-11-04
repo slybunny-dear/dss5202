@@ -6,7 +6,7 @@
 
 论文比较NUS学生一年参加六次正式活动的新品购买、二手购买和同款租赁。正文采用原始问卷的1、2、3比率映射与全部17份完整回答，报告个人及群体一致性、年度LCA/LCC结果、AHP加权综合评分和交通敏感性分析。
 
-技术路线图按研究范围、并行评价、综合决策和交通敏感性分析分层组织；年度指标与问卷权重分别进入评分模型。文献图式的查阅记录见[技术路线图绘图说明](framework_design_notes.md)。新增LCA产品系统图区分全寿命过程与三种年度活动路径，并说明共同寿命分摊。讲义页码、参考文献图号和模型对应关系见[LCA系统边界图说明](lca_boundary_notes.md)。论文共7页（含参考文献），包含4张矢量图、2张外置结果表及正文中的主要输入表。问卷描述统计保存在原始资料中，正文聚焦研究方法与结果。
+技术路线图按研究范围、并行评价、综合决策和交通敏感性分析分层组织；年度指标与问卷权重分别进入评分模型。文献图式的查阅记录见[技术路线图绘图说明](framework_design_notes.md)。LCA产品系统图按照讲义的系统边界画法，明确标注功能单位、内部过程、资源输入、功能输出和温室气体排放；kg CO₂e单列为影响评价指标。讲义页码、流类型及模型对应关系见[LCA系统边界图说明](lca_boundary_notes.md)。论文共7页（含参考文献），包含4张矢量图、2张外置结果表及正文中的主要输入表。问卷描述统计保存在原始资料中，正文聚焦研究方法与结果。
 
 ## 从原始数据重建
 
@@ -53,4 +53,4 @@ python -X utf8 -B report/package_source.py
 
 技术路线图另提供[可编辑SVG](figures/framework.svg)和[高分辨率预览](figures/framework.png)。运行`python -X utf8 -B report/draw_framework.py`可单独重建此图。
 
-LCA系统边界图另提供[可编辑SVG](figures/lca_boundary.svg)和[高分辨率预览](figures/lca_boundary.png)。运行`python -X utf8 -B report/draw_lca_boundary.py`可单独重建此图；图中活动量直接读取项目参数。
+LCA系统边界图另提供[可编辑SVG](figures/lca_boundary.svg)和[高分辨率预览](figures/lca_boundary.png)。运行`python -X utf8 -B report/draw_lca_boundary.py`可单独重建此图；功能单位中的年度次数读取项目参数，年度活动量和寿命分摊见正文及参数文件。
