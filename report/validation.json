@@ -18,6 +18,9 @@
   "references": 8,
   "latex_warnings": 0,
   "conversational_or_negative_phrase_scan": "PASS",
-  "visual_review": "All six pages and three figures reviewed",
-  "pdf_sha256": "e3b86d8869bb4b6a69dc73472a94f564b125eb458c215ac5f338125b17476a21"
+  "visual_review": "All six updated pages and three figures reviewed; redesigned framework checked at manuscript size",
+  "pdf_sha256": "9ec28479e680575d2a9ce7f129018a7605a8e50b139acef96f8021ee097d9842",
+  "framework_reference_studies_inspected": 4,
+  "scientific_files_unchanged_in_figure_revision": true,
+  "standalone_source_package_build": "PASS: six pages; extracted text matches delivered PDF"
 }

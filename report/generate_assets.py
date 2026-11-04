@@ -13,8 +13,8 @@ os.environ.setdefault("MPLCONFIGDIR", str(Path(tempfile.gettempdir()) / "dss5202
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 from matplotlib.ticker import PercentFormatter
+from draw_framework import draw_framework
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -55,52 +55,6 @@ def save(fig, name):
                 metadata={"CreationDate": None, "ModDate": None})
     fig.savefig(FIGURES / (name + ".png"), dpi=240, bbox_inches="tight", pad_inches=.04)
     plt.close(fig)
-
-
-def framework(n):
-    fig, ax = plt.subplots(figsize=(6.8, 3.0))
-    fig.subplots_adjust(0, 0, 1, 1)
-    ax.set(xlim=(0, 100), ylim=(0, 78))
-    ax.axis("off")
-    ink, teal, grey = "#243746", "#246C77", "#536A77"
-    ax.text(50, 74.5, "ONE STUDENT  /  SIX EVENTS PER YEAR  /  THREE OPTIONS",
-            ha="center", va="center", fontsize=8.5, fontweight="bold", color=ink)
-    ax.plot([2, 98], [70, 70], color="#C7D6DB", lw=.8)
-
-    def box(x, y, w, h, label, lines, accent=teal, fill="#F1F7F7", size=8, body_y=5.4):
-        ax.add_patch(FancyBboxPatch((x, y), w, h,
-                     boxstyle="round,pad=0.02,rounding_size=1.0",
-                     facecolor=fill, edgecolor="#BED0D5", linewidth=.8))
-        ax.plot([x+1.1, x+1.1], [y+2, y+h-2], color=accent, lw=2)
-        ax.text(x+3, y+h-3.3, label, fontsize=8.3, weight="bold", color=accent, va="center")
-        ax.text(x+3, y+body_y, lines, fontsize=size, linespacing=1.45, color=ink, va="center")
-
-    def arrow(start, end, color=grey, connection="arc3,rad=0"):
-        ax.add_patch(FancyArrowPatch(start, end, arrowstyle="-|>", mutation_scale=10,
-                     linewidth=1, color=color, connectionstyle=connection,
-                     shrinkA=2, shrinkB=2))
-
-    box(2, 49, 27, 16, "PHYSICAL EVIDENCE", "Garment and service data\nPrices, care and transport")
-    box(35, 49, 27, 16, "ANNUAL BURDENS", "Carbon emissions (LCA)\nExpenditure (LCC) and time")
-    box(2, 28, 27, 16, "ORIGINAL RESPONSES", f"{n} complete response sets\nThree criterion comparisons", accent="#657A8A", fill="#F4F6F8")
-    box(35, 28, 27, 16, "AHP PREFERENCES", "1 / 2 / 3 ratio intensities\nGroup criterion weights", accent="#657A8A", fill="#F4F6F8")
-    arrow((29, 57), (35, 57))
-    arrow((29, 36), (35, 36))
-    box(69, 36, 29, 25, "COMPOSITE EVALUATION",
-        "Normalize criterion burdens\nApply AHP weights\nRank the three options", fill="#EAF2F4", size=8, body_y=10)
-    arrow((62, 57), (69, 53))
-    arrow((62, 36), (69, 43))
-
-    ax.add_patch(FancyBboxPatch((2, 3), 96, 19, boxstyle="round,pad=0.02,rounding_size=1.0",
-                               facecolor="#FCF7EF", edgecolor="#D9C6AD", linewidth=.8))
-    ax.text(5, 17.5, "TRANSPORT SENSITIVITY", fontsize=8.3, weight="bold", color=COLORS["rental"])
-    ax.text(5, 10.3, "Vary rental travel attribution, $\\alpha$\nEmissions, fares and travel time",
-            fontsize=8, linespacing=1.45, va="center")
-    arrow((47, 10.5), (54, 10.5), COLORS["rental"])
-    ax.text(57, 10.3, "Recalculate scores with fixed AHP weights\nIdentify ranking changes and crossover shares",
-            fontsize=8, linespacing=1.45, va="center")
-    arrow((83.5, 36), (83.5, 22), COLORS["rental"])
-    save(fig, "framework")
 
 
 def emissions(annual):
@@ -188,7 +142,7 @@ def main():
          [f"{float(r['score']):.4f} ({r['rank']})"] for r in ranks])
     scenarios=read("transport_scenarios.csv")
     thresholds={r["comparison"]:float(r["alpha"]) for r in read("transport_thresholds.csv")}
-    framework(int(groups[0]["n"]))
+    draw_framework(int(groups[0]["n"]), output_dir=FIGURES)
     emissions(annual)
     traffic(scenarios,thresholds)
     print(json.dumps({"tables":2,"figures":3,"mapping":groups[0]["mapping"],

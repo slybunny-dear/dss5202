@@ -17,6 +17,8 @@ def package():
         paths.add(path if path.suffix else path.with_suffix(".tex"))
     for relative in re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", main):
         paths.add(HERE / relative)
+    paths.add(HERE / "figures/framework.svg")
+    paths.add(HERE / "framework_design_notes.md")
     missing = [str(path) for path in paths if not path.is_file()]
     if missing:
         raise FileNotFoundError(missing)
