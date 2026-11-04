@@ -103,7 +103,7 @@ Rental care surcharges and additional platform charges are set to zero. The full
 Convenience is represented by active consumer time. Ordering and home care yield $T_N=T_S=15+7(15)=120$ minutes/year. Booking, handover, and dedicated travel yield $T_R=6[10+4(30)]=780$ minutes/year. These time inputs are scenario assumptions.
 
 \subsection{AHP weights and composite scoring}
-The original questionnaire contains 18 records, of which 17 provide complete comparisons of emissions ($E$), cost ($C$), and convenience ($V$). Q8, Q9, and Q10 supply the ratios $E/C$, $E/V$, and $C/V$. Five-position responses are converted to ratio intensities $1,2,3$ at distances $0,1,2$ from midpoint code 3. Codes 1--5 therefore map to $(3,2,1,1/2,1/3)$ for Q8 and Q10; Q9 uses the reverse sequence because its first endpoint favours convenience. Midpoint equality and symmetric ratios specify the analytical interpretation of the numbered positions.
+The original questionnaire contains 18 records, of which 17 provide complete comparisons of emissions ($E$), cost ($C$), and convenience ($V$). Q8, Q9, and Q10 supply the ratios $E/C$, $E/V$, and $C/V$.
 
 Reciprocal matrices are aggregated geometrically with equal respondent weights \citep{forman1998}. The group priorities are normalized row geometric means, which equal the principal eigenvector for a positive reciprocal $3\times3$ matrix:
 \begin{equation}
@@ -186,7 +186,7 @@ The estimates depend on the selected garment lifetime, advertised prices, proxy 
 For one student attending six formal events annually, second-hand purchasing achieves the highest AHP-weighted score, followed by new purchasing and rental. Its advantage arises from lower expenditure under equal modelled purchase-related emissions and time. Rental becomes the highest-scoring option when its attributed collection-and-return travel burdens fall below approximately 6.87\% of the dedicated-travel baseline. The findings support second-hand acquisition under the specified assumptions and link rental competitiveness to efficient collection-and-return arrangements.
 
 \section*{Data and reproducibility}
-The repository retains the original questionnaire, parameter and source registers, respondent-level CR values, and full-precision results. The scripts \path{code/run.py} and \path{report/generate_assets.py} regenerate numerical outputs and manuscript assets; execution instructions accompany the repository. The archived evidence records source locations and input hashes. All analyses use the original questionnaire.
+The repository retains the original questionnaire, parameter and source registers, respondent-level CR values, and full-precision results. The scripts \path{code/run.py} and \path{report/generate_assets.py} regenerate numerical outputs and manuscript assets; execution instructions accompany the repository. The archived evidence records source locations and input hashes.
 
 \noindent\textit{Author information.} Faculty of Science, National University of Singapore. Instructor: Kim Leng Poh.
 

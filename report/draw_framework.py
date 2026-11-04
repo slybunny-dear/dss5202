@@ -104,7 +104,7 @@ def draw_framework(n, output_dir=None):
         text(5.795, 2.80, "Preference elicitation", size=9.0, bold=True, color=TEAL)
         text(5.795, 2.60, f"Complete responses (n = {n})", size=8.4)
         arrow(5.795, 2.47, 5.795, 2.36)
-        text(5.795, 2.23, "AHP: 1 / 2 / 3 ratios", size=8.5)
+        text(5.795, 2.23, "AHP pairwise comparisons", size=8.5)
         text(5.795, 2.04, "Geometric aggregation · CR", size=8.2)
         arrow(5.795, 1.93, 5.795, 1.85)
         text(5.795, 1.73, r"Criterion weights: $w_E,\ w_C,\ w_V$", size=8.25)

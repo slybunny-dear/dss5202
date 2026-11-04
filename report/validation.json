@@ -18,8 +18,8 @@
   "references": 8,
   "latex_warnings": 0,
   "conversational_or_negative_phrase_scan": "PASS",
-  "visual_review": "All seven pages and four figures reviewed; explicit functional unit and boundary inputs/outputs checked at manuscript size",
-  "pdf_sha256": "3cac490993ad0190e43fca9d9dbf425640c646e02520382eb25263ab0ab366a0",
+  "visual_review": "All seven pages reviewed after the editorial revision; four figures and three tables are legible and correctly placed",
+  "pdf_sha256": "7e078452217f44699df39aabe1e199440200185103d8689586f09dd4497cc87d",
   "framework_reference_studies_inspected": 4,
   "scientific_files_unchanged_in_figure_revision": true,
   "lca_boundary_model_alignment": "PASS: common FU, model processes, qualitative resource and emission flows, background supply and separate climate indicator",
@@ -36,5 +36,18 @@
   ],
   "figure_count": 4,
   "lca_diagram_flow_status": "Qualitative boundary exchanges; numerical impacts use aggregate factors",
-  "standalone_source_package_build": "PASS: seven pages; extracted text matches delivered PDF"
+  "standalone_source_package_build": "PASS: seven pages; extracted text matches delivered PDF",
+  "latest_editorial_revision": {
+    "baseline_commit": "672dc779dab7b6e40a7569cb9fa80b394e847a3e",
+    "removed": [
+      "Three sentences detailing questionnaire ratio conversion",
+      "Repeated original-questionnaire statement in Data and reproducibility"
+    ],
+    "framework_label": "AHP pairwise comparisons",
+    "six_equations_unchanged": true,
+    "scientific_code_data_results_and_tables_unchanged": true,
+    "model_validation": "Existing model checks retained from the baseline commit; this revision changes presentation only",
+    "compiled_pdf_content_verified": true,
+    "all_seven_pages_visually_reviewed": true
+  }
 }
