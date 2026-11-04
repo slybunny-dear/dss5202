@@ -31,7 +31,7 @@ def draw_lca_boundary(config=None, output_dir=None):
     events = config["parameters"]["events"]["value"]
     output_dir = Path(output_dir) if output_dir else HERE / "figures"
     output_dir.mkdir(parents=True, exist_ok=True)
-    style = {"font.family": "DejaVu Sans", "font.size": 8.5,
+    style = {"font.family": "DejaVu Sans", "font.sans-serif": ["DejaVu Sans"], "font.size": 8.6,
              "mathtext.fontset": "dejavusans", "text.color": INK,
              "pdf.fonttype": 42, "ps.fonttype": 42,
              "svg.fonttype": "none", "svg.hashsalt": "dss5202-lca-boundary-lecture-v2"}
@@ -57,7 +57,8 @@ def draw_lca_boundary(config=None, output_dir=None):
                          color=FLOW if resource else INK, shrinkA=0, shrinkB=0, zorder=3))
 
         def process(x, y, w, h, label, size=8.5):
-            ax.add_patch(Rectangle((x, y), w, h, facecolor=PROCESS,
+            ax.add_patch(FancyBboxPatch((x, y), w, h,
+                         boxstyle="round,pad=0,rounding_size=.045", facecolor=PROCESS,
                          edgecolor=BLUE, lw=.75, zorder=1))
             text(x+w/2, y+h/2, label, size=size)
 

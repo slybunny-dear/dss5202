@@ -18,8 +18,8 @@
   "references": 8,
   "latex_warnings": 0,
   "conversational_or_negative_phrase_scan": "PASS",
-  "visual_review": "All seven pages reviewed; colourful framework inspected at manuscript size and in a 300 dpi preview; icon, label, arrow and formula spacing checked independently",
-  "pdf_sha256": "ad70558e407f6420cf59c690bae7911727a880fc5ff3187f959d3b3734c8ad88",
+  "visual_review": "All seven pages reviewed; LCA diagram retains lecture palette and flows with rounded process boxes and matching DejaVu Sans fonts; delivery-allocation explanation checked at manuscript size",
+  "pdf_sha256": "d27cc0cf306f1ef6cd61464e4618210c3114a7c9f5f47bc57a2e1309fdb19e07",
   "framework_reference_studies_inspected": 4,
   "scientific_files_unchanged_in_figure_revision": true,
   "lca_boundary_model_alignment": "PASS: common FU, model processes, qualitative resource and emission flows, background supply and separate climate indicator",
@@ -74,5 +74,40 @@
     "labels_and_seven_page_layout_verified": true,
     "independent_visual_review": "PASS",
     "model_validation": "Existing model checks retained; numerical model and results are unchanged"
+  },
+  "latest_lca_revision": {
+    "baseline_commit": "e9db66d5e5429f108a336b508284c0469fd7a087",
+    "style": "Lecture palette and layout retained; rounded process boxes; DejaVu Sans and corresponding math fonts match Figure 1",
+    "lecture_pages_rechecked": [
+      20,
+      22,
+      55
+    ],
+    "all_lca_figure_labels_unchanged": true,
+    "functional_unit_and_input_output_flows_preserved": true,
+    "delivery_assumptions": {
+      "km_per_leg": 10,
+      "legs": 2,
+      "garment_equivalent_items_per_batch": 20
+    },
+    "allocated_delivery_vehicle_km": [
+      1,
+      1,
+      0
+    ],
+    "annual_passenger_km": [
+      0,
+      0,
+      240
+    ],
+    "transport_distances_and_batch_identified_as_scenario_assumptions": true,
+    "annual_model_rows_recomputed_and_matched": 3,
+    "scientific_code_data_and_results_unchanged": true,
+    "six_numbered_equations_unchanged": true,
+    "independent_visual_and_distance_review": "PASS",
+    "png_pixels": [
+      2040,
+      1260
+    ]
   }
 }

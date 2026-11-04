@@ -53,4 +53,4 @@ python -X utf8 -B report/package_source.py
 
 技术路线图另提供[可编辑SVG](figures/framework.svg)和[高分辨率预览](figures/framework.png)。运行`python -X utf8 -B report/draw_framework.py`可单独重建此图。
 
-LCA系统边界图另提供[可编辑SVG](figures/lca_boundary.svg)和[高分辨率预览](figures/lca_boundary.png)。运行`python -X utf8 -B report/draw_lca_boundary.py`可单独重建此图；功能单位中的年度次数读取项目参数，年度活动量和寿命分摊见正文及参数文件。
+LCA系统边界图另提供[可编辑SVG](figures/lca_boundary.svg)和[高分辨率预览](figures/lca_boundary.png)。保留讲义的浅蓝环境、浅绿系统区域、浅黄过程框及蓝色虚线边界；内部过程框采用圆角矩形，字体与技术路线图统一使用DejaVu Sans。功能单位及跨边界输入输出完整保留。运行`python -X utf8 -B report/draw_lca_boundary.py`可单独重建此图；功能单位中的年度次数读取项目参数，年度活动量和寿命分摊见正文及参数文件。正文明确区分10公里单程距离和按20件批量分摊后的1车公里配送活动量。

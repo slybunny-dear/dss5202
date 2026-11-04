@@ -79,7 +79,7 @@ Delivery and deposit & New delivery SGD 0; second-hand delivery SGD 1.99; refund
 Manufacturing / distribution / disposal & 14.8 / 0.84 / 0.99 \co\ per garment (literature proxies)\\
 Cleaning & 0.109 \co\ per clean; purchases 7 cleans, rental 6 cleans (proxy and scenario)\\
 Transport & Rail 0.0287 \co/passenger-km; van 0.31844 \co/vehicle-km (UK proxies)\\
-Acquisition travel & Purchases 1 allocated vehicle-km; rental 240 passenger-km, comprising 24 legs of 10 km (scenario)\\
+Acquisition travel & Purchases: two 10-km delivery legs shared by 20 garment-equivalent items; rental: 24 legs of 10 km (scenario)\\
 Care, fares, and active time & SGD 1 and 15 minutes per home clean; SGD 2 and 30 minutes per travel leg; 15 minutes per purchase order; 10 minutes per rental booking (scenario)\\
 \bottomrule
 \end{tabularx}
@@ -92,6 +92,8 @@ E_m=\frac{n}{L}(M+D+F)+k_m e_c+d_m e_v+p_m e_r,
 \label{eq:lca}
 \end{equation}
 where $k_m$ denotes cleaning count, $d_m$ allocated delivery vehicle-kilometres, $p_m$ passenger-kilometres, and $e_c,e_v,e_r$ the corresponding factors. The baseline uses $(k_N,k_S,k_R)=(7,7,6)$, $(d_N,d_S,d_R)=(1,1,0)$, and $(p_N,p_S,p_R)=(0,0,240)$. Garment-stage burdens are allocated equally across channels, with avoided-production and energy-recovery credits set to zero.
+
+The delivery scenario assumes two 10-km legs shared equally by 20 garment-equivalent items, giving $d_N=d_S=(10\times2)/20=1$ allocated vehicle-km per purchase. Rental travel yields $p_R=6\times4\times10=240$ passenger-km.
 
 The LCC calculation measures direct annual consumer expenditure. Purchase payments enter in full, with resale receipts and residual values set to zero:
 \begin{equation}
