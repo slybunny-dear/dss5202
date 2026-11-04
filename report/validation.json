@@ -14,13 +14,25 @@
   "traffic_crossovers_verified": 2,
   "raw_data_unchanged": true,
   "input_and_code_hashes_match": true,
-  "pdf_pages": 6,
+  "pdf_pages": 7,
   "references": 8,
   "latex_warnings": 0,
   "conversational_or_negative_phrase_scan": "PASS",
-  "visual_review": "All six updated pages and three figures reviewed; redesigned framework checked at manuscript size",
-  "pdf_sha256": "9ec28479e680575d2a9ce7f129018a7605a8e50b139acef96f8021ee097d9842",
+  "visual_review": "All seven pages and four figures reviewed; LCA diagram checked at manuscript size",
+  "pdf_sha256": "8d516f2831f6705778525404938efb1814a621a602f7ad59829148889389ea33",
   "framework_reference_studies_inspected": 4,
   "scientific_files_unchanged_in_figure_revision": true,
-  "standalone_source_package_build": "PASS: six pages; extracted text matches delivered PDF"
+  "lca_boundary_model_alignment": "PASS: lifecycle allocation, activity counts, passenger travel and arrow semantics match the model",
+  "lca_lecture_pages_consulted": [
+    17,
+    18,
+    19,
+    20,
+    24,
+    25,
+    26,
+    55
+  ],
+  "standalone_source_package_build": "PASS: seven pages; extracted text matches delivered PDF",
+  "figure_count": 4
 }

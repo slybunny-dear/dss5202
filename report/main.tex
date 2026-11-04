@@ -11,6 +11,8 @@
 \setlength{\parindent}{1.2em}
 \setlength{\parskip}{2pt}
 \setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
 \renewcommand{\topfraction}{0.90}
 \renewcommand{\bottomfraction}{0.80}
 \renewcommand{\textfraction}{0.08}
@@ -55,7 +57,13 @@ This study compares three acquisition strategies for the Love, Bonito Eyka Multi
 
 \section{Methods}
 \subsection{Scenario, evidence, and assumptions}
-The functional unit is formalwear for one NUS student attending six formal events over one year. Each purchase option involves one acquisition and six wears; rental involves six separate seven-day bookings. The scenario permits repeated use of the same style and assumes suitable fit, dress-code compliance, hygiene, and availability. The environmental boundary covers manufacturing, distribution and retail, gross disposal, cleaning, and acquisition-related delivery or passenger travel. Packaging is reused, and the analysis focuses on the dress and its acquisition service.
+The functional unit is formalwear for one NUS student attending six formal events over one year. Each purchase option involves one acquisition and six wears; rental involves six separate seven-day bookings. The scenario permits repeated use of the same style and assumes suitable fit, dress-code compliance, hygiene, and availability. Figure~\ref{fig:lca_boundary} delineates manufacturing, distribution and retail, use and care, and eventual disposal, following the life-cycle grouping in formalwear LCA \citep{monticelli2023}. Annual activities comprise cleaning and acquisition-related delivery or passenger travel. Packaging is reused, and the analysis focuses on the dress and its acquisition service.
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{figures/lca_boundary.pdf}
+\caption{LCA product system and annual activity boundaries. The three acquisition options deliver the same functional unit. Garment-stage burdens are allocated by lifetime wears; cleaning and acquisition travel enter at annual activity levels.}
+\label{fig:lca_boundary}
+\end{figure}
 
 Advertised prices and terms were archived on 3 November 2026 from the manufacturer and two Singapore listings \citep{lovebonito,usedquote,rentalquote}. Garment-stage factors are rounded graphical extractions from \citet{sandin2019}, Figure 4.24. The cleaning proxy represents residential washing, drying, and ironing in an Italian study \citep{monticelli2023}, Table 4; UK transport factors include direct and upstream energy emissions \citep{desnz2026}. These proxies support a screening assessment. Table~\ref{tab:inputs} summarizes the principal inputs. All channels share a 26-wear lifetime, and the second-hand garment's reported prior wear satisfies the remaining-capacity condition $1+6\leq26$.
 
@@ -141,7 +149,10 @@ Both purchase options yield 4.92 \co/year, compared with 11.38 \co/year for rent
 \centering\small\input{tables/costs.tex}
 \end{table}
 
+\begin{samepage}
 The AHP weights are 0.2410 for emissions, 0.4295 for cost, and 0.3295 for convenience. Eleven of 17 individual matrices satisfy $CR\leq0.10$, and the group matrix has $CR=0.005885$. With these weights, second-hand purchasing scores 0.8412, followed by new purchasing at 0.8281 and rental at 0.5189 (Table~\ref{tab:ranking}).
+\par
+\end{samepage}
 
 \begin{table}[htbp]
 \caption{Baseline annual outcomes, criterion scores, and composite ranking.}
@@ -181,5 +192,6 @@ The repository retains the original questionnaire, parameter and source register
 
 \noindent\textit{AI use statement.} AI assistance supported English revision, LaTeX preparation, figure generation, and computational and document checks.
 
+\clearpage
 \input{references.tex}
 \end{document}

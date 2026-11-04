@@ -15,6 +15,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 from draw_framework import draw_framework
+from draw_lca_boundary import draw_lca_boundary
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -143,9 +144,10 @@ def main():
     scenarios=read("transport_scenarios.csv")
     thresholds={r["comparison"]:float(r["alpha"]) for r in read("transport_thresholds.csv")}
     draw_framework(int(groups[0]["n"]), output_dir=FIGURES)
+    draw_lca_boundary(output_dir=FIGURES)
     emissions(annual)
     traffic(scenarios,thresholds)
-    print(json.dumps({"tables":2,"figures":3,"mapping":groups[0]["mapping"],
+    print(json.dumps({"tables":2,"figures":4,"mapping":groups[0]["mapping"],
                       "group_n":int(groups[0]["n"]),"thresholds":thresholds},indent=2))
 
 
