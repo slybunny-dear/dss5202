@@ -28,7 +28,7 @@
 \renewcommand{\headrulewidth}{0.3pt}
 \newcommand{\co}{\ensuremath{\mathrm{kg\,CO_2e}}}
 \newcommand{\note}[1]{\par\vspace{2pt}{\footnotesize\noindent\textit{Note.} #1\par}}
-\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\tablestyle}{\small\renewcommand{\arraystretch}{1.12}\setlength{\tabcolsep}{5pt}}
 \hypersetup{pdftitle={Buying New, Buying Second-Hand, or Renting?},pdfauthor={DSS5202 Group 04}}
 \begin{document}
 \thispagestyle{plain}
@@ -40,7 +40,7 @@
 {\normalsize Yang Yihua, Cao Xiaoyue, Yang Liu, Liu Ziqing, and Xie Tongling\par}
 \end{center}
 \begin{abstract}
-Students choosing whether to purchase or rent formalwear must balance carbon emissions, expenditure, and convenience. This study compares purchasing a new dress, purchasing a second-hand dress, and renting the same dress model for a National University of Singapore student attending six formal events over one year. Life cycle assessment (LCA) estimates allocated annual greenhouse gas emissions, while life cycle costing (LCC) quantifies direct consumer expenditure. These outcomes and a time-based convenience indicator are combined through analytic hierarchy process (AHP)-weighted composite scoring. Under baseline assumptions, annual emissions are 4.92 kg CO$_2$e for each purchase option and 11.38 kg CO$_2$e for rental. Annual expenditure is SGD 60.99, 72.00, and 108.00 for second-hand purchasing, new purchasing, and rental, respectively. Second-hand purchasing ranks first, reflecting its lower cost and identical modelled emissions and active time relative to new purchasing. Transport sensitivity analysis examines how collection-and-return travel affects the ranking. The results support second-hand purchasing in the baseline scenario and identify substantial reductions in attributed travel burdens as a condition for rental competitiveness.
+Students choosing whether to purchase or rent formalwear must balance carbon emissions, expenditure, and convenience. This study compares purchasing a new dress, purchasing a second-hand dress, and renting the same dress model for a National University of Singapore student attending six formal events over one year. Life cycle assessment (LCA) estimates allocated annual greenhouse gas emissions, while life cycle costing (LCC) quantifies direct consumer expenditure. These outcomes and a time-based convenience indicator are combined through analytic hierarchy process (AHP)-weighted composite scoring. Under baseline assumptions, annual emissions are 4.92 kg CO$_2$e for each purchase option and 11.38 kg CO$_2$e for rental. Annual expenditure is SGD 60.99, 72.00, and 108.00 for second-hand purchasing, new purchasing, and rental, respectively. Second-hand purchasing ranks first, reflecting its lower cost and identical modelled emissions and active time relative to new purchasing. Given rental's substantial collection-and-return burden, transport sensitivity analysis tests how travel attribution affects the ranking. The results support second-hand purchasing in the baseline scenario and identify substantial reductions in attributed travel burdens as a condition for rental competitiveness.
 \end{abstract}
 \noindent\textit{Keywords:} formalwear; life-cycle assessment; life-cycle costing; analytic hierarchy process; transport sensitivity
 
@@ -70,19 +70,28 @@ Advertised prices and terms were archived on 3 November 2026 from the manufactur
 \begin{table}[htbp]
 \caption{Principal inputs for the six-event annual scenario.}
 \label{tab:inputs}
-\centering\small
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.34\linewidth}Y@{}}
+\centering\tablestyle
+\begin{tabular}{@{}ccc@{}}
 \toprule
-Input & Value and basis\\\midrule
-Acquisition payments & New SGD 65; second-hand SGD 52; rental SGD 10 per seven-day booking (advertised)\\
-Delivery and deposit & New delivery SGD 0; second-hand delivery SGD 1.99; refundable rental deposit SGD 99 (advertised)\\
-Manufacturing / distribution / disposal & 14.8 / 0.84 / 0.99 \co\ per garment (literature proxies)\\
-Cleaning & 0.109 \co\ per clean; purchases 7 cleans, rental 6 cleans (proxy and scenario)\\
-Transport & Rail 0.0287 \co/passenger-km; van 0.31844 \co/vehicle-km (UK proxies)\\
-Acquisition travel & Purchases: two 10-km delivery legs shared by 20 garment-equivalent items; rental: 24 legs of 10 km (scenario)\\
-Care, fares, and active time & SGD 1 and 15 minutes per home clean; SGD 2 and 30 minutes per travel leg; 15 minutes per purchase order; 10 minutes per rental booking (scenario)\\
+Input & Value & Basis\\\midrule
+Purchase price (new / second-hand) & SGD 65 / 52 & Advertised\\
+Delivery fee (new / second-hand) & SGD 0 / 1.99 & Advertised\\
+Rental fee (seven-day booking) & SGD 10 & Advertised\\
+Refundable rental deposit & SGD 99 & Advertised\\
+Manufacturing / distribution / disposal & 14.8 / 0.84 / 0.99 \co/garment & Literature\\
+Cleaning emissions & 0.109 \co/clean & Literature\\
+Rail emissions & 0.0287 \co/passenger-km & UK proxy\\
+Van emissions & 0.31844 \co/vehicle-km & UK proxy\\
+Annual uses / lifetime uses & 6 / 26 wears & Scenario\\
+Annual cleans (purchase / rental) & 7 / 6 & Scenario\\
+Purchase delivery allocation & Two 10-km legs / 20 items & Scenario\\
+Rental collection and return & 24 legs $\times$ 10 km & Scenario\\
+Home-care cost / active time & SGD 1 / 15 min per clean & Scenario\\
+Rail fare / travel time & SGD 2 / 30 min per leg & Scenario\\
+Purchase ordering time & 15 min per order & Scenario\\
+Rental booking and handover time & 10 min per booking & Scenario\\
 \bottomrule
-\end{tabularx}
+\end{tabular}
 \end{table}
 
 \subsection{Annual emissions, expenditure, and time}
@@ -91,39 +100,55 @@ Let $m\in\{N,S,R\}$ denote new, second-hand, and rental. With $n=6$ annual wears
 E_m=\frac{n}{L}(M+D+F)+k_m e_c+d_m e_v+p_m e_r,
 \label{eq:lca}
 \end{equation}
-where $k_m$ denotes cleaning count, $d_m$ allocated delivery vehicle-kilometres, $p_m$ passenger-kilometres, and $e_c,e_v,e_r$ the corresponding factors. The baseline uses $(k_N,k_S,k_R)=(7,7,6)$, $(d_N,d_S,d_R)=(1,1,0)$, and $(p_N,p_S,p_R)=(0,0,240)$. Garment-stage burdens are allocated equally across channels, with avoided-production and energy-recovery credits set to zero.
+where $k_m$ denotes cleaning count, $d_m$ allocated delivery vehicle-kilometres, $p_m$ passenger-kilometres, and $e_c,e_v,e_r$ the corresponding emission factors. The fraction $n/L=6/26$ assigns the share of garment-stage impacts associated with six of the garment's 26 lifetime wears to the annual functional unit. This service-based allocation applies equally across channels, with avoided-production and energy-recovery credits set to zero. The distribution factor $D$ represents the garment's distribution and retail stage; $d_m$ and $p_m$ represent acquisition-related transport in the annual scenario.
 
-The delivery scenario assumes two 10-km legs shared equally by 20 garment-equivalent items, giving $d_N=d_S=(10\times2)/20=1$ allocated vehicle-km per purchase. Rental travel yields $p_R=6\times4\times10=240$ passenger-km.
+Purchase options include one initial clean and one clean after each wear, giving $k_N=k_S=1+6=7$; rental includes one clean after each return, giving $k_R=6$. The delivery scenario assumes two 10-km legs shared equally by 20 garment-equivalent items, giving $d_N=d_S=(10\times2)/20=1$ allocated vehicle-km per purchase. Rental requires a collection round trip and a return round trip per booking, yielding $p_R=6\times4\times10=240$ passenger-km. Thus $(d_N,d_S,d_R)=(1,1,0)$ and $(p_N,p_S,p_R)=(0,0,240)$.
+
+Defining the common annual garment-stage allocation as $G$, substitution into Eq.~\ref{eq:lca} gives the following emissions in \co/year:
+\begin{equation}
+\begin{aligned}
+G&=\frac{6}{26}(14.8+0.84+0.99)\approx3.83769,\\
+E_N=E_S&=G+7(0.109)+1(0.31844)\approx4.92,\\
+E_R&=G+6(0.109)+240(0.0287)\approx11.38.
+\end{aligned}
+\label{eq:lca_values}
+\end{equation}
 
 The LCC calculation measures direct annual consumer expenditure. Purchase payments enter in full, with resale receipts and residual values set to zero:
 \begin{equation}
-C_N=65+7(1),\qquad C_S=52+1.99+7(1),\qquad C_R=6(10)+24(2).
+\begin{aligned}
+C_N&=65+7(1)=72.00,\\
+C_S&=52+1.99+7(1)=60.99,\\
+C_R&=6(10)+24(2)=108.00.
+\end{aligned}
 \label{eq:cost}
 \end{equation}
-Rental care surcharges and additional platform charges are set to zero. The fully refundable SGD 99 deposit represents a temporary liquidity requirement. Carbon allocation and consumer expenditure thus reflect annual service use and annual cash payments, respectively.
+These totals are expressed in SGD/year. Purchase care covers seven home cleans, while rental travel covers 24 one-way fares. Rental care surcharges and additional platform charges are set to zero. The fully refundable SGD 99 deposit represents a temporary liquidity requirement. Carbon allocation and consumer expenditure thus reflect annual service use and annual cash payments, respectively.
 
-Convenience is represented by active consumer time. Ordering and home care yield $T_N=T_S=15+7(15)=120$ minutes/year. Booking, handover, and dedicated travel yield $T_R=6[10+4(30)]=780$ minutes/year. These time inputs are scenario assumptions.
+Convenience is represented by active consumer time, with shorter durations indicating greater convenience. Home-care time covers active handling, and rental cleaning is assigned to the service provider in the scenario. Ordering and home care yield $T_N=T_S=15+7(15)=120$ minutes/year. Booking, handover, and dedicated travel yield $T_R=6[10+4(30)]=780$ minutes/year. These time inputs are scenario assumptions.
 
 \subsection{AHP weights and composite scoring}
 The original questionnaire contains 18 records, of which 17 provide complete comparisons of emissions ($E$), cost ($C$), and convenience ($V$). Q8, Q9, and Q10 supply the ratios $E/C$, $E/V$, and $C/V$.
 
-Reciprocal matrices are aggregated geometrically with equal respondent weights \citep{forman1998}. The group priorities are normalized row geometric means, which equal the principal eigenvector for a positive reciprocal $3\times3$ matrix:
+Each matrix entry $a_{ij}^{(r)}$ expresses respondent $r$'s assessed importance of criterion $i$ relative to $j$, with $a_{ji}^{(r)}=1/a_{ij}^{(r)}$ and $a_{ii}^{(r)}=1$. Reciprocal matrices are aggregated geometrically with equal respondent weights \citep{forman1998}. The group priorities are normalized row geometric means, which equal the principal eigenvector for a positive reciprocal $3\times3$ matrix:
 \begin{equation}
 \bar a_{ij}=\left(\prod_{r=1}^{17}a_{ij}^{(r)}\right)^{1/17},\qquad
  g_i=\left(\prod_{j=1}^{3}\bar a_{ij}\right)^{1/3},\qquad
  w_i=\frac{g_i}{\sum_h g_h}.
 \label{eq:ahp}
 \end{equation}
-Individual and group consistency use $CI=(\lambda_{\max}-3)/2$ and $CR=CI/RI$, with $RI=0.52$ and criterion $CR\leq0.10$ \citep{saaty1994}. All 17 complete responses contribute to the group weights, providing exploratory preference estimates.
+Individual and group consistency use $CI=(\lambda_{\max}-3)/2$ and $CR=CI/RI$, where $\lambda_{\max}$ is the largest eigenvalue, $RI=0.52$, and the consistency criterion is $CR\leq0.10$ \citep{saaty1994}. All 17 complete responses contribute to the group weights, providing exploratory preference estimates.
 
 Annual burdens $B_{mj}\in\{E_m,C_m,T_m\}$ are converted to linear scores and combined using these weights:
 \begin{equation}
 s_{mj}=1-\frac{B_{mj}}{U_j},\qquad S_m=w_Es_{mE}+w_Cs_{mC}+w_Vs_{mV},
 \label{eq:score}
 \end{equation}
-with annual reference values $(U_E,U_C,U_V)=(24\ \co,360\ \mathrm{SGD},1080\ \mathrm{minutes})$. Higher scores indicate preferred outcomes. The reference values set the scales of the linear functions, which retain their form across the burden domain.
+with annual reference values $(U_E,U_C,U_V)=(24\ \co,360\ \mathrm{SGD},1080\ \mathrm{minutes})$. These scenario-defined references equal the assumed per-event values of 4 \co, SGD 60, and 180 minutes multiplied by six events. They set the measurement scales, while AHP weights express criterion importance. A zero burden scores 1, and a burden equal to its reference scores 0; the linear functions extend across the burden domain. Higher scores indicate preferred outcomes.
 
 \subsection{Transport sensitivity analysis}
+Rental requires repeated collection and return, making travel a substantial component of its annual emissions, expenditure, and active time. The baseline assumes 24 dedicated one-way journeys, while collection and return may also be integrated with existing trips. Sensitivity analysis therefore examines the dependence of rental competitiveness on attributed travel burdens under fixed preference weights and scoring references.
+
 Let $\alpha\in[0,1]$ denote the share of baseline rental collection-and-return travel attributed to rental. Dedicated journeys correspond to $\alpha=1$; fully shared journeys with zero incremental travel burden correspond to $\alpha=0$. Travel emissions, fares, and active time change proportionally, while rental payments, cleaning, and handling remain fixed:
 \begin{equation}
 \begin{aligned}
@@ -133,11 +158,11 @@ T_R(\alpha)&=60+720\alpha.
 \end{aligned}
 \label{eq:transport}
 \end{equation}
-Ownership outcomes, criterion weights, and scoring references remain fixed. Rental--ownership crossover shares are obtained by equating their composite scores.
+The constant terms comprise garment allocation and cleaning (4.4916923 \co), six rental payments (SGD 60), and booking and handover (60 minutes). The travel coefficients follow from $240(0.0287)=6.888$ \co, $24(2)=48$ SGD, and $24(30)=720$ minutes. Ownership outcomes, criterion weights, and scoring references remain fixed. Rental--ownership crossover shares are obtained by equating their composite scores.
 
 \section{Results}
 \subsection{Annual burdens and baseline ranking}
-Both purchase options yield 4.92 \co/year, compared with 11.38 \co/year for rental (Figure~\ref{fig:emissions}). The common garment-stage allocation contributes 3.84 \co/year. Rental travel contributes a further 6.89 \co/year, accounting for approximately 61\% of its total emissions. Annual expenditure is SGD 60.99 for second-hand, SGD 72.00 for new, and SGD 108.00 for rental (Table~\ref{tab:cost}). Rental payments total SGD 60, with travel adding SGD 48 and 720 active minutes.
+Both purchase options yield 4.92 \co/year, compared with 11.38 \co/year for rental (Eq.~\ref{eq:lca_values}; Figure~\ref{fig:emissions}). The common garment-stage allocation contributes 3.84 \co/year. Purchase cleaning and delivery contribute 0.763 and 0.31844 \co/year; rental cleaning and travel contribute 0.654 and 6.888 \co/year. Annual expenditure is SGD 60.99 for second-hand, SGD 72.00 for new, and SGD 108.00 for rental (Table~\ref{tab:cost}). Rental travel accounts for 60.5\% of its emissions, 44.4\% of its expenditure, and 92.3\% of its active time, highlighting its influence across all three criteria.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=.96\linewidth]{figures/emissions.pdf}
@@ -148,7 +173,7 @@ Both purchase options yield 4.92 \co/year, compared with 11.38 \co/year for rent
 \begin{table}[htbp]
 \caption{Annual consumer expenditure by component (SGD).}
 \label{tab:cost}
-\centering\small\input{tables/costs.tex}
+\centering\tablestyle\input{tables/costs.tex}
 \end{table}
 
 \begin{samepage}
@@ -159,10 +184,14 @@ The AHP weights are 0.2410 for emissions, 0.4295 for cost, and 0.3295 for conven
 \begin{table}[htbp]
 \caption{Baseline annual outcomes, criterion scores, and composite ranking.}
 \label{tab:ranking}
-\centering\small\input{tables/ranking.tex}
+\centering\tablestyle\input{tables/ranking.tex}
 \note{Minutes denote assumed active consumer time. Calculations retain full precision.}
 \end{table}
 
+For second-hand purchasing, Eq.~\ref{eq:score} gives criterion scores $1-4.9191323/24\approx0.7950$, $1-60.99/360\approx0.8306$, and $1-120/1080\approx0.8889$. Combining them gives
+\[
+S_S\approx0.2410(0.7950)+0.4295(0.8306)+0.3295(0.8889)\approx0.8412.
+\]
 Second-hand purchasing saves SGD 11.01 relative to new purchasing while sharing the same modelled emissions and active time. New purchasing has lower burdens than rental on all three criteria. These relationships establish the baseline ordering for positive criterion weights.
 
 \subsection{Transport and ranking changes}
@@ -171,7 +200,12 @@ Substitution into Eq.~\ref{eq:score} gives
 S_R(\alpha)=0.865006510-0.346091054\alpha.
 \label{eq:traffic_score}
 \end{equation}
-Rental equals second-hand at $\alpha=0.068704$ and new at $\alpha=0.106662$ (Figure~\ref{fig:traffic}). Accordingly, rental ranks first below approximately 6.87\% of baseline attributed travel burdens, second between approximately 6.87\% and 10.67\%, and third above approximately 10.67\%. The intersecting alternatives share equal scores at each boundary.
+Equating Eq.~\ref{eq:traffic_score} to the fixed score $S_m$ of each purchase option gives
+\begin{equation}
+\alpha_m^*=\frac{0.865006510-S_m}{0.346091054},\qquad m\in\{N,S\}.
+\label{eq:crossover}
+\end{equation}
+Using full-precision scores, rental equals second-hand at $\alpha_S^*=0.068704$ and new at $\alpha_N^*=0.106662$ (Figure~\ref{fig:traffic}). Accordingly, rental ranks first below approximately 6.87\% of baseline attributed travel burdens, second between approximately 6.87\% and 10.67\%, and third above approximately 10.67\%. The intersecting alternatives share equal scores at each boundary.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\linewidth]{figures/traffic_sensitivity.pdf}
@@ -182,7 +216,10 @@ Rental equals second-hand at $\alpha=0.068704$ and new at $\alpha=0.106662$ (Fig
 \section{Discussion}
 The second-hand advantage reflects a lower acquisition price under common garment allocation, care, and delivery assumptions. Equal emissions for the purchase options follow from this allocation convention. Rental's repeated collection and return generate substantial travel costs and time, explaining its baseline position. Its first-place crossover near 7\% identifies extensive travel sharing as a condition for competitiveness within the proportional scenario. Collection integrated with existing journeys therefore warrants attention in rental service design.
 
-The estimates depend on the selected garment lifetime, advertised prices, proxy inventories, and assumed active time. The Italian care and UK transport factors provide screening estimates for the Singapore setting. Product-specific inventories, local routes, actual transaction costs, and channel-specific lifetimes would strengthen empirical precision. The original survey supports a small-sample assessment of criterion preferences; individual and collective CR values characterize their respective judgment matrices. Transport thresholds also depend on the scoring references and the proportional relationship among travel emissions, fares, and time. These conditions define the interpretation of the modelled ranking.
+\begin{samepage}
+The estimates depend on the selected garment lifetime, advertised prices, proxy inventories, and assumed active time. The Italian care and UK transport factors provide screening estimates for the Singapore setting. Product-specific inventories, local routes, actual transaction costs, and channel-specific lifetimes would strengthen empirical precision. The original survey supports a small-sample assessment of criterion preferences. Individual CR describes within-respondent coherence, whereas group CR describes the aggregated matrix; the six individual matrices above the threshold remain represented in the exploratory group estimate. Transport thresholds also depend on the scoring references and the proportional relationship among travel emissions, fares, and time. In practice, trip sharing may affect these components by different proportions. The present analysis characterizes their joint response to a common attribution factor. These conditions define the interpretation of the modelled ranking.
+\par
+\end{samepage}
 
 \section{Conclusion}
 For one student attending six formal events annually, second-hand purchasing achieves the highest AHP-weighted score, followed by new purchasing and rental. Its advantage arises from lower expenditure under equal modelled purchase-related emissions and time. Rental becomes the highest-scoring option when its attributed collection-and-return travel burdens fall below approximately 6.87\% of the dedicated-travel baseline. The findings support second-hand acquisition under the specified assumptions and link rental competitiveness to efficient collection-and-return arrangements.

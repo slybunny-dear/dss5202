@@ -132,11 +132,11 @@ def main():
     assert len(groups)==1 and groups[0]["mapping"]=="mild_3_2" and groups[0]["subset"]=="all_complete"
     assert len(ranks)==3 and {r["mapping"] for r in ranks}=={"mild_3_2"}
     ranks.sort(key=lambda r:int(r["rank"]))
-    write_table("costs.tex", "lrrrrrr", ["Option", "Garment", "Delivery", "Rent", "Care", "Travel", "Total"],
+    write_table("costs.tex", "ccccccc", ["Option", "Garment", "Delivery", "Rent", "Care", "Travel", "Total"],
         [[LABELS[m]]+[f"{float(annual[m][k]):.2f}" for k in
          ("purchase_sgd","delivery_sgd","rental_sgd","care_sgd","travel_sgd","annual_spending_sgd")]
          for m in ("new","used","rental")])
-    write_table("ranking.tex", "lrrrrrrr", ["Option", "\\co/year", "SGD/year", "Minutes", "$s_E$", "$s_C$", "$s_V$", "$S$ (rank)"],
+    write_table("ranking.tex", "cccccccc", ["Option", "\\co/year", "SGD/year", "Minutes", "$s_E$", "$s_C$", "$s_V$", "$S$ (rank)"],
         [[LABELS[r["mode"]],f"{float(annual[r['mode']]['annual_kgco2e']):.2f}",
           f"{float(annual[r['mode']]['annual_spending_sgd']):.2f}",f"{float(annual[r['mode']]['annual_minutes']):.0f}"]+
          [f"{float(r[k]):.4f}" for k in ("emissions_score","cost_score","convenience_score")]+

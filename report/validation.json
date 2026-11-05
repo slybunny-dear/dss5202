@@ -14,12 +14,12 @@
   "traffic_crossovers_verified": 2,
   "raw_data_unchanged": true,
   "input_and_code_hashes_match": true,
-  "pdf_pages": 7,
+  "pdf_pages": 8,
   "references": 8,
   "latex_warnings": 0,
   "conversational_or_negative_phrase_scan": "PASS",
-  "visual_review": "All seven pages reviewed; LCA diagram retains lecture palette and flows with rounded process boxes and matching DejaVu Sans fonts; delivery-allocation explanation checked at manuscript size",
-  "pdf_sha256": "d27cc0cf306f1ef6cd61464e4618210c3114a7c9f5f47bc57a2e1309fdb19e07",
+  "visual_review": "All eight pages reviewed; all tables centered with a common 10 pt body size; single-line Table 1 cells; clear equations; discussion paragraph kept intact across the figure float.",
+  "pdf_sha256": "45729dde1bda1b8c9fe137dc419e1e900939df57d5217c6be9bcb917bbb55041",
   "framework_reference_studies_inspected": 4,
   "scientific_files_unchanged_in_figure_revision": true,
   "lca_boundary_model_alignment": "PASS: common FU, model processes, qualitative resource and emission flows, background supply and separate climate indicator",
@@ -36,7 +36,7 @@
   ],
   "figure_count": 4,
   "lca_diagram_flow_status": "Qualitative boundary exchanges; numerical impacts use aggregate factors",
-  "standalone_source_package_build": "PASS: seven pages; extracted text matches delivered PDF",
+  "standalone_source_package_build": "PASS: eight pages; extracted text of every page matches delivered PDF",
   "latest_editorial_revision": {
     "baseline_commit": "672dc779dab7b6e40a7569cb9fa80b394e847a3e",
     "removed": [
@@ -109,5 +109,37 @@
       2040,
       1260
     ]
+  },
+  "latest_clarity_revision": {
+    "date": "2026-11-05",
+    "baseline_commit": "85f5565f989ec1d02238f3e1cd33906b5fb0feee",
+    "rental_transport_rationale": "Repeated dedicated collection and return; scenario attribution changes emissions, fares and active time together",
+    "rental_travel_percent_of_emissions_cost_time": [
+      60.5,
+      44.4,
+      92.3
+    ],
+    "restored_explanations": [
+      "Lifetime allocation and cleaning counts",
+      "Delivery and passenger-kilometre activities",
+      "Numerical annual emissions and spending",
+      "Active time and service-provider cleaning assumption",
+      "AHP matrix symbols and individual/group CR interpretation",
+      "Scenario-based scoring references and worked composite score",
+      "Travel coefficients and analytical crossover formula"
+    ],
+    "tables": {
+      "body_font_pt": 10,
+      "alignment": "centered natural-width columns",
+      "table_1_single_line_cells": true,
+      "generated_tables_exactly_match": true
+    },
+    "all_14_existing_model_tests_passed": true,
+    "scientific_model_raw_data_parameters_results_and_figures_unchanged": true,
+    "equation_count": 8,
+    "independent_methods_and_visual_review": "PASS",
+    "all_eight_pages_visually_reviewed": true,
+    "latex_warnings": 0,
+    "standalone_source_package_verified": true
   }
 }
