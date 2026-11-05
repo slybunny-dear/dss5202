@@ -14,15 +14,15 @@
   "traffic_crossovers_verified": 2,
   "raw_data_unchanged": true,
   "input_and_code_hashes_match": true,
-  "pdf_pages": 8,
+  "pdf_pages": 9,
   "references": 8,
   "latex_warnings": 0,
   "conversational_or_negative_phrase_scan": "PASS",
-  "visual_review": "All eight pages reviewed; all tables centered with a common 10 pt body size; single-line Table 1 cells; clear equations; discussion paragraph kept intact across the figure float.",
-  "pdf_sha256": "45729dde1bda1b8c9fe137dc419e1e900939df57d5217c6be9bcb917bbb55041",
+  "visual_review": "All nine pages reviewed: supplied vector LCA diagram fully visible; four figure and three table captions centered; independent body paragraphs indented; discussion heading kept with first paragraph; three-part appendix on page 9.",
+  "pdf_sha256": "462a9a818238a0839a340e280c213a31205903bd6a75f5e30d23a4e5c0d8d2dd",
   "framework_reference_studies_inspected": 4,
   "scientific_files_unchanged_in_figure_revision": true,
-  "lca_boundary_model_alignment": "PASS: common FU, model processes, qualitative resource and emission flows, background supply and separate climate indicator",
+  "lca_boundary_model_alignment": "PASS: common functional unit, six uses, purchase/rental cleaning counts, acquisition transport, qualitative resource and system-wide emission flows",
   "lca_lecture_pages_consulted": [
     17,
     18,
@@ -36,7 +36,7 @@
   ],
   "figure_count": 4,
   "lca_diagram_flow_status": "Qualitative boundary exchanges; numerical impacts use aggregate factors",
-  "standalone_source_package_build": "PASS: eight pages; extracted text of every page matches delivered PDF",
+  "standalone_source_package_build": "PASS: nine pages; every page text matches delivered PDF",
   "latest_editorial_revision": {
     "baseline_commit": "672dc779dab7b6e40a7569cb9fa80b394e847a3e",
     "removed": [
@@ -141,5 +141,38 @@
     "all_eight_pages_visually_reviewed": true,
     "latex_warnings": 0,
     "standalone_source_package_verified": true
+  },
+  "latest_layout_appendix_revision": {
+    "date": "2026-11-06",
+    "baseline_commit": "c4c928558a4da68ba8eb31e39646495fd2fae353",
+    "supplied_figure": "figures/lca_boundary_group.pdf",
+    "supplied_figure_sha256": "4be4c9604a778689df7c70fa560bb892544e316a91bda2a621bc95f0753825d1",
+    "supplied_pdf_identical_to_user_file": true,
+    "latex_whitespace_trim_bp": [
+      140,
+      96,
+      140,
+      100
+    ],
+    "all_labels_preserved": true,
+    "caption_alignment": "centered, including multiline captions",
+    "paragraph_indent": "1.2 em, including section-opening and independent post-equation paragraphs",
+    "appendix_after_references": true,
+    "appendix_subsections": [
+      "Source locators and evidence status",
+      "Survey traceability and analytical records",
+      "Data, reproducibility, and authorship"
+    ],
+    "original_three_subsection_structure_restored": true,
+    "appendix_paths_and_archived_evidence_verified": true,
+    "all_eight_numbered_equations_unchanged": true,
+    "raw_data_parameters_model_results_and_result_tables_unchanged": true,
+    "generator_preserves_supplied_figure": true,
+    "other_three_pdf_figures_and_two_tables_reproduced_exactly": true,
+    "all_nine_pages_visually_reviewed": true,
+    "standalone_source_package_verified": true,
+    "model_test_status": "Previous 14 passing model checks retained; model files and inputs unchanged in this presentation revision",
+    "latex_warnings": 0,
+    "pdf_import_note": "xdvipdfmx ignores imported structure tags; original supplied PDF preserved and rendered content verified"
   }
 }

@@ -1,13 +1,12 @@
 {
-  "main_pdf_sha256": "45729dde1bda1b8c9fe137dc419e1e900939df57d5217c6be9bcb917bbb55041",
-  "main_tex_sha256": "0e93658657c7bdc7cc32f94974c51d12fb88b66a1db3a0018f619c81ada79055",
-  "source_zip_sha256": "703fe76352cff3d3aead8440bad9dcb286c6f77d5a5144712b9de317c10d9b23",
+  "main_pdf_sha256": "462a9a818238a0839a340e280c213a31205903bd6a75f5e30d23a4e5c0d8d2dd",
+  "main_tex_sha256": "7fe79d792574e5d95b5f18c5cc3c73647e9ab9b15fedaf2024d440a9de417cd7",
+  "source_zip_sha256": "a9e0be1ab68e01cb2c250993d0818b4c41ea15478002cd12543347e821aef2ca",
   "source_files": [
     "figures/emissions.pdf",
     "figures/framework.pdf",
     "figures/framework.svg",
-    "figures/lca_boundary.pdf",
-    "figures/lca_boundary.svg",
+    "figures/lca_boundary_group.pdf",
     "figures/traffic_sensitivity.pdf",
     "framework_design_notes.md",
     "lca_boundary_notes.md",

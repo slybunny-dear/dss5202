@@ -7,8 +7,13 @@
 \usepackage[unicode,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=teal]{hyperref}
 \urlstyle{same}
 \definecolor{teal}{HTML}{246C77}
-\captionsetup{font=small,labelfont=bf,justification=raggedright,singlelinecheck=false}
+\captionsetup{font=small,labelfont=bf,justification=centering,singlelinecheck=false}
 \setlength{\parindent}{1.2em}
+% Apply the same first-line indentation after section headings.
+\makeatletter
+\let\@afterindentfalse\@afterindenttrue
+\@afterindenttrue
+\makeatother
 \setlength{\parskip}{2pt}
 \setlength{\emergencystretch}{2em}
 \clubpenalty=10000
@@ -60,12 +65,14 @@ This study compares three acquisition strategies for the Love, Bonito Eyka Multi
 The functional unit is the provision of six formalwear uses for one NUS student over one year. Each purchase option involves one acquisition and six wears; rental involves six separate seven-day bookings. The scenario permits repeated use of the same style and assumes suitable fit, dress-code compliance, hygiene, and availability. Figure~\ref{fig:lca_boundary} defines the common product system, its resource inputs, and its service and emission outputs. Manufacturing, distribution and retail, use and care, and eventual disposal follow the life-cycle grouping in formalwear LCA \citep{monticelli2023}. Annual activities comprise cleaning and acquisition-related delivery or passenger travel. Packaging is reused, and the analysis focuses on the dress and its acquisition service.
 
 \begin{figure}[htbp]
-\centering\includegraphics[width=\linewidth]{figures/lca_boundary.pdf}
+\centering\includegraphics[width=\linewidth,trim=140bp 96bp 140bp 100bp,clip]{figures/lca_boundary_group.pdf}
 \caption{Product system and system boundary for the common functional unit. Resource and emission arrows represent qualitative flows; background supply is embedded in the stage factors. Climate-change impacts are quantified using aggregated literature factors and scenario-specific annual activities.}
 \label{fig:lca_boundary}
 \end{figure}
 
-Advertised prices and terms were archived on 3 November 2026 from the manufacturer and two Singapore listings \citep{lovebonito,usedquote,rentalquote}. Garment-stage factors are rounded graphical extractions from \citet{sandin2019}, Figure 4.24. The cleaning proxy represents residential washing, drying, and ironing in an Italian study \citep{monticelli2023}, Table 4; UK transport factors include direct and upstream energy emissions \citep{desnz2026}. These proxies support a screening assessment. Table~\ref{tab:inputs} summarizes the principal inputs. All channels share a 26-wear lifetime, and the second-hand garment's reported prior wear satisfies the remaining-capacity condition $1+6\leq26$.
+Advertised prices and terms were archived on 3 November 2026 from the manufacturer and two Singapore listings \citep{lovebonito,usedquote,rentalquote}. Garment-stage factors are rounded graphical extractions from \citet{sandin2019}, Figure 4.24. The cleaning proxy represents residential washing, drying, and ironing in an Italian study \citep{monticelli2023}, Table 4; UK transport factors include direct and upstream energy emissions \citep{desnz2026}. These proxies support a screening assessment.
+
+Table~\ref{tab:inputs} summarizes the principal inputs. All channels share a 26-wear lifetime, and the second-hand garment's reported prior wear satisfies the remaining-capacity condition $1+6\leq26$.
 
 \begin{table}[htbp]
 \caption{Principal inputs for the six-event annual scenario.}
@@ -123,6 +130,7 @@ C_R&=6(10)+24(2)=108.00.
 \end{aligned}
 \label{eq:cost}
 \end{equation}
+
 These totals are expressed in SGD/year. Purchase care covers seven home cleans, while rental travel covers 24 one-way fares. Rental care surcharges and additional platform charges are set to zero. The fully refundable SGD 99 deposit represents a temporary liquidity requirement. Carbon allocation and consumer expenditure thus reflect annual service use and annual cash payments, respectively.
 
 Convenience is represented by active consumer time, with shorter durations indicating greater convenience. Home-care time covers active handling, and rental cleaning is assigned to the service provider in the scenario. Ordering and home care yield $T_N=T_S=15+7(15)=120$ minutes/year. Booking, handover, and dedicated travel yield $T_R=6[10+4(30)]=780$ minutes/year. These time inputs are scenario assumptions.
@@ -137,6 +145,7 @@ Each matrix entry $a_{ij}^{(r)}$ expresses respondent $r$'s assessed importance 
  w_i=\frac{g_i}{\sum_h g_h}.
 \label{eq:ahp}
 \end{equation}
+
 Individual and group consistency use $CI=(\lambda_{\max}-3)/2$ and $CR=CI/RI$, where $\lambda_{\max}$ is the largest eigenvalue, $RI=0.52$, and the consistency criterion is $CR\leq0.10$ \citep{saaty1994}. All 17 complete responses contribute to the group weights, providing exploratory preference estimates.
 
 Annual burdens $B_{mj}\in\{E_m,C_m,T_m\}$ are converted to linear scores and combined using these weights:
@@ -158,6 +167,7 @@ T_R(\alpha)&=60+720\alpha.
 \end{aligned}
 \label{eq:transport}
 \end{equation}
+
 The constant terms comprise garment allocation and cleaning (4.4916923 \co), six rental payments (SGD 60), and booking and handover (60 minutes). The travel coefficients follow from $240(0.0287)=6.888$ \co, $24(2)=48$ SGD, and $24(30)=720$ minutes. Ownership outcomes, criterion weights, and scoring references remain fixed. Rental--ownership crossover shares are obtained by equating their composite scores.
 
 \section{Results}
@@ -192,6 +202,7 @@ For second-hand purchasing, Eq.~\ref{eq:score} gives criterion scores $1-4.91913
 \[
 S_S\approx0.2410(0.7950)+0.4295(0.8306)+0.3295(0.8889)\approx0.8412.
 \]
+
 Second-hand purchasing saves SGD 11.01 relative to new purchasing while sharing the same modelled emissions and active time. New purchasing has lower burdens than rental on all three criteria. These relationships establish the baseline ordering for positive criterion weights.
 
 \subsection{Transport and ranking changes}
@@ -200,11 +211,13 @@ Substitution into Eq.~\ref{eq:score} gives
 S_R(\alpha)=0.865006510-0.346091054\alpha.
 \label{eq:traffic_score}
 \end{equation}
+
 Equating Eq.~\ref{eq:traffic_score} to the fixed score $S_m$ of each purchase option gives
 \begin{equation}
 \alpha_m^*=\frac{0.865006510-S_m}{0.346091054},\qquad m\in\{N,S\}.
 \label{eq:crossover}
 \end{equation}
+
 Using full-precision scores, rental equals second-hand at $\alpha_S^*=0.068704$ and new at $\alpha_N^*=0.106662$ (Figure~\ref{fig:traffic}). Accordingly, rental ranks first below approximately 6.87\% of baseline attributed travel burdens, second between approximately 6.87\% and 10.67\%, and third above approximately 10.67\%. The intersecting alternatives share equal scores at each boundary.
 
 \begin{figure}[htbp]
@@ -213,8 +226,11 @@ Using full-precision scores, rental equals second-hand at $\alpha_S^*=0.068704$ 
 \label{fig:traffic}
 \end{figure}
 
+\begin{samepage}
 \section{Discussion}
 The second-hand advantage reflects a lower acquisition price under common garment allocation, care, and delivery assumptions. Equal emissions for the purchase options follow from this allocation convention. Rental's repeated collection and return generate substantial travel costs and time, explaining its baseline position. Its first-place crossover near 7\% identifies extensive travel sharing as a condition for competitiveness within the proportional scenario. Collection integrated with existing journeys therefore warrants attention in rental service design.
+\par
+\end{samepage}
 
 \begin{samepage}
 The estimates depend on the selected garment lifetime, advertised prices, proxy inventories, and assumed active time. The Italian care and UK transport factors provide screening estimates for the Singapore setting. Product-specific inventories, local routes, actual transaction costs, and channel-specific lifetimes would strengthen empirical precision. The original survey supports a small-sample assessment of criterion preferences. Individual CR describes within-respondent coherence, whereas group CR describes the aggregated matrix; the six individual matrices above the threshold remain represented in the exploratory group estimate. Transport thresholds also depend on the scoring references and the proportional relationship among travel emissions, fares, and time. In practice, trip sharing may affect these components by different proportions. The present analysis characterizes their joint response to a common attribution factor. These conditions define the interpretation of the modelled ranking.
@@ -224,13 +240,25 @@ The estimates depend on the selected garment lifetime, advertised prices, proxy 
 \section{Conclusion}
 For one student attending six formal events annually, second-hand purchasing achieves the highest AHP-weighted score, followed by new purchasing and rental. Its advantage arises from lower expenditure under equal modelled purchase-related emissions and time. Rental becomes the highest-scoring option when its attributed collection-and-return travel burdens fall below approximately 6.87\% of the dedicated-travel baseline. The findings support second-hand acquisition under the specified assumptions and link rental competitiveness to efficient collection-and-return arrangements.
 
-\section*{Data and reproducibility}
-The repository retains the original questionnaire, parameter and source registers, respondent-level CR values, and full-precision results. The scripts \path{code/run.py} and \path{report/generate_assets.py} regenerate numerical outputs and manuscript assets; execution instructions accompany the repository. The archived evidence records source locations and input hashes.
-
-\noindent\textit{Author information.} Faculty of Science, National University of Singapore. Instructor: Kim Leng Poh.
-
-\noindent\textit{AI use statement.} AI assistance supported English revision, LaTeX preparation, figure generation, and computational and document checks.
-
 \clearpage
 \input{references.tex}
+\clearpage
+\appendix
+\section{Source and Reproduction Notes}\label{app:audit}
+\subsection{Source locators and evidence status}
+Market sources are indexed as M2\_001 (new), M2\_002 (second-hand listing 1447640322), and M2\_003 (rental listing 1464833759) in \path{data/sources.json}, with access dated 3 November 2026, Singapore time. Quotation extracts are archived in \path{evidence/market_quotes.md}. The baseline uses the first-rental refundable deposit of SGD 99.
+
+Garment-stage emission factors refer to \citet{sandin2019}, printed page 83, Figure 4.24. The 0.478 kg reference mass appears on printed page 159, Table B-59. The cleaning proxy is the residential GWP entry in \citet{monticelli2023}, Table 4, printed page 7635; Table 2 on page 7632 describes the associated inventory. Extracted figures and inventory records are retained in \path{evidence/environment/}, and \path{data/parameters.json} records each input's value, unit, and evidence category.
+
+UK 2026 rail factors combine direct and upstream terms of $0.02121+0.00749=0.02870$ \co/passenger-km from \textit{Business travel--land} D89 and \textit{WTT--pass vehs \& travel--land} D86. Van factors combine $0.25716+0.06128=0.31844$ \co/vehicle-km from \textit{Delivery vehicles} D32 and \textit{WTT--delivery vehs \& freight} D31. The selected cells are archived in \path{evidence/environment/uk2026_selected_cells.json}.
+
+\subsection{Survey traceability and analytical records}
+The original workbook, \path{data/raw/survey_18.xlsx}, supplies Q8--Q10 from rows 2--19 and columns J--L of its response sheet. Cells B27--B29 in the question-and-rules sheet provide the wording transcribed in \path{results/run_manifest.json}. Seventeen records contain complete pairwise comparisons. Anonymous response identifiers, source rows, individual priorities, and CR values are retained in \path{results/ahp_individual.csv}; group priorities and consistency appear in \path{results/ahp_group.csv}. The annual outcomes, composite scores, and transport crossovers are summarized in \path{results/analysis_summary.json} and the accompanying CSV files. Reported values use full-precision calculations with rounding for presentation.
+
+\subsection{Data, reproducibility, and authorship}
+The repository retains the original questionnaire, parameter and source registers, respondent-level CR values, and full-precision results. Running \path{code/run.py} from the project root regenerates the numerical outputs; \path{report/generate_assets.py} recreates the result tables and generated figures while retaining the group-supplied LCA system-boundary PDF. Execution and compilation instructions accompany the repository. The source package contains the LaTeX manuscript and its referenced tables and figures, and the archived evidence records source locations and input hashes.
+
+\textit{Author information.} Yang Yihua, Cao Xiaoyue, Yang Liu, Liu Ziqing, and Xie Tongling. Faculty of Science, National University of Singapore. Instructor: Kim Leng Poh.
+
+\textit{AI use statement.} AI assistance supported English revision, LaTeX preparation, figure generation, and computational and document checks.
 \end{document}

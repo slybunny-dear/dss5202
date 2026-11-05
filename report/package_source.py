@@ -19,7 +19,6 @@ def package():
         paths.add(HERE / relative)
     paths.add(HERE / "figures/framework.svg")
     paths.add(HERE / "framework_design_notes.md")
-    paths.add(HERE / "figures/lca_boundary.svg")
     paths.add(HERE / "lca_boundary_notes.md")
     missing = [str(path) for path in paths if not path.is_file()]
     if missing:

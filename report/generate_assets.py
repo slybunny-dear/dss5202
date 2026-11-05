@@ -2,6 +2,7 @@
 
 Run ``python -X utf8 -B code/run.py`` first, then this script.
 All analytical values are read from results/. Original inputs remain read-only.
+The group-supplied LCA boundary PDF is retained as a fixed manuscript asset.
 """
 from pathlib import Path
 import csv
@@ -15,7 +16,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
 from draw_framework import draw_framework
-from draw_lca_boundary import draw_lca_boundary
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -126,6 +126,9 @@ def traffic(scenarios, thresholds):
 
 
 def main():
+    supplied_boundary = FIGURES / "lca_boundary_group.pdf"
+    if not supplied_boundary.is_file():
+        raise FileNotFoundError(f"Required group-supplied figure: {supplied_boundary}")
     annual={r["mode"]:r for r in read("annual_results.csv")}
     groups=read("ahp_group.csv")
     ranks=read("rankings.csv")
@@ -144,10 +147,9 @@ def main():
     scenarios=read("transport_scenarios.csv")
     thresholds={r["comparison"]:float(r["alpha"]) for r in read("transport_thresholds.csv")}
     draw_framework(int(groups[0]["n"]), output_dir=FIGURES)
-    draw_lca_boundary(output_dir=FIGURES)
     emissions(annual)
     traffic(scenarios,thresholds)
-    print(json.dumps({"tables":2,"figures":4,"mapping":groups[0]["mapping"],
+    print(json.dumps({"tables":2,"generated_figures":3,"supplied_figure":supplied_boundary.name,"mapping":groups[0]["mapping"],
                       "group_n":int(groups[0]["n"]),"thresholds":thresholds},indent=2))
 
 
